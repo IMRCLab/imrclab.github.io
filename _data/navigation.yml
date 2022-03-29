@@ -1,0 +1,18 @@
+- name: About
+  link: /
+  icon: fas fa-info
+- name: Publications
+  link: /publications.html
+  icon: fas fa-book
+- name: Teaching
+  link: /teaching.html
+  icon: fas fa-chalkboard
+#- name: Projects
+#  link: /projects.html
+#  icon: fas fa-bars-progress
+- name: Jobs
+  link: /jobs.html
+  icon: fas fa-graduation-cap
+- name: Team
+  link: /team.html
+  icon: fas fa-address-card

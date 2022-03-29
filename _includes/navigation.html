@@ -1,0 +1,25 @@
+  <!-- Navigation bar -->
+  <nav class="navbar is-dark" id="home">
+    <div class="navbar-brand">
+      <div class="navbar-burger burger is-active" data-target="myNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="myNavbar" class="navbar-menu is-active">
+      <div class="navbar-end">
+        {% for item in site.data.navigation %}
+        <a class="navbar-item {% if page.url == item.link %} is-active {%endif%}" href="{{ item.link }}">
+          {% if item.icon %}
+          <span class="icon">
+            <i class=" {{ item.icon }}"></i>
+          </span>
+          {% endif %}
+          <span>{{ item.name }} </span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>

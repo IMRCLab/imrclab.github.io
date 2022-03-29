@@ -1,0 +1,46 @@
+---
+layout: default
+title: IMRC Team
+---
+
+<div class="section-heading">
+    <h2 class="title is-2">Team</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        {% for member in site.data.team.groupleader %}
+            {% include teammember.html %}
+        {%- endfor %}
+
+        {% for member in site.data.team.administration %}
+            {% include teammember.html %}
+        {%- endfor %}
+
+        {% for member in site.data.team.phdstudents %}
+            {% include teammember.html %}
+        {%- endfor %}
+
+        {% comment %}
+        {% for member in site.data.team.msthesis %}
+            {% include teammember.html %}
+        {%- endfor %}
+        {% endcomment %}
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Lab</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        {% for member in site.data.team.robots %}
+            {% include teammember.html %}
+        {%- endfor %}
+
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/{{ member.image }}" alt="{{ member.name }}">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          {{ member.name }}
+        </p>
+        <p class="venue">
+          {{member.start}} - now
+        </p>
+        <p class="author">
+          {{ member.role }}
+        </p>
+        {% if member.note %}
+        <p class="note">
+           {{ member.note | newline_to_br}}
+        </p>
+        {% endif %}
+      </div>
+      <footer class="card-footer">
+        {% if member.email %}
+        <a href="mailto:{{member.email}}" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        {% endif %}
+        {% if member.website %}
+        <a href="{{member.website}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        {% endif %}
+        {% if member.github %}
+        <a href="https://github.com/{{ member.github }}" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
+        {% endif %}
+      </footer>
+    </div>
+</div>

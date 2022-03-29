@@ -1,0 +1,32 @@
+<div class="tile is-parent">
+    <div class="tile is-child card">
+      {% if course.image %}
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/{{ course.image }}" alt="{{ course.name }}">
+        </figure>
+      </div>
+      {% endif %}
+      <div class="card-content paper">
+        <p class="title">
+          {{ course.name }}
+        </p>
+        <p class="venue">
+          {{course.time}}
+        </p>
+        <p class="author">
+          Credits: {{ course.credits }}
+        </p>
+        {% if course.note %}
+        <p class="note">
+          {{ course.note | newline_to_br}}
+        </p>
+        {% endif %}
+      </div>
+      <footer class="card-footer">
+        {% if course.moses %}
+        <a href="{{course.moses}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        {% endif %}
+      </footer>
+    </div>
+</div>

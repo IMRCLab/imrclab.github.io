@@ -1,0 +1,49 @@
+---
+layout: default
+title: IMRC Teaching
+---
+
+<div class="section-heading">
+    <h2 class="title is-2">MSc/BSc Thesis</h2>
+</div>
+
+<div class="container">
+
+We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin.
+We do not maintain a fixed list of topics; instead, we offer customized topics based on mutual interest and technical background.
+Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis.
+Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
+
+If you are interested in working with us, please contact <a href="mailto:hoenig (at) tu-berlin (dot) de">Wolfgang Hönig</a> with a motivation letter.
+In your letter, please describe why you are interested, your technical background, and potential projects of interest (if any).
+For us, your enthusiasm for the research area and a desire to participate in a research lab is of utmost importance.
+We are a highly interdisciplinary and diverse team and we explicitly encourage applications from underrepresented groups.
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Summer 2022</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for course in site.data.teaching.ss2022 %}
+            {% include course.html %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Winter 2021/22</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for course in site.data.teaching.ws2021 %}
+            {% include course.html %}
+        {%- endfor %}
+
+    </div>
+</div>

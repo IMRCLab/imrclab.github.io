@@ -1,0 +1,30 @@
+ws2021:
+  - name: "Learning and Intelligent Systems: Project"
+    time: Wed, 2-4pm; individual meetings
+    credits: 9
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41017&version=1&sprache=2
+    note: |
+      Course held by Prof. Marc Toussaint. We mentored one out of five students.
+
+      After attending the module, students have extensive experience with working in a research lab on specific topics of current research in Learning & Intelligent Systems. They have in-depth knowledge and practical understanding of the specific topic they work on during the project. They are capable of conceptualizing a research project, formulating a realistic workplan, and managing the research work autonomously.
+ss2022:
+  - name: "Motion Planning"
+    time: Fr, 10-12pm; Tue, 4-6pm
+    credits: 6
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=1&sprache=2
+    note: |
+      New course designed by Dr. Wolfgang Hönig and Dr. Andreas Orthey.
+
+      Motion planning is a fundamental building block for autonomous systems, with applications in robotics, industrial automation, and autonomous driving.
+
+      After completion of the course, students will have a detailed understanding of:
+      • Formalization of geometric, kinodynamic, and optimal motion planning;
+      • Sampling-based approaches: Rapidly-exploring random trees (RRT) and probabilistic roadmaps (PRM);
+      • Search-based approaches: State-lattice based A*;
+      • Optimization-based approaches: Sequential convex programming;
+      • The theoretical properties relevant to these algorithms (completeness, optimality, and complexity).
+
+      Students will be able to:
+      • Decide (theoretically and empirically) which algorithm(s) to use for a given problem;
+      • Implement (basic versions) of the algorithms themselves;
+      • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).

@@ -1,0 +1,64 @@
+groupleader:
+  - name: Wolfgang Hönig
+    role: Group Leader
+    email: hoenig (at) tu-berlin (dot) de
+    website: https://whoenig.github.io/
+    github: whoenig
+    affiliation: TU Berlin
+    image: wolfgang_hoenig.jpg
+    start: 05/2021
+
+administration:
+  - name: Ilaria Cicchetti-Nilsson
+    role: Administration
+    email: i (dot) cicchetti-nilsson (at) tu-berlin (dot) de
+    affiliation: TU Berlin
+    image: ilaria_cicchetti-nilsson.jpg
+    start: 05/2021
+
+phdstudents:
+  - name: Akmaral Moldagalieva
+    role: PhD student
+    email: moldagalieva (at) tu-berlin (dot) de
+    # website:
+    github: akmaralAW
+    affiliation: TU Berlin
+    image: akmaral_moldagalieva.jpg
+    start: 12/2021
+
+  - name: Khaled Wahba
+    role: PhD student
+    email: kwahba (at) tu-berlin (dot) de
+    # website:
+    github: Khaledwahba1994
+    affiliation: TU Berlin
+    image: khaled_wahba.jpg
+    start: 01/2022
+
+  - name: Pia Hanfeld
+    role: External PhD student
+    email: p.hanfeld (at) hzdr (dot) de
+    website: https://www.casus.science/team-members/pia-hanfeld/
+    github: phanfeld
+    affiliation: CASUS, TU Berlin
+    image: pia_hanfeld.jpg
+    start: 2022
+
+msthesis:
+  - name: Welf Rehberg
+    role: MS Thesis
+
+researchassistants:
+
+undergrad:
+
+robots:
+  - name: Flightspace
+    image: flightspace.jpg
+    start: 2021
+    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+
+  - name: Crazyflie 2.1
+    image: crazyflie20.png
+    start: 2021
+    note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
