@@ -25,7 +25,10 @@
       </div>
       <footer class="card-footer">
         {% if course.moses %}
-        <a href="{{course.moses}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        <a href="{{course.moses}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Module</span></a>
+        {% endif %}
+        {% if course.isis %}
+        <a href="{{course.isis}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>ISIS</span></a>
         {% endif %}
       </footer>
     </div>
