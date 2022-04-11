@@ -143,3 +143,15 @@ ul li {
 .alert {
   font-weight: bold;
 }
+
+.button.is-multiline {
+  min-height: 2.25em;
+  white-space: unset;
+  height: auto;
+  flex-direction: column;
+}
+
+.button .note {
+  font-size: 0.8rem;
+  font-style: italic;
+}
