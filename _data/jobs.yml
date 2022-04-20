@@ -1,0 +1,24 @@
+- name: "Student Assistant (BS/MS)"
+  hours: 60 per month
+  deadline: March 8, 2022
+  reference: 3434T35/22
+  announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+  note: |
+    The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) conduct validation experiments with real/simulated robots; 3) 3D design and printing of robotic parts needed to assemble a new flying robot; and 4) electrical design for new sensor payloads. 
+
+    Requirements:
+        • First experience in computer science, aerospace engineering, mechanical engineering, electrical engineering, or related fields.
+        • Programming skills in Python, C++, or similar language.
+        • Excellent written and spoken English.
+        • Above all, enthusiasm for the research area and a desire to participate in a research lab.
+
+    Desirable:
+        • Basic skills in 3D CAD modeling and 3D printing.
+        • Basic knowledge of soldering.
+        • Knowledge of Calculus.
+        • Experience with the Robot Operating System (ROS).
+
+- name: "Student Assistant (BS/MS)"
+  hours: 60 per month
+  note: |
+    We are in the process of creating a formal job announcement for one student who is interested in aerial robotics. We will update this webpage with the links once it is posted publically.

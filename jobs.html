@@ -24,6 +24,11 @@ We currently have no funded positions available.
 </div>
 
 <div class="container">
-We currently have two positions (15h/week) for student assistants (BA or MS level) who are interested in aerial robotics.
-We are in the process of creating formal job announcements and will update this webpage with the links once they are posted publically.
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for job in site.data.jobs %}
+            {% include job.html %}
+        {%- endfor %}
+
+    </div>
 </div>

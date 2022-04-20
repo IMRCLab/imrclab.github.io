@@ -1,0 +1,43 @@
+<div class="tile is-parent">
+    <div class="tile is-child card">
+      {% if job.image %}
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/{{ job.image }}" alt="{{ job.name }}">
+        </figure>
+      </div>
+      {% endif %}
+      <div class="card-content paper">
+        <p class="title">
+          {{ job.name }}
+        </p>
+        {% if job.deadline %}
+        <p class="venue">
+          Deadline: {{job.deadline}}
+        </p>
+        {% endif %}
+        <p class="author">
+          Hours: {{ job.hours }}
+        </p>
+        {% if job.note %}
+        <p class="note">
+          {{ job.note | newline_to_br}}
+        </p>
+        {% endif %}
+      </div>
+      <footer class="card-footer">
+        {% if job.announcement %}
+        <a href="{{job.announcement}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Announcement</span></a>
+        {% endif %}
+        {% if job.reference %}
+        <a href="mailto:i.cicchetti-nilsson@tu-berlin.de?subject=Application for {{job.reference}}&body=Please attach a single PDF with:%0D%0A
+          • Motivation letter%0D%0A
+          • CV%0D%0A
+          • Current grade sheets%0D%0A
+          • Link to relevant code samples (e.g., GitHub repository)%0D%0A
+          • Other supporting materials, if any (e.g., BA thesis or project reports)%0D%0A
+          By submitting your application via email you consent to having your data electronically processed and saved. Please note that we do not provide a guarantee for the protection of your personal data when submitted as an unprotected file. Please find our data protection notice acc. DSGVO (General Data Protection Regulation) at TU website quick access 214041." class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span><span>Apply</span></a>
+        {% endif %}
+      </footer>
+    </div>
+</div>
