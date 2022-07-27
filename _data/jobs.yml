@@ -20,6 +20,10 @@
 
 - name: "Student Assistant (BS/MS)"
   hours: (up to) 60 per month
+  deadline: August 9, 2022
+  reference: 3434T63/22
+  announcement: https://tubcloud.tu-berlin.de/s/t6FTEAd52QjF3ML
+
   note: |
     The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) work on a simulation environment for the aerial robots performing specific collaborative tasks with a software-in-the-loop (SITL); 3) developing the 3D design and printing of robotic parts for payload transportation; and 4) contribute to new algorithms that plan and control aerial robots to transport payloads.
 
@@ -35,5 +39,3 @@
         • Basic knowledge of soldering.
         • Knowledge of Calculus.
         • Experience with the Robot Operating System (ROS).
-
-    We will update this webpage with the formal job announcement once it is posted publically.
