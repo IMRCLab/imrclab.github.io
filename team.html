@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMRC Team</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.solid.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.brands.min.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  
+          // Get "navbar-burger" element
+          const $myNavbarBurger = document.querySelector('.navbar-burger');
+          const $myNavbar = document.querySelector('.navbar-menu');
+  
+          // do not expand menu if JS is available
+          $myNavbarBurger.classList.remove('is-active');
+          $myNavbar.classList.remove('is-active');
+  
+          $myNavbarBurger.addEventListener('click', () => {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $myNavbarBurger.classList.toggle('is-active');
+            $myNavbar.classList.toggle('is-active');
+          });
+  
+          // Get all "navbar-item" elements
+          const $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+          if ($navbarItems.length > 0) {
+  
+            // Add a click event on each of them
+            $navbarItems.forEach( el => {
+              el.addEventListener('click', () => {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $myNavbarBurger.classList.remove('is-active');
+                $myNavbar.classList.remove('is-active');
+              });
+            });
+          }
+  
+        });
+      </script>
+
+  </head>
+  <body>
+      <!-- Navigation bar -->
+  <nav class="navbar is-dark" id="home">
+    <div class="navbar-brand">
+      <div class="navbar-burger burger is-active" data-target="myNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="myNavbar" class="navbar-menu is-active">
+      <div class="navbar-end">
+        
+        <a class="navbar-item " href="/">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-info"></i>
+          </span>
+          
+          <span>About </span>
+        </a>
+        
+        <a class="navbar-item " href="/publications.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-book"></i>
+          </span>
+          
+          <span>Publications </span>
+        </a>
+        
+        <a class="navbar-item " href="/teaching.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-chalkboard"></i>
+          </span>
+          
+          <span>Teaching </span>
+        </a>
+        
+        <a class="navbar-item " href="/jobs.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-graduation-cap"></i>
+          </span>
+          
+          <span>Jobs </span>
+        </a>
+        
+        <a class="navbar-item  is-active " href="/team.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-people-group"></i>
+          </span>
+          
+          <span>Team </span>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+
+    <div class="content">
+        <div class="section-heading">
+    <h2 class="title is-2">Team</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/wolfgang_hoenig.jpg" alt="Wolfgang Hönig">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Wolfgang Hönig
+        </p>
+        <p class="venue">
+          05/2021 - now
+        </p>
+        <p class="author">
+          Group Leader
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="mailto:hoenig (at) tu-berlin (dot) de" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        
+        
+        <a href="https://whoenig.github.io/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        
+        
+        <a href="https://github.com/whoenig" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
+        
+      </footer>
+    </div>
+</div>
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/ilaria_cicchetti-nilsson.jpg" alt="Ilaria Cicchetti-Nilsson">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Ilaria Cicchetti-Nilsson
+        </p>
+        <p class="venue">
+          05/2021 - now
+        </p>
+        <p class="author">
+          Administration
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="mailto:i (dot) cicchetti-nilsson (at) tu-berlin (dot) de" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        
+        
+        
+      </footer>
+    </div>
+</div>
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/akmaral_moldagalieva.jpg" alt="Akmaral Moldagalieva">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Akmaral Moldagalieva
+        </p>
+        <p class="venue">
+          12/2021 - now
+        </p>
+        <p class="author">
+          PhD student
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="mailto:moldagalieva (at) tu-berlin (dot) de" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        
+        
+        
+        <a href="https://github.com/akmaralAW" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
+        
+      </footer>
+    </div>
+</div>
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/khaled_wahba.jpg" alt="Khaled Wahba">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Khaled Wahba
+        </p>
+        <p class="venue">
+          01/2022 - now
+        </p>
+        <p class="author">
+          PhD student
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="mailto:k (dot) wahba (at) tu-berlin (dot) de" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        
+        
+        
+        <a href="https://github.com/Khaledwahba1994" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
+        
+      </footer>
+    </div>
+</div>
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/pia_hanfeld.jpg" alt="Pia Hanfeld">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Pia Hanfeld
+        </p>
+        <p class="venue">
+          2022 - now
+        </p>
+        <p class="author">
+          External PhD student
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="mailto:p.hanfeld (at) hzdr (dot) de" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
+        
+        
+        <a href="https://www.casus.science/team-members/pia-hanfeld/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        
+        
+        <a href="https://github.com/phanfeld" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
+        
+      </footer>
+    </div>
+</div>
+
+        
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Lab</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/flightspace.jpg" alt="Flightspace">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Flightspace
+        </p>
+        <p class="venue">
+          2021 - now
+        </p>
+        <p class="author">
+          
+        </p>
+        
+        <p class="note">
+           Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        
+        
+      </footer>
+    </div>
+</div>
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/crazyflie20.png" alt="Crazyflie 2.1">
+        </figure>
+      </div>
+      <div class="card-content paper">
+        <p class="title">
+          Crazyflie 2.1
+        </p>
+        <p class="venue">
+          2021 - now
+        </p>
+        <p class="author">
+          
+        </p>
+        
+        <p class="note">
+           Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        
+        
+      </footer>
+    </div>
+</div>
+
+    </div>
+</div>
+    </div>
+  </body>
+</html>

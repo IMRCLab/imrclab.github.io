@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMRC Teaching</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.solid.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.brands.min.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  
+          // Get "navbar-burger" element
+          const $myNavbarBurger = document.querySelector('.navbar-burger');
+          const $myNavbar = document.querySelector('.navbar-menu');
+  
+          // do not expand menu if JS is available
+          $myNavbarBurger.classList.remove('is-active');
+          $myNavbar.classList.remove('is-active');
+  
+          $myNavbarBurger.addEventListener('click', () => {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $myNavbarBurger.classList.toggle('is-active');
+            $myNavbar.classList.toggle('is-active');
+          });
+  
+          // Get all "navbar-item" elements
+          const $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+          if ($navbarItems.length > 0) {
+  
+            // Add a click event on each of them
+            $navbarItems.forEach( el => {
+              el.addEventListener('click', () => {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $myNavbarBurger.classList.remove('is-active');
+                $myNavbar.classList.remove('is-active');
+              });
+            });
+          }
+  
+        });
+      </script>
+
+  </head>
+  <body>
+      <!-- Navigation bar -->
+  <nav class="navbar is-dark" id="home">
+    <div class="navbar-brand">
+      <div class="navbar-burger burger is-active" data-target="myNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="myNavbar" class="navbar-menu is-active">
+      <div class="navbar-end">
+        
+        <a class="navbar-item " href="/">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-info"></i>
+          </span>
+          
+          <span>About </span>
+        </a>
+        
+        <a class="navbar-item " href="/publications.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-book"></i>
+          </span>
+          
+          <span>Publications </span>
+        </a>
+        
+        <a class="navbar-item  is-active " href="/teaching.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-chalkboard"></i>
+          </span>
+          
+          <span>Teaching </span>
+        </a>
+        
+        <a class="navbar-item " href="/jobs.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-graduation-cap"></i>
+          </span>
+          
+          <span>Jobs </span>
+        </a>
+        
+        <a class="navbar-item " href="/team.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-people-group"></i>
+          </span>
+          
+          <span>Team </span>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+
+    <div class="content">
+        <div class="section-heading">
+    <h2 class="title is-2">MSc/BSc Thesis</h2>
+</div>
+
+<div class="container">
+
+We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin.
+We do not maintain a fixed list of topics; instead, we offer customized topics based on mutual interest and technical background.
+Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis.
+Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
+
+If you are interested in working with us, please contact <a href="mailto:hoenig (at) tu-berlin (dot) de">Wolfgang Hönig</a> with a motivation letter.
+In your letter, please describe why you are interested, your technical background, and potential projects of interest (if any).
+For us, your enthusiasm for the research area and a desire to participate in a research lab is of utmost importance.
+We are a highly interdisciplinary and diverse team and we explicitly encourage applications from underrepresented groups.
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Summer 2022</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      
+      <div class="card-content paper">
+        <p class="title">
+          Motion Planning
+        </p>
+        <p class="venue">
+          Fr, 10-12pm; Tue, 4-6pm
+        </p>
+        <p class="author">
+          Credits: 6
+        </p>
+        
+        <p class="note">
+          New course designed by Dr. Wolfgang Hönig and Dr. Andreas Orthey.<br />
+<br />
+Motion planning is a fundamental building block for autonomous systems, with applications in robotics, industrial automation, and autonomous driving.<br />
+<br />
+After completion of the course, students will have a detailed understanding of:<br />
+• Formalization of geometric, kinodynamic, and optimal motion planning;<br />
+• Sampling-based approaches: Rapidly-exploring random trees (RRT) and probabilistic roadmaps (PRM);<br />
+• Search-based approaches: State-lattice based A*;<br />
+• Optimization-based approaches: Sequential convex programming;<br />
+• The theoretical properties relevant to these algorithms (completeness, optimality, and complexity).<br />
+<br />
+Students will be able to:<br />
+• Decide (theoretically and empirically) which algorithm(s) to use for a given problem;<br />
+• Implement (basic versions) of the algorithms themselves;<br />
+• Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).<br />
+
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=1&sprache=2" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Module</span></a>
+        
+        
+        <a href="https://isis.tu-berlin.de/course/view.php?id=29201" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>ISIS</span></a>
+        
+      </footer>
+    </div>
+</div>
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Winter 2021/22</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        
+            <div class="tile is-parent">
+    <div class="tile is-child card">
+      
+      <div class="card-content paper">
+        <p class="title">
+          Learning and Intelligent Systems: Project
+        </p>
+        <p class="venue">
+          Wed, 2-4pm; individual meetings
+        </p>
+        <p class="author">
+          Credits: 9
+        </p>
+        
+        <p class="note">
+          Course held by Prof. Marc Toussaint. We mentored one out of five students.<br />
+<br />
+After attending the module, students have extensive experience with working in a research lab on specific topics of current research in Learning & Intelligent Systems. They have in-depth knowledge and practical understanding of the specific topic they work on during the project. They are capable of conceptualizing a research project, formulating a realistic workplan, and managing the research work autonomously.<br />
+
+        </p>
+        
+      </div>
+      <footer class="card-footer">
+        
+        <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41017&version=1&sprache=2" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Module</span></a>
+        
+        
+      </footer>
+    </div>
+</div>
+
+    </div>
+</div>
+
+    </div>
+  </body>
+</html>
