@@ -1,10 +1,12 @@
 <div class="tile is-parent">
     <div class="tile is-child card">
+      {% if member.image %}
       <div class="card-image has-text-centered">
         <figure class="image is-inline-block">
           <img src="assets/img/{{ member.image }}" alt="{{ member.name }}">
         </figure>
       </div>
+      {% endif %}
       <div class="card-content paper">
         <p class="title">
           {{ member.name }}

@@ -44,3 +44,17 @@ title: IMRC Team
 
     </div>
 </div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Thesis Supervision</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        {% for member in site.data.team.msthesis %}
+            {% include teammember.html %}
+        {%- endfor %}
+
+    </div>
+</div>

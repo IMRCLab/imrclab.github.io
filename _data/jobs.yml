@@ -1,41 +1,42 @@
-- name: "Student Assistant (BS/MS)"
-  hours: (up to) 60 per month
-  deadline: Expired on July 31, 2022. Please do not apply anymore.
-  # reference: 3434T35/22
-  announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
-  note: |
-    The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) conduct validation experiments with real/simulated robots; 3) 3D design and printing of robotic parts needed to assemble a new flying robot; and 4) electrical design for new sensor payloads. 
+[]
+# - name: "Student Assistant (BS/MS)"
+#   hours: (up to) 60 per month
+#   deadline: Expired on July 31, 2022. Please do not apply anymore.
+#   # reference: 3434T35/22
+#   announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+#   note: |
+#     The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) conduct validation experiments with real/simulated robots; 3) 3D design and printing of robotic parts needed to assemble a new flying robot; and 4) electrical design for new sensor payloads. 
 
-    Requirements:
-        • First experience in computer science, aerospace engineering, mechanical engineering, electrical engineering, or related fields.
-        • Programming skills in Python, C++, or similar language.
-        • Excellent written and spoken English.
-        • Above all, enthusiasm for the research area and a desire to participate in a research lab.
+#     Requirements:
+#         • First experience in computer science, aerospace engineering, mechanical engineering, electrical engineering, or related fields.
+#         • Programming skills in Python, C++, or similar language.
+#         • Excellent written and spoken English.
+#         • Above all, enthusiasm for the research area and a desire to participate in a research lab.
 
-    Desirable:
-        • Basic skills in 3D CAD modeling and 3D printing.
-        • Basic knowledge of soldering.
-        • Knowledge of Calculus.
-        • Experience with the Robot Operating System (ROS).
+#     Desirable:
+#         • Basic skills in 3D CAD modeling and 3D printing.
+#         • Basic knowledge of soldering.
+#         • Knowledge of Calculus.
+#         • Experience with the Robot Operating System (ROS).
 
-- name: "Student Assistant (BS/MS)"
-  hours: (up to) 60 per month
-  deadline: August 9, 2022
-  reference: 3434T63/22
-  announcement: https://tubcloud.tu-berlin.de/s/t6FTEAd52QjF3ML
+# - name: "Student Assistant (BS/MS)"
+#   hours: (up to) 60 per month
+#   deadline: August 9, 2022
+#   reference: 3434T63/22
+#   announcement: https://tubcloud.tu-berlin.de/s/t6FTEAd52QjF3ML
 
-  note: |
-    The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) work on a simulation environment for the aerial robots performing specific collaborative tasks with a software-in-the-loop (SITL); 3) developing the 3D design and printing of robotic parts for payload transportation; and 4) contribute to new algorithms that plan and control aerial robots to transport payloads.
+#   note: |
+#     The candidate will participate in research and development to contribute 1) improvements to and maintenance of our open-source aerial swarms research testbed; 2) work on a simulation environment for the aerial robots performing specific collaborative tasks with a software-in-the-loop (SITL); 3) developing the 3D design and printing of robotic parts for payload transportation; and 4) contribute to new algorithms that plan and control aerial robots to transport payloads.
 
-    Requirements:
-        • First experience in computer science, aerospace engineering, mechanical engineering, electrical engineering, or related fields.
-        • Programming skills in Python, C++, or similar language.
-        • Excellent written and spoken English.
-        • Above all, enthusiasm for the research area and a desire to participate in a research lab.
+#     Requirements:
+#         • First experience in computer science, aerospace engineering, mechanical engineering, electrical engineering, or related fields.
+#         • Programming skills in Python, C++, or similar language.
+#         • Excellent written and spoken English.
+#         • Above all, enthusiasm for the research area and a desire to participate in a research lab.
 
-    Desirable:
-        • Knowledge of modeling and control of aerial vehicles.
-        • Basic skills in 3D CAD modeling and 3D printing.
-        • Basic knowledge of soldering.
-        • Knowledge of Calculus.
-        • Experience with the Robot Operating System (ROS).
+#     Desirable:
+#         • Knowledge of modeling and control of aerial vehicles.
+#         • Basic skills in 3D CAD modeling and 3D printing.
+#         • Basic knowledge of soldering.
+#         • Knowledge of Calculus.
+#         • Experience with the Robot Operating System (ROS).

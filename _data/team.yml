@@ -47,6 +47,8 @@ phdstudents:
 msthesis:
   - name: Welf Rehberg
     role: MS Thesis
+    note: k-Order Motion Optimization for Cooperative Multirotor Teams
+    start: 04/2022
 
 researchassistants:
 

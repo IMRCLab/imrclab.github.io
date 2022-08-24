@@ -24,11 +24,15 @@ We currently have no funded positions available.
 </div>
 
 <div class="container">
-    <div class="tile is-ancestor is-flex-wrap">
+    {% if site.data.jobs.size == 0 %}
+        We currently have no funded positions available.
+    {% else %}
+        <div class="tile is-ancestor is-flex-wrap">
 
-        {% for job in site.data.jobs %}
-            {% include job.html %}
-        {%- endfor %}
+            {% for job in site.data.jobs %}
+                {% include job.html %}
+            {%- endfor %}
 
-    </div>
+        </div>
+    {% endif %}
 </div>
