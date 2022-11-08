@@ -12,7 +12,7 @@
           {{ member.name }}
         </p>
         <p class="venue">
-          {{member.start}} - now
+          {{member.start}} - {% if member.end %} {{member.end}} {% else %} now {% endif %}
         </p>
         <p class="author">
           {{ member.role }}

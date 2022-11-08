@@ -42,13 +42,19 @@ phdstudents:
     github: phanfeld
     affiliation: CASUS, TU Berlin
     image: pia_hanfeld.jpg
-    start: 2022
-
-msthesis:
-  - name: Welf Rehberg
-    role: MS Thesis
-    note: k-Order Motion Optimization for Cooperative Multirotor Teams
     start: 04/2022
+
+thesis:
+  - name: Jana Schicke
+    role: BS Thesis (Computer Science)
+    note: Learning-based Multirotor System Model Enhancements
+    start: 11/2022
+
+  - name: Welf Rehberg
+    role: MS Thesis (Computational Engineering Science)
+    note: K-Order Markov Optimization and Sequential Convex Programming for Multirotor Motion Planning
+    start: 04/2022
+    end: 11/2022
 
 researchassistants:
 

@@ -6,6 +6,8 @@ on github using [jekyll-action](https://github.com/helaili/jekyll-action).
 
 ## Initial Set Up
 
+Follow instruction on https://jekyllrb.com/docs/installation/ubuntu/, i.e., install ruby and then use
+
 ```
 gem install jekyll bundler
 ```
