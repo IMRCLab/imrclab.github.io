@@ -1,3 +1,19 @@
+a {
+  /* color: #51aae3; */
+  color: #2056ae;
+  /* cursor: pointer; */
+  /* text-decoration: none; */
+}
+
+/* a strong {
+  color: currentColor;
+}
+
+a:hover {
+  color: #363636;
+} */
+
+
 .content {
   margin-left:0.5em;
   margin-right:0.5em;
