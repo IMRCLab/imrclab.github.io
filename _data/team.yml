@@ -57,6 +57,13 @@ thesis:
     end: 11/2022
 
 researchassistants:
+  - name: Pablo Robles Cervantes
+    role: Student Assistant
+    email:  pablo (dot) roblescervantes (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: P10010
+    image: pablo_robles_cervantes.jpg
+    start: 11/2022
 
 undergrad:
 

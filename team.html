@@ -22,6 +22,10 @@ title: IMRC Team
             {% include teammember.html %}
         {%- endfor %}
 
+        {% for member in site.data.team.researchassistants %}
+            {% include teammember.html %}
+        {%- endfor %}
+
         {% comment %}
         {% for member in site.data.team.msthesis %}
             {% include teammember.html %}
