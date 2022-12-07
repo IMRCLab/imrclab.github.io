@@ -19,10 +19,17 @@
             {{entry.journal}}
         {% elsif entry.type == "inproceedings" %}
             {{entry.booktitle}}
+        {% elsif entry.type == "mastersthesis" %}
+            MS Thesis ({{entry.degree}})
         {% endif %}
         ,
         {{entry.year}}
       </p>
+      {% if entry.note %}
+      <p class="venue">
+        {{entry.note}}
+      </p>
+      {% endif %}
       <p class="author">
         {% for author in entry.author_array %}
             {% if forloop.last %}

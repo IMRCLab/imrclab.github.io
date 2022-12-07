@@ -33,6 +33,10 @@
         {% if member.github %}
         <a href="https://github.com/{{ member.github }}" class="card-footer-item"><span class="icon"><i class="fab fa-github"></i></span></a>
         {% endif %}
+        {% if member.thesis %}
+            <a href="{{member.thesis}}" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>Thesis</span></a>
+        {% endif %}
       </footer>
     </div>
 </div>
