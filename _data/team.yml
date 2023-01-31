@@ -45,6 +45,11 @@ phdstudents:
     start: 04/2022
 
 thesis:
+  - name: Maika Krüger
+    role: MS Thesis (Computer Science)
+    note: Safety-Guided Multi-Robot Motion Planning with Applications to Robotic Assisted Surgery using Monte-Carlo Tree Search
+    start: 01/2023
+
   - name: Jana Schicke
     role: BS Thesis (Computer Science)
     note: Learning-based Multirotor System Model Enhancements
