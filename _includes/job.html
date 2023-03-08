@@ -16,9 +16,11 @@
           Deadline: {{job.deadline}}
         </p>
         {% endif %}
+        {% if job.hours %}
         <p class="author">
           Hours: {{ job.hours }}
         </p>
+        {% endif %}
         {% if job.note %}
         <p class="note">
           {{ job.note | newline_to_br}}

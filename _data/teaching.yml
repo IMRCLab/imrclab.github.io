@@ -1,12 +1,49 @@
-ws2021:
-  - name: "Learning and Intelligent Systems: Project"
-    time: Wed, 2-4pm; individual meetings
-    credits: 9
-    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41017&version=1&sprache=2
+thesis:
+  - name: Benchmarking Multi-Robot Planning Methods for Intralogistics (MS; in collaboration with Bosch)
     note: |
-      Course held by Prof. Marc Toussaint. We mentored one out of five students.
+      The goal of this MSc thesis project is to build a benchmark dataset for multi-agent pickup and delivery (MAPD) planners, with a special focus on the application in industrial logistics or warehouses. The purpose of this benchmark set is to motivate and support research in MAPD planners. It should consist of discrete planning scenarios including an environment to plan in as well as time-steps with pickup and drop-off locations for multiple agents. The environment is represented as a roadmap graph, as this is the common modeling approach in industrial logistics or warehouses.
 
-      After attending the module, students have extensive experience with working in a research lab on specific topics of current research in Learning & Intelligent Systems. They have in-depth knowledge and practical understanding of the specific topic they work on during the project. They are capable of conceptualizing a research project, formulating a realistic workplan, and managing the research work autonomously.
+      More details on request.
+
+  - name: Open Topic
+    note: |
+      We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin. We do not maintain a fixed list of topics; instead, we offer customized topics based on mutual interest and technical background. Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis. Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
+
+      If you are interested in working with us, please contact <a href="mailto:hoenig (at) tu-berlin (dot) de">Wolfgang Hönig</a> with a motivation letter. In your letter, please describe why you are interested, your technical background, and potential projects of interest (if any). If you need an inspiration, you can find examples of past thesis on our publications and teams pages. For us, your enthusiasm for the research area and a desire to participate in a research lab is of utmost importance. We are a highly interdisciplinary and diverse team and we explicitly encourage applications from underrepresented groups.
+
+ss2023:
+  - name: "Motion Planning"
+    time: We, 10-11:30am (lecture); Tue, 4-15:30pm (discussion)
+    credits: 6
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=2&sprache=2
+    # isis: https://isis.tu-berlin.de/course/view.php?id=29201
+    note: |
+      This course is an improved version of the SoSe 2022 class, which now follows the portfolio style.
+
+      Motion planning is a fundamental building block for autonomous systems, with applications in robotics, industrial automation, and autonomous driving.
+
+      After completion of the course, students will have a detailed understanding of:
+      • Formalization of geometric, kinodynamic, and optimal motion planning;
+      • Sampling-based approaches: Rapidly-exploring random trees (RRT) and probabilistic roadmaps (PRM);
+      • Search-based approaches: State-lattice based A*;
+      • Optimization-based approaches: Sequential convex programming;
+      • The theoretical properties relevant to these algorithms (completeness, optimality, and complexity).
+
+      Students will be able to:
+      • Decide (theoretically and empirically) which algorithm(s) to use for a given problem;
+      • Implement (basic versions) of the algorithms themselves;
+      • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).
+
+  - name: "Other Robotics Courses"
+    note: |
+      If you are interested in robotics, we recommend the following other classes offered in the summer term:
+
+      • AI and Robotics: Lab Course [MS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41004&version=2&sprache=2">Module</a>]
+      • Event-based Robot Vision [MS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40993&version=1&sprache=2">Module</a>]
+      • Introduction to Camera Geometry [BS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41060&version=1&sprache=2">Module</a>]
+      • Aktuelle Forschung in KI & Robotik [BS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41057&version=1&sprache=1">Module</a>]
+      • Einführung in die Künstliche Intelligenz [BS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41048&version=2&sprache=1">Module</a>]
+
 ss2022:
   - name: "Motion Planning"
     time: Fr, 10-12pm; Tue, 4-6pm
@@ -29,3 +66,13 @@ ss2022:
       • Decide (theoretically and empirically) which algorithm(s) to use for a given problem;
       • Implement (basic versions) of the algorithms themselves;
       • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).
+
+ws2021:
+  - name: "Learning and Intelligent Systems: Project"
+    time: Wed, 2-4pm; individual meetings
+    credits: 9
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41017&version=1&sprache=2
+    note: |
+      Course held by Prof. Marc Toussaint. We mentored one out of five students.
+
+      After attending the module, students have extensive experience with working in a research lab on specific topics of current research in Learning & Intelligent Systems. They have in-depth knowledge and practical understanding of the specific topic they work on during the project. They are capable of conceptualizing a research project, formulating a realistic workplan, and managing the research work autonomously.

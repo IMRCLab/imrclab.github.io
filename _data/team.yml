@@ -45,6 +45,11 @@ phdstudents:
     start: 04/2022
 
 thesis:
+  - name: Alexander Weingart
+    role: MS Thesis (Computer Science)
+    note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
+    start: 02/2023
+
   - name: Maika Krüger
     role: MS Thesis (Computer Science)
     note: Safety-Guided Multi-Robot Motion Planning with Applications to Robotic Assisted Surgery using Monte-Carlo Tree Search

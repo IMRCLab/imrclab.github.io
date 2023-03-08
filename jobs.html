@@ -16,7 +16,17 @@ We currently have no funded positions. However, interested applicants may contac
 </div>
 
 <div class="container">
-We currently have no funded positions available.
+    {% if site.data.jobs.phd.size == 0 %}
+        We currently have no funded positions available.
+    {% else %}
+        <div class="tile is-ancestor is-flex-wrap">
+
+            {% for job in site.data.jobs.phd %}
+                {% include job.html %}
+            {%- endfor %}
+
+        </div>
+    {% endif %}
 </div>
 
 <div class="section-heading">
@@ -24,12 +34,12 @@ We currently have no funded positions available.
 </div>
 
 <div class="container">
-    {% if site.data.jobs.size == 0 %}
+    {% if site.data.jobs.shk.size == 0 %}
         We currently have no funded positions available.
     {% else %}
         <div class="tile is-ancestor is-flex-wrap">
 
-            {% for job in site.data.jobs %}
+            {% for job in site.data.jobs.shk %}
                 {% include job.html %}
             {%- endfor %}
 

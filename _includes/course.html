@@ -14,9 +14,11 @@
         <p class="venue">
           {{course.time}}
         </p>
+        {% if course.credits %}
         <p class="author">
           Credits: {{ course.credits }}
         </p>
+        {% endif %}
         {% if course.note %}
         <p class="note">
           {{ course.note | newline_to_br}}

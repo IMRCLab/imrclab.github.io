@@ -1,4 +1,28 @@
-[]
+phd:
+  - name: "Research Assistant / PhD Student"
+    #hours: 40 to 80 per month
+    #deadline: Expired on July 31, 2022. Please do not apply anymore.
+    # reference: 3434T35/22
+    #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+    note: |
+      Details and official announcement will follow. TV-L 13, 100 % with potential starting in April.
+shk:
+  - name: "Student Assistant (BS/MS)"
+    hours: 40 to 80 per month
+    #deadline: Expired on July 31, 2022. Please do not apply anymore.
+    # reference: 3434T35/22
+    #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+    note: |
+      Details and official announcement will follow. Starting in April.
+  - name: "Student Assistant (BS/MS)"
+    hours: 40 to 80 per month
+    #deadline: Expired on July 31, 2022. Please do not apply anymore.
+    # reference: 3434T35/22
+    #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+    note: |
+      Details and official announcement will follow. Starting in April.
+
+
 # - name: "Student Assistant (BS/MS)"
 #   hours: (up to) 60 per month
 #   deadline: Expired on July 31, 2022. Please do not apply anymore.
