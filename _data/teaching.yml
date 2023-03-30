@@ -16,7 +16,7 @@ ss2023:
     time: We, 10-11:30am (lecture); Tue, 4-5:30pm (discussion)
     credits: 6
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=2&sprache=2
-    # isis: https://isis.tu-berlin.de/course/view.php?id=29201
+    isis: https://isis.tu-berlin.de/course/view.php?id=33667
     note: |
       This course is an improved version of the SoSe 2022 class, which now follows the portfolio style.
 
@@ -35,8 +35,11 @@ ss2023:
       • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).
 
   - name: "Other Robotics Courses"
+    isis: https://isis.tu-berlin.de/course/view.php?id=33668
     note: |
-      If you are interested in robotics, we recommend the following other classes offered in the summer term:
+      If you are interested in robotics, please enroll in the "Robotics Interest Group" on ISIS to receive notifications.
+
+      We recommend the following other classes offered in the summer term:
 
       • AI and Robotics: Lab Course [MS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41004&version=2&sprache=2">Module</a>]
       • Event-based Robot Vision [MS, <a href="https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=40993&version=1&sprache=2">Module</a>]
