@@ -16,6 +16,9 @@
         </p>
         <p class="author">
           {{ member.role }}
+          {% if member.next_role %}
+          → {{ member.next_role }}
+          {% endif %}
         </p>
         {% if member.note %}
         <p class="note">

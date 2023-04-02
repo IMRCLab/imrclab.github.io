@@ -1,0 +1,26 @@
+<li>
+  <span class="title">
+    {{ member.name }},
+  </span>
+  <span class="venue">
+    {{member.start}} - {% if member.end %} {{member.end}} {% else %} now {% endif %},
+  </span>
+  <span class="author">
+    {{ member.role }}
+    {% if member.next_role %}
+    → {{ member.next_role }}
+    {% endif %} 
+  </span>
+  <br>
+  [
+  {% if member.email %}
+  <a href="mailto:{{member.email}}"><span class="icon"><i class="fas fa-at"></i></span></a>
+  {% endif %}
+  {% if member.website %}
+  <a href="{{member.website}}"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+  {% endif %}
+  {% if member.github %}
+  <a href="https://github.com/{{ member.github }}"><span class="icon"><i class="fab fa-github"></i></span></a>
+  {% endif %}
+  ]
+</li>

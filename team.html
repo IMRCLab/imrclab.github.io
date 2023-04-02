@@ -10,27 +10,11 @@ title: IMRC Team
 <div class="container">
     <div class="team tile is-ancestor is-flex-wrap">
 
-        {% for member in site.data.team.groupleader %}
-            {% include teammember.html %}
+        {% for member in site.data.team.team %}
+            {% unless member.end %}
+                {% include teammember.html %}
+            {% endunless %}
         {%- endfor %}
-
-        {% for member in site.data.team.administration %}
-            {% include teammember.html %}
-        {%- endfor %}
-
-        {% for member in site.data.team.phdstudents %}
-            {% include teammember.html %}
-        {%- endfor %}
-
-        {% for member in site.data.team.researchassistants %}
-            {% include teammember.html %}
-        {%- endfor %}
-
-        {% comment %}
-        {% for member in site.data.team.msthesis %}
-            {% include teammember.html %}
-        {%- endfor %}
-        {% endcomment %}
 
     </div>
 </div>
@@ -42,7 +26,7 @@ title: IMRC Team
 <div class="container">
     <div class="team tile is-ancestor is-flex-wrap">
 
-        {% for member in site.data.team.robots %}
+        {% for member in site.data.team.lab %}
             {% include teammember.html %}
         {%- endfor %}
 
@@ -61,4 +45,20 @@ title: IMRC Team
         {%- endfor %}
 
     </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Alumni</h2>
+</div>
+
+<div class="container">
+    <ul class="paper">
+
+        {% for member in site.data.team.team %}
+            {% if member.end %}
+                {% include teammember_list.html %}
+            {% endif %}
+        {%- endfor %}
+
+    </ul>
 </div>

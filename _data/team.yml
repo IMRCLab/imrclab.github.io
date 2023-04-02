@@ -1,4 +1,4 @@
-groupleader:
+team:
   - name: Wolfgang Hönig
     role: Group Leader
     email: hoenig (at) tu-berlin (dot) de
@@ -8,7 +8,6 @@ groupleader:
     image: wolfgang_hoenig.jpg
     start: 05/2021
 
-administration:
   - name: Ilaria Cicchetti-Nilsson
     role: Administration
     email: i (dot) cicchetti-nilsson (at) tu-berlin (dot) de
@@ -16,7 +15,6 @@ administration:
     image: ilaria_cicchetti-nilsson.jpg
     start: 05/2021
 
-phdstudents:
   - name: Akmaral Moldagalieva
     role: PhD student
     email: moldagalieva (at) tu-berlin (dot) de
@@ -44,6 +42,35 @@ phdstudents:
     image: pia_hanfeld.jpg
     start: 04/2022
 
+  - name: Pablo Robles Cervantes
+    role: Student Assistant
+    email:  pablo (dot) roblescervantes (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: P10010
+    image: pablo_robles_cervantes.jpg
+    start: 11/2022
+    end: 3/2023
+    next_role: MSc Student (Computer Science) ETH Zürich
+
+  - name: Dennis Schmidt
+    role: Student Assistant
+    email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: den-schmidt
+    image: dennis_schmidt.jpg
+    start: 12/2022
+
+lab:
+  - name: Flightspace
+    image: flightspace.jpg
+    start: 2021
+    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+
+  - name: Crazyflie 2.1
+    image: crazyflie20.png
+    start: 2021
+    note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
+
 thesis:
   - name: Alexander Weingart
     role: MS Thesis (Computer Science)
@@ -66,33 +93,3 @@ thesis:
     start: 04/2022
     end: 11/2022
     thesis: assets/pdf/rehberg2022msthesis.pdf
-
-researchassistants:
-  - name: Pablo Robles Cervantes
-    role: Student Assistant
-    email:  pablo (dot) roblescervantes (at) campus (dot) tu-berlin (dot) de
-    affiliation: TU Berlin
-    github: P10010
-    image: pablo_robles_cervantes.jpg
-    start: 11/2022
-
-  - name: Dennis Schmidt
-    role: Student Assistant
-    email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
-    affiliation: TU Berlin
-    github: den-schmidt
-    image: dennis_schmidt.jpg
-    start: 12/2022
-
-undergrad:
-
-robots:
-  - name: Flightspace
-    image: flightspace.jpg
-    start: 2021
-    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
-
-  - name: Crazyflie 2.1
-    image: crazyflie20.png
-    start: 2021
-    note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
