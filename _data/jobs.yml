@@ -13,10 +13,11 @@ shk:
     # reference: 3434T35/22
     #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
     note: |
-      Details and official announcement will follow. Starting in April.
+      Details and official announcement will follow. Starting in May.
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
-    deadline: April 14, 2023
+    # deadline: April 14, 2023
+    deadline: May 8, 2023
     reference: 3434T17/23
     announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T17%2023.pdf&downloadStartSecret=dhhmd77o1e7
     note: |
