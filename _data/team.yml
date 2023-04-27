@@ -72,6 +72,11 @@ lab:
     note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
 
 thesis:
+  - name: Keerthana Laxmish
+    role: MS Thesis (ICT Innovation)
+    note: Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
+    start: 04/2023
+
   - name: Alexander Weingart
     role: MS Thesis (Computer Science)
     note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
