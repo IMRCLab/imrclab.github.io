@@ -1,11 +1,36 @@
 phd:
   - name: "Research Assistant / PhD Student"
-    #hours: 40 to 80 per month
-    #deadline: Expired on July 31, 2022. Please do not apply anymore.
-    # reference: 3434T35/22
-    #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
+    hours: TV-L 13, 100 %
+    deadline: May 26, 2023
+    reference:  	IV-186/23
+    announcement: https://www.jobs.tu-berlin.de/en/job-postings/164574
     note: |
-      Details and official announcement will follow. TV-L 13, 100 % with potential starting in April.
+      In our research we investigate artificial intelligence techniques that enable decision making in high-dimensional search spaces. We are motivated by aerial robots, which need to coordinate safely and efficiently in congested environments. Our goal is to develop the algorithmic foundations, both theoretical and practical, that will enable future robot swarms to autonomously conduct search-and-rescue missions, advance just-in-time manufacturing, and function as aerial robot delivery systems.
+
+      Requirements:
+          • Successfully completed university degree (Master, Diplom or equivalent) in robotics, computer science, electrical engineering, mechanical engineering, or a related discipline with outstanding performance
+          • Strong analytical skills (such as linear algebra, calculus, AI theory)
+          • Strong programming skills, preferably in C++, Python, or Julia
+          • Excellent communication
+          • Excellent written and spoken English; knowledge of German or the willingness to learn it
+          • Above all, enthusiasm for the research area and a desire to develop cutting-edge solutions to challenging real-world problems
+
+      Desirable:
+          • Knowledge of trajectory optimization, informed search, machine learning or planning
+          • Experience with multi-agent or multi-robot systems
+          • Experience with unmanned aerial vehicles (e.g., Crazyflie, PX4, Arducopter) or other robotic systems
+          • Experience with the Robot Operating System (ROS)
+          • Experience with embedded systems (e.g., firmware development in C)
+          • Working knowledge of Linux
+
+    apply: |
+          • Cover letter with your interest and experience related to the position%0D%0A
+          • Curriculum vitae%0D%0A
+          • Transcripts (BS and MS)%0D%0A
+          • Writing sample (e.g., BS thesis, MS thesis, or other authored manuscripts)%0D%0A
+          • Programming sample (e.g., link to github)%0D%0A
+          • Names and email addresses of up to two qualified persons who are willing to provide a reference on request
+
 shk:
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month

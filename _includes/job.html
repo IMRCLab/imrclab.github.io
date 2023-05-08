@@ -33,12 +33,17 @@
         {% endif %}
         {% if job.reference %}
         <a href="mailto:i (dot) cicchetti-nilsson (at) tu-berlin (dot) de?subject=Application for {{job.reference}}&body=Please attach a single PDF with:%0D%0A
+        {% if job.apply %}
+          {{job.apply}}
+        {% else %}
           • Motivation letter%0D%0A
           • CV%0D%0A
           • Current grade sheets%0D%0A
           • Link to relevant code samples (e.g., GitHub repository)%0D%0A
-          • Other supporting materials, if any (e.g., BA thesis or project reports)%0D%0A
-          By submitting your application via email you consent to having your data electronically processed and saved. Please note that we do not provide a guarantee for the protection of your personal data when submitted as an unprotected file. Please find our data protection notice acc. DSGVO (General Data Protection Regulation) at TU website quick access 214041." class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span><span>Apply</span></a>
+          • Other supporting materials, if any (e.g., BA thesis or project reports)
+        {% endif %}
+          %0D%0A
+          By submitting your application via email you consent to having your data electronically processed and saved. Please note that we do not provide a guaranty for the protection of your personal data when submitted as unprotected file. Please find our data protection notice acc. DSGVO (General Data Protection Regulation) at TU website quick access 214041." class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span><span>Apply</span></a>
         {% endif %}
       </footer>
     </div>
