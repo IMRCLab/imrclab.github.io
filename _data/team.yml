@@ -72,6 +72,11 @@ lab:
     note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
 
 thesis:
+  - name: Theo Valentin Kern
+    role: MS Thesis (Computer Engineering)
+    note: Long-Horizon Planning of Multirotor Teams for Construction Assembly
+    start: 05/2023
+
   - name: Keerthana Laxmish
     role: MS Thesis (ICT Innovation)
     note: Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
