@@ -38,28 +38,29 @@ shk:
     # reference: 3434T35/22
     #announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T35%2022.pdf&downloadStartSecret=pskruu70wq
     note: |
-      Details and official announcement will follow. Starting in May.
-  - name: "Student Assistant (BS/MS)"
-    hours: 40 to 80 per month
-    # deadline: April 14, 2023
-    deadline: May 8, 2023
-    reference: 3434T17/23
-    announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T17%2023.pdf&downloadStartSecret=dhhmd77o1e7
-    note: |
-      Research and development activities in the field of multi-robot systems (Programming in Python/C++/ROS 2; infrastructure for automated testing of flying robots; 3D printing, soldering; contribution to planning and control algorithms). 
+      Details and official announcement will follow. Starting in June.
 
-      Requirements:
-          • Very good programming skills in Python or C++
-          • Good mathematical basics (linear algebra and calculus)
-          • Excellent written and spoken English
-          • Above all, enthusiasm for the research area and a desire to participate in a research lab
+  # - name: "Student Assistant (BS/MS)"
+  #   hours: 40 to 80 per month
+  #   # deadline: April 14, 2023
+  #   deadline: May 8, 2023
+  #   reference: 3434T17/23
+  #   announcement: https://tubcloud.tu-berlin.de/s/AYS7eDfzFEYs494/download?path=%2FFak.%20IV&files=3434T17%2023.pdf&downloadStartSecret=dhhmd77o1e7
+  #   note: |
+  #     Research and development activities in the field of multi-robot systems (Programming in Python/C++/ROS 2; infrastructure for automated testing of flying robots; 3D printing, soldering; contribution to planning and control algorithms). 
 
-      Desirable:
-          • Basic knowledge of artificial intelligence / machine learning
-          • Knowledge of modelling an control of flying robots
-          • Experience with 3D CAD modeling and 3D printing
-          • Basic knowledge of soldering
-          • Experience with the Robot Operating System (ROS)
+  #     Requirements:
+  #         • Very good programming skills in Python or C++
+  #         • Good mathematical basics (linear algebra and calculus)
+  #         • Excellent written and spoken English
+  #         • Above all, enthusiasm for the research area and a desire to participate in a research lab
+
+  #     Desirable:
+  #         • Basic knowledge of artificial intelligence / machine learning
+  #         • Knowledge of modelling an control of flying robots
+  #         • Experience with 3D CAD modeling and 3D printing
+  #         • Basic knowledge of soldering
+  #         • Experience with the Robot Operating System (ROS)
 
 
 # - name: "Student Assistant (BS/MS)"
