@@ -45,6 +45,10 @@
             <a href="{{entry.pdf}}" class="card-footer-item"><span class="icon"> <i
                 class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
         {%- endif %}
+        {% if entry.arxiv %} 
+            <a href="https://arxiv.org/abs/{{entry.arxiv}}" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        {% endif %}
         {%- if entry.video %}
             <a href="{{entry.video}}" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
                 </span> <span>Video</span></a>
@@ -59,10 +63,6 @@
         {%- if entry.code %}
         <a href="{{entry.code}}" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
         {%- endif %}
-        {% if entry.arxiv %} 
-            <a href="https://arxiv.org/abs/{{entry.arxiv}}" class="card-footer-item"><span class="icon"> <i
-                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
-        {% endif %}
 
     </footer>
   </div>
