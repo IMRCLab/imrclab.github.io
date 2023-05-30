@@ -16,13 +16,12 @@
       </p>
       <p class="venue">
         {% if entry.type == "article" %}
-            {{entry.journal}}
+            {{entry.journal}},
         {% elsif entry.type == "inproceedings" %}
-            {{entry.booktitle}}
+            {{entry.booktitle}},
         {% elsif entry.type == "mastersthesis" %}
-            MS Thesis ({{entry.degree}})
+            MS Thesis ({{entry.degree}}),
         {% endif %}
-        ,
         {{entry.year}}
       </p>
       {% if entry.note %}
