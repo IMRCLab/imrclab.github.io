@@ -60,6 +60,14 @@ team:
     image: dennis_schmidt.jpg
     start: 12/2022
 
+  - name: Nan Cai
+    role: Student Assistant
+    email:  nan (dot) cai (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: NannCai
+    image: nan_cai.jpg
+    start: 06/2023
+
 lab:
   - name: Flightspace
     image: flightspace.jpg
