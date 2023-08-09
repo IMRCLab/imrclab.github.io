@@ -8,9 +8,31 @@ title: IMRC Teaching
 </div>
 
 <div class="container">
+    We recommend <a href="https://www.theses.tu-berlin.de">(I)STROD - (International) Student Thesis and Research Opportunities Database</a> to find a thesis topic.
+</div>
+
+<div class="container">
     <div class="tile is-ancestor is-flex-wrap">
 
         {% for course in site.data.teaching.thesis %}
+            {% include course.html %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Winter 2023/24</h2>
+</div>
+
+<div class="container">
+    We do not offer any classes this term. If you are interested in robotics, please join the interest group.
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for course in site.data.teaching.ws2023 %}
             {% include course.html %}
         {%- endfor %}
 

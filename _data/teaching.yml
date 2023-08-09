@@ -1,4 +1,9 @@
 thesis:
+  - name: Vision-based residual force prediction for a team of UAV in close proximity (MS)
+    note: |
+      The goal of this MSc thesis project is to predict interaction forces between flying robots directly from low-resolution grayscale images.
+    apply: https://www.theses.tu-berlin.de/en/theses/0189d953-673d-73ab-8cfd-0c24183be2fc
+
   - name: Benchmarking Multi-Robot Planning Methods for Intralogistics (MS; in collaboration with Bosch)
     note: |
       The goal of this MSc thesis project is to build a benchmark dataset for multi-agent pickup and delivery (MAPD) planners, with a special focus on the application in industrial logistics or warehouses. The purpose of this benchmark set is to motivate and support research in MAPD planners. It should consist of discrete planning scenarios including an environment to plan in as well as time-steps with pickup and drop-off locations for multiple agents. The environment is represented as a roadmap graph, as this is the common modeling approach in industrial logistics or warehouses.
@@ -7,9 +12,18 @@ thesis:
 
   - name: Open Topic
     note: |
-      We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin. We do not maintain a fixed list of topics; instead, we offer customized topics based on mutual interest and technical background. Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis. Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
+      We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin. In addition to our fixed list of topics, we offer customized topics based on mutual interest and technical background. Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis. Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
 
       If you are interested in working with us, please contact <a href="mailto:hoenig (at) tu-berlin (dot) de">Wolfgang Hönig</a> with a motivation letter. In your letter, please describe why you are interested, your technical background, and potential projects of interest (if any). If you need an inspiration, you can find examples of past thesis on our publications and teams pages. For us, your enthusiasm for the research area and a desire to participate in a research lab is of utmost importance. We are a highly interdisciplinary and diverse team and we explicitly encourage applications from underrepresented groups.
+
+    apply: |
+        mailto: hoenig (at) tu-berlin (dot) de?subject=Application for MSc/BSc thesis&body=Please attach a single PDF with your motivation letter
+
+ws2023:
+  - name: "Other Robotics Courses"
+    isis: https://isis.tu-berlin.de/course/view.php?id=33668
+    note: |
+      If you are interested in robotics, please enroll in the "Robotics Interest Group" on ISIS to receive notifications.
 
 ss2023:
   - name: "Motion Planning"
