@@ -1,4 +1,15 @@
 thesis:
+
+  - name: Small-time Locally Controllability for Flying Adversarial Patches (BS)
+    note: |
+      The goal of this thesis is to adapt the training algorithm of the Flying Adversarial Patch attack, such that the control over the attacked multirotor is increased. An empirical study should highlight the benefit of the improved method over previous work. Additionally, an adversarial patch should be introduced that specifically forces worst-case predictions of the DL model to compare against the STLC patches in 'safe' regions.
+    apply: https://www.theses.tu-berlin.de/en/theses/018a3f64-7f10-7afa-b386-9f3e94df59c6
+
+  - name: Scaling Fyling Adversarial Patches to a Swarm of Attacker and Victim Multirotors (MS)
+    note: |
+      The goal of this thesis is to improve the overall control over the victim by scaling the Flying Adversarial Patch attack to a team or swarm of attacker multirotors. Furthermore, the extended method can be applied to a swarm of victim multirotors. The attack should be performed in a suitable simulation environment.
+    apply: https://www.theses.tu-berlin.de/en/theses/018a3f5c-2507-7007-aa53-96051dbf4942
+
   - name: Vision-based residual force prediction for a team of UAV in close proximity (MS)
     note: |
       The goal of this MSc thesis project is to predict interaction forces between flying robots directly from low-resolution grayscale images.
