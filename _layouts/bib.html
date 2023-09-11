@@ -62,6 +62,9 @@
         {%- if entry.code %}
         <a href="{{entry.code}}" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
         {%- endif %}
+        {%- if entry.talk %}
+        <a href="{{entry.talk}}" class="card-footer-item"><span class="icon"> <i class="fas fa-chalkboard"></i> </span> <span>Talk</span></a>
+        {%- endif %}
 
     </footer>
   </div>
