@@ -21,6 +21,8 @@
             {{entry.booktitle}},
         {% elsif entry.type == "mastersthesis" %}
             MS Thesis ({{entry.degree}}),
+        {% elsif entry.type == "bachelorsthesis" %}
+            BS Thesis ({{entry.degree}}),
         {% endif %}
         {{entry.year}}
       </p>
