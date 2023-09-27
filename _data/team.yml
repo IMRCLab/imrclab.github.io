@@ -94,11 +94,13 @@ thesis:
     role: MS Thesis (Computer Science)
     note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
     start: 02/2023
+    end: 08/2023
 
   - name: Maika Krüger
     role: MS Thesis (Computer Science)
     note: Safety-Guided Multi-Robot Motion Planning with Applications to Robotic Assisted Surgery using Monte-Carlo Tree Search
     start: 01/2023
+    end: 08/2023
 
   - name: Jana Schicke
     role: BS Thesis (Computer Science)
