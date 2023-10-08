@@ -1,3 +1,4 @@
+# in chronological order
 team:
   - name: Wolfgang Hönig
     role: Group Leader
@@ -42,6 +43,14 @@ team:
     image: pia_hanfeld.jpg
     start: 04/2022
 
+  - name: Welf Rehberg
+    role: MS Thesis (Computational Engineering Science)
+    note: K-Order Markov Optimization and Sequential Convex Programming for Multirotor Motion Planning
+    start: 04/2022
+    end: 11/2022
+    thesis: assets/pdf/rehberg2022msthesis.pdf
+    next_role: PhD Student, NTNU
+
   - name: Pablo Robles Cervantes
     role: Student Assistant
     email:  pablo (dot) roblescervantes (at) campus (dot) tu-berlin (dot) de
@@ -68,18 +77,25 @@ team:
     image: nan_cai.jpg
     start: 06/2023
 
-lab:
-  - name: Flightspace
-    image: flightspace.jpg
-    start: 2021
-    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+  - name: Jana Schicke
+    role: BS Thesis (Computer Science)
+    note: Learning-based Multirotor System Model Enhancements
+    start: 11/2022
+    end: 03/2023
+    thesis: assets/pdf/schicke2023bsthesis.pdf
 
-  - name: Crazyflie 2.1
-    image: crazyflie20.png
-    start: 2021
-    note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
+  - name: Maika Krüger
+    role: MS Thesis (Computer Science)
+    note: Safety-Guided Multi-Robot Motion Planning with Applications to Robotic Assisted Surgery using Monte-Carlo Tree Search
+    start: 01/2023
+    end: 08/2023
 
-thesis:
+  - name: Alexander Weingart
+    role: MS Thesis (Computer Science)
+    note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
+    start: 02/2023
+    end: 08/2023
+
   - name: Theo Valentin Kern
     role: MS Thesis (Computer Engineering)
     note: Long-Horizon Planning of Multirotor Teams for Construction Assembly
@@ -90,28 +106,13 @@ thesis:
     note: Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
     start: 04/2023
 
-  - name: Alexander Weingart
-    role: MS Thesis (Computer Science)
-    note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
-    start: 02/2023
-    end: 08/2023
+lab:
+  - name: Flightspace
+    image: flightspace.jpg
+    start: 2021
+    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
 
-  - name: Maika Krüger
-    role: MS Thesis (Computer Science)
-    note: Safety-Guided Multi-Robot Motion Planning with Applications to Robotic Assisted Surgery using Monte-Carlo Tree Search
-    start: 01/2023
-    end: 08/2023
-
-  - name: Jana Schicke
-    role: BS Thesis (Computer Science)
-    note: Learning-based Multirotor System Model Enhancements
-    start: 11/2022
-    end: 03/2023
-    thesis: assets/pdf/schicke2023bsthesis.pdf
-
-  - name: Welf Rehberg
-    role: MS Thesis (Computational Engineering Science)
-    note: K-Order Markov Optimization and Sequential Convex Programming for Multirotor Motion Planning
-    start: 04/2022
-    end: 11/2022
-    thesis: assets/pdf/rehberg2022msthesis.pdf
+  - name: Crazyflie 2.1
+    image: crazyflie20.png
+    start: 2021
+    note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.

@@ -11,16 +11,27 @@
     → {{ member.next_role }}
     {% endif %} 
   </span>
-  <br>
-  [
-  {% if member.email %}
-  <a href="mailto:{{member.email}}"><span class="icon"><i class="fas fa-at"></i></span></a>
+  {% if member.note %}
+  <span class="note">
+     , {{ member.note | newline_to_br}}
+  </span>
   {% endif %}
-  {% if member.website %}
-  <a href="{{member.website}}"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+
+  {% if member.email or member.website or member.github or member.thesis %}
+    <br>
+    [
+    {% if member.email %}
+    <a href="mailto:{{member.email}}"><span class="icon"><i class="fas fa-at"></i></span></a>
+    {% endif %}
+    {% if member.website %}
+    <a href="{{member.website}}"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+    {% endif %}
+    {% if member.github %}
+    <a href="https://github.com/{{ member.github }}"><span class="icon"><i class="fab fa-github"></i></span></a>
+    {% endif %}
+    {% if member.thesis %}
+    <a href="{{member.thesis}}"><span class="icon"> <i class="fas fa-file-pdf"></i> </span></a>
+    {% endif %}
+    ]
   {% endif %}
-  {% if member.github %}
-  <a href="https://github.com/{{ member.github }}"><span class="icon"><i class="fab fa-github"></i></span></a>
-  {% endif %}
-  ]
 </li>
