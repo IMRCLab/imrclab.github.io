@@ -100,11 +100,21 @@ team:
     role: MS Thesis (Computer Engineering)
     note: Long-Horizon Planning of Multirotor Teams for Construction Assembly
     start: 05/2023
+    end: 11/2023
 
   - name: Keerthana Laxmish
     role: MS Thesis (ICT Innovation)
     note: Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
     start: 04/2023
+    end: 10/2023
+
+  - name: Julien Thévenoz
+    role: Student Assistant
+    email:  julien (at) thevenoz (dot) ch
+    affiliation: FU Berlin
+    github: julienthevenoz
+    image: julien_thevenoz.jpg
+    start: 11/2023
 
 lab:
   - name: Flightspace
