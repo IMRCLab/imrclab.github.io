@@ -31,26 +31,26 @@ phd: []
   #         • Programming sample (e.g., link to github)%0D%0A
   #         • Names and email addresses of up to two qualified persons who are willing to provide a reference on request
 
-shk:
-  - name: "Student Assistant (BS/MS)"
-    hours: 40 to 60 per month
-    deadline: September 18, 2023
-    reference: IV-SB-0039-2023
-    announcement: https://www.jobs.tu-berlin.de/en/job-postings/172249
-    note: |
-      Help with hardware development activities in the field of flying robots (research and component proposals for our own multirotors (frames, motors, propellers, ESCs); assistance with prototyping (mechanics and electronics); help with tuning of control algorithms including flight tests).
+shk: []
+  # - name: "Student Assistant (BS/MS)"
+  #   hours: 40 to 60 per month
+  #   deadline: September 18, 2023
+  #   reference: IV-SB-0039-2023
+  #   announcement: https://www.jobs.tu-berlin.de/en/job-postings/172249
+  #   note: |
+  #     Help with hardware development activities in the field of flying robots (research and component proposals for our own multirotors (frames, motors, propellers, ESCs); assistance with prototyping (mechanics and electronics); help with tuning of control algorithms including flight tests).
 
-      Requirements:
-          • Very good knowledge in the field of prototype development (mechanics and electronics)
-          • Good basic knowledge in control engineering
-          • Excellent written and spoken English
-          • Above all, enthusiasm for the research area and a desire to participate in a research lab
+  #     Requirements:
+  #         • Very good knowledge in the field of prototype development (mechanics and electronics)
+  #         • Good basic knowledge in control engineering
+  #         • Excellent written and spoken English
+  #         • Above all, enthusiasm for the research area and a desire to participate in a research lab
 
-      Desirable:
-          • Experience with modelling and control of flying robots
-          • Experience with embedded systems (Arduino, STM32, or similar)
-          • Experience with the Robot Operating System (ROS)
-          • Good mathematical basics (linear algebra and calculus)
+  #     Desirable:
+  #         • Experience with modelling and control of flying robots
+  #         • Experience with embedded systems (Arduino, STM32, or similar)
+  #         • Experience with the Robot Operating System (ROS)
+  #         • Good mathematical basics (linear algebra and calculus)
 
   # - name: "Student Assistant (BS/MS)"
   #   hours: 40 to 80 per month

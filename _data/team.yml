@@ -116,6 +116,11 @@ team:
     image: julien_thevenoz.jpg
     start: 11/2023
 
+  - name: Christian Hickstein
+    role: BS Thesis (Computer Engineering)
+    note: Hardware-in-the-loop Simulation for Crazyflie Multirotors
+    start: 11/2023
+
 lab:
   - name: Flightspace
     image: flightspace.jpg
