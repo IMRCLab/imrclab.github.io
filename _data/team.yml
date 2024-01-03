@@ -95,6 +95,7 @@ team:
     note: Enhancing Sampling Based Kinodynamic Motion Planning with Reinforcement Learning Policies
     start: 02/2023
     end: 08/2023
+    thesis: assets/pdf/weingart2023msthesis.pdf
 
   - name: Theo Valentin Kern
     role: MS Thesis (Computer Engineering)
@@ -107,6 +108,7 @@ team:
     note: Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
     start: 04/2023
     end: 10/2023
+    thesis: assets/pdf/laxmish2023msthesis.pdf
 
   - name: Julien Thévenoz
     role: Student Assistant
