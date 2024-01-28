@@ -30,6 +30,48 @@ thesis:
     apply: |
         mailto: hoenig (at) tu-berlin (dot) de?subject=Application for MSc/BSc thesis&body=Please attach a single PDF with your motivation letter
 
+ss2024:
+  - name: "Motion Planning"
+    time: tba
+    credits: 6
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=2&sprache=2
+    note: |
+      This course is an improved version of the SoSe 2023 class with updated programming assignments.
+
+      Motion planning is a fundamental building block for autonomous systems, with applications in robotics, industrial automation, and autonomous driving.
+
+      After completion of the course, students will have a detailed understanding of:
+      • Formalization of geometric, kinodynamic, and optimal motion planning;
+      • Sampling-based approaches: Rapidly-exploring random trees (RRT) and probabilistic roadmaps (PRM);
+      • Search-based approaches: State-lattice based A*;
+      • Optimization-based approaches: Sequential convex programming;
+      • The theoretical properties relevant to these algorithms (completeness, optimality, and complexity).
+
+      Students will be able to:
+      • Decide (theoretically and empirically) which algorithm(s) to use for a given problem;
+      • Implement (basic versions) of the algorithms themselves;
+      • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).
+
+  - name: "Multi-Robot Systems"
+    time: tba
+    credits: 3
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41158&version=2&sprache=2
+    note: |
+      This course is a new seminar-style class to learn basics and current topics of multi-robot coordination.
+
+  - name: "Robot Learning"
+    time: tba
+    credits: 6
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41165&version=1&sprache=2
+    note: |
+      This course is a new class held with Marc Toussaint on how to apply learning to robotics problems.
+
+  - name: "Other Robotics Courses"
+    isis: https://isis.tu-berlin.de/course/view.php?id=33668
+    note: |
+      If you are interested in robotics, please enroll in the "Robotics Interest Group" on ISIS to receive notifications.
+
+
 ws2023:
   - name: "Other Robotics Courses"
     isis: https://isis.tu-berlin.de/course/view.php?id=33668
