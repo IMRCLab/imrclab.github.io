@@ -35,6 +35,7 @@ ss2024:
     time: tba
     credits: 6
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=2&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=37033
     note: |
       This course is an improved version of the SoSe 2023 class with updated programming assignments.
 
@@ -56,6 +57,7 @@ ss2024:
     time: tba
     credits: 3
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41158&version=2&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=37034
     note: |
       This course is a new seminar-style class to learn basics and current topics of multi-robot coordination.
 
