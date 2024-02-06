@@ -35,7 +35,7 @@ shk:
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
     #deadline: September 18, 2023
-    #reference: IV-SB-0039-2023
+    reference: IV-SB-0011-2024
     #announcement: https://www.jobs.tu-berlin.de/en/job-postings/172249
     note: |
       Help with hardware development activities in the field of flying robots (research and component proposals for our own multirotors (frames, motors, propellers, ESCs); assistance with prototyping (mechanics and electronics); help with tuning of control algorithms including flight tests).
@@ -55,7 +55,7 @@ shk:
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
     #deadline: Extended to June 21
-    #reference: IV-SB-0034/23
+    reference: IV-SB-0010-2024
     #announcement: https://www.jobs.tu-berlin.de/en/job-postings/167367
     note: |
       Help with research and development activities in the field of multi-robot systems (Programming in Python/C++/ROS 2; Support in the execution of flight experiments with flying robot teams; Embedded programming in C for the firmware of the robots; Assistance in the validation of new planning and control algorithms for collaborative flying robot teams).
