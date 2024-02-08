@@ -11,7 +11,7 @@ title: IMRC Team
     <div class="team tile is-ancestor is-flex-wrap">
 
         {% for member in site.data.team.team %}
-            {% unless member.end or member.role contains "Thesis" %}
+            {% unless member.end or member.role contains "Thesis" or member.role contains "Lab" %}
                 {% include teammember.html %}
             {% endunless %}
         {%- endfor %}
@@ -26,8 +26,12 @@ title: IMRC Team
 <div class="container">
     <div class="team tile is-ancestor is-flex-wrap">
 
-        {% for member in site.data.team.lab %}
-            {% include teammember.html %}
+        {% for member in site.data.team.team %}
+            {% if member.role contains "Lab" %}
+                {% unless member.end %}
+                    {% include teammember.html %}
+                {% endunless %}
+            {% endif %}
         {%- endfor %}
 
     </div>

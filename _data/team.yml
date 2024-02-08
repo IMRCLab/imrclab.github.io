@@ -6,6 +6,7 @@ team:
     website: https://whoenig.github.io/
     github: whoenig
     affiliation: TU Berlin
+    linkedin: https://www.linkedin.com/in/wolfgang-h%C3%B6nig-71385599
     image: wolfgang_hoenig.jpg
     start: 05/2021
 
@@ -35,7 +36,7 @@ team:
     start: 01/2022
 
   - name: Pia Hanfeld
-    role: External PhD student
+    role: External PhD student (CASUS)
     email: p.hanfeld (at) hzdr (dot) de
     website: https://www.casus.science/team-members/pia-hanfeld/
     github: phanfeld
@@ -123,13 +124,30 @@ team:
     note: Hardware-in-the-loop Simulation for Crazyflie Multirotors
     start: 11/2023
 
-lab:
+  - name: Bojan Derajić
+    role: External PhD student (Continental)
+    email: bojan.derajic (at) continental-corporation (dot) com
+    linkedin: https://www.linkedin.com/in/bojan-derajic/
+    github: bojan-derajic
+    affiliation: Continental Corporation, TU Berlin
+    image: bojan_derajic.jpg
+    start: 12/2023
+
   - name: Flightspace
+    role: Lab
+    image: flightspace2.jpg
+    start: 02/2024
+    note: Indoor flight space (7 x 4 x 2.75 m) with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+
+  - name: Flightspace
+    role: Lab
     image: flightspace.jpg
-    start: 2021
-    note: Small indoor flight space with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+    start: 08/2021
+    end: 01/2024
+    note: Small indoor flight space (3.5 x 3.5 x 2.75 m) with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
 
   - name: Crazyflie 2.1
+    role: Lab
     image: crazyflie20.png
     start: 2021
     note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
