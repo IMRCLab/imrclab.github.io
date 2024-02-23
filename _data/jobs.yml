@@ -34,6 +34,49 @@ phd: []
 shk:
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
+    deadline: pending official announcement
+    reference: IV-SB-0027-2024
+    # announcement: https://www.jobs.tu-berlin.de/en/job-postings/179021
+    note: |
+      Help with research and development activities in the field of multi-robot systems, in particular:
+          • preparatory and supporting work in the Programming in Python within the scope of machine learning for flying robot teams  (60%).
+          • Support in the execution of experiments with robot teams to collect data (flying robots indoors) (40%)
+
+      Requirements:
+          • Very good programming skills in Python
+          • Very good knowledge in machine learning
+          • Excellent written and spoken English
+          • Above all, enthusiasm for the research area and a desire to participate in a research lab
+
+      Desirable:
+          • Basics of control engineering / robotics
+          • Experience with modelling and control of flying robots
+          • Experience with the Robot Operating System (ROS)
+
+  - name: "Student Assistant (BS/MS)"
+    hours: 40 to 80 per month
+    deadline: pending official announcement
+    reference: IV-SB-0026-2024
+    # announcement: https://www.jobs.tu-berlin.de/en/job-postings/179021
+    note: |
+      Help with research and development activities in the field of multi-robot systems, in particular:
+          • preparatory and supporting work in the Programming in C++ and Python within the scope of multi-robot motion planning (70%).
+          • Support in the execution of experiments with robot teams (flying robots and other mobile robots) (30%)
+
+      Requirements:
+          • Very good programming skills in C++ and Python
+          • Good algorithmic foundation (data structures, informed search)
+          • Excellent written and spoken English
+          • Above all, enthusiasm for the research area and a desire to participate in a research lab
+
+      Desirable:
+          • Fundamentals of artificial intelligence / machine learning
+          • Basics of control engineering / robotics
+          • Basics of optimization algorithms
+          • Experience with the Robot Operating System (ROS)
+
+  - name: "Student Assistant (BS/MS)"
+    hours: 40 to 80 per month
     deadline: February 29, 2024
     reference: IV-SB-0011-2024
     announcement: https://www.jobs.tu-berlin.de/en/job-postings/179021
