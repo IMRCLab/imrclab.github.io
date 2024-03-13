@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coltrans Planning</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/academicons.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.solid.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.brands.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="../assets/img/favicon.png">
+
+  </head>
+  <body>
+    <div class="content">
+        <!-- <div class="section-heading">
+    <h2 class="title is-2">Kinodynamic Motion Planning for a Team of Multirotors Transporting a Cable-Suspended Payload in Cluttered Environments</h2>
+    <h3 class="title is-4">Khaled Wahba, Joaquim Ortiz-Haro, Marc Toussaint, and Wolfgang Hönig</h3>
+    
+</div> -->
+
+<section class="section" id="about">
+    <div class="section-heading">
+        <h1 class="title is-4">Kinodynamic Motion Planning for a Team of Multirotors Transporting a Cable-Suspended Payload in Cluttered Environments</h1>
+        <h2 class="subtitle is-5">Khaled Wahba, Joaquim Ortiz-Haro, Marc Toussaint, and Wolfgang Hönig</h2>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-three-quarters is-4-desktop">
+        <div class="content">
+          <h2 class="subtitle is-6">Abstract</h2>
+          <p>
+            We propose a motion planner for cable-driven payload transportation using multiple unmanned aerial vehicles (UAVs) in an environment cluttered with obstacles. Our planner is kinodynamic, i.e., it considers the full dynamics model of the transporting system including actuation constraints. Due to the high dimensionality of the planning problem, we use a hierarchical approach where we first solve the geometric motion planning using a sampling-based method with a novel sampler, followed by constrained trajectory optimization that considers the full dynamics of the system. Both planning stages consider inter-robot and robot/obstacle collisions. We demonstrate in a software-in-the-loop simulation and real flight experiments that there is a significant benefit in kinodynamic motion planning for such payload transport systems with respect to payload tracking error and energy consumption compared to the standard methods of planning for the payload alone. Notably, we observe a significantly higher success rate in scenarios where the team formation changes are needed to move through tight spaces.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-one-quarter is-4-desktop">
+
+        <p class="buttons is-centered">
+            <a href="https://arxiv.org/abs/2310.03394" class="button is-dark">
+                <span class="icon">
+                <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper</span>
+            </a>
+            <a href="https://youtu.be/hjHR-yy6_kg" class="button is-dark">
+                <span class="icon">
+                <i class="fas fa-video"></i>
+                </span>
+                <span>Video</span>
+            </a>
+            <a href="https://github.com/IMRCLab/coltrans-planning" class="button is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+        </p>
+
+      </div>
+    </div>
+</section>
+
+<!-- <div class="section-heading">
+    <h2 class="title is-3">Abstract</h2>
+</div>
+
+<div class="container">
+We propose a motion planner for cable-driven payload transportation using multiple unmanned aerial vehicles (UAVs) in an environment cluttered with obstacles. Our planner is kinodynamic, i.e., it considers the full dynamics model of the transporting system including actuation constraints. Due to the high dimensionality of the planning problem, we use a hierarchical approach where we first solve the geometric motion planning using a sampling-based method with a novel sampler, followed by constrained trajectory optimization that considers the full dynamics of the system. Both planning stages consider inter-robot and robot/obstacle collisions. We demonstrate in a software-in-the-loop simulation and real flight experiments that there is a significant benefit in kinodynamic motion planning for such payload transport systems with respect to payload tracking error and energy consumption compared to the standard methods of planning for the payload alone. Notably, we observe a significantly higher success rate in scenarios where the team formation changes are needed to move through tight spaces.
+</div> -->
+
+<div class="section-heading">
+  <h2 class="title is-5">Example Results</h2>
+</div>
+
+<div class="container">
+  <figure class="image is-16by9">
+      <iframe class="has-ratio" width="640" height="360" src="../paperpages/coltrans-planning/trajectory_opt_trial.html" frameborder="0" allowfullscreen></iframe>
+  </figure>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-5">Videos</h2>
+</div>
+
+<!-- <div class="container">
+    <figure class="image is-9by16">
+        <iframe class="has-ratio" width="640" height="360" src="https://www.youtube-nocookie.com/embed/Mgc1TJSoSXw" frameborder="0" allowfullscreen></iframe>
+    </figure>
+</div> -->
+
+<div class="section-heading">
+  <h2 class="title is-6">3 UAV Forest</h2>
+</div>
+
+<div class="container">
+    
+  <div class="tile is-ancestor is-flex-wrap">
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Top View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/qNRSwON5Bg0" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/Bt67BbFW3Gw" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="section-heading">
+  <h2 class="title is-6">2 UAV Window</h2>
+</div>
+
+
+<div class="container">
+    
+  <div class="tile is-ancestor is-flex-wrap">
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/817IpkBOG-M" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Geometric (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/bVALI2iEjRs" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-heading">
+  <h2 class="title is-6">3 UAV Window</h2>
+</div>
+
+
+<div class="container">
+    
+  <div class="tile is-ancestor is-flex-wrap">
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Top View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/Mgc1TJSoSXw" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/HLFYcg13J8s" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Geometric (Top View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/Dqbs4hlRdH8" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Geometric (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/SBuee1cM2B8" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+</div>
+
+<div class="section-heading">
+  <h2 class="title is-6">2 UAV Forest</h2>
+</div>
+
+<div class="container">
+    
+  <div class="tile is-ancestor is-flex-wrap">
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Top View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/wgZpkrKpsLU" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Optimization (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/0yLdx225NFE" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+        <div class="card-content paper">
+          <p class="title">
+            Geometric (Top View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/jvoMx7TBa78" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="tile is-parent" style="min-width: 15rem; max-width: 20rem">
+      <div class="tile is-child card">
+
+        <div class="card-content paper">
+          <p class="title">
+            Geometric (Side View)
+          </p>
+          <figure class="image is-9by16">
+            <iframe class="has-ratio" src="https://www.youtube-nocookie.com/embed/8nSwNgkJQP0" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    </div>
+  </body>
+</html>

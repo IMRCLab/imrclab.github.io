@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMRC</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.solid.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.brands.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  
+          // Get "navbar-burger" element
+          const $myNavbarBurger = document.querySelector('.navbar-burger');
+          const $myNavbar = document.querySelector('.navbar-menu');
+  
+          // do not expand menu if JS is available
+          $myNavbarBurger.classList.remove('is-active');
+          $myNavbar.classList.remove('is-active');
+  
+          $myNavbarBurger.addEventListener('click', () => {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $myNavbarBurger.classList.toggle('is-active');
+            $myNavbar.classList.toggle('is-active');
+          });
+  
+          // Get all "navbar-item" elements
+          const $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+          if ($navbarItems.length > 0) {
+  
+            // Add a click event on each of them
+            $navbarItems.forEach( el => {
+              el.addEventListener('click', () => {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $myNavbarBurger.classList.remove('is-active');
+                $myNavbar.classList.remove('is-active');
+              });
+            });
+          }
+  
+        });
+      </script>
+
+  </head>
+  <body>
+      <!-- Navigation bar -->
+  <nav class="navbar is-dark" id="home">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://imrclab.github.io/">
+        <img src="assets/img/imrc_logo_dark_bg.png">
+      </a>
+
+      <div class="navbar-burger burger is-active" data-target="myNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="myNavbar" class="navbar-menu is-active">
+      <div class="navbar-end">
+        
+        <a class="navbar-item  is-active " href="/">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-info"></i>
+          </span>
+          
+          <span>About </span>
+        </a>
+        
+        <a class="navbar-item " href="/publications.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-book"></i>
+          </span>
+          
+          <span>Publications </span>
+        </a>
+        
+        <a class="navbar-item " href="/teaching.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-chalkboard"></i>
+          </span>
+          
+          <span>Teaching </span>
+        </a>
+        
+        <a class="navbar-item " href="/jobs.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-graduation-cap"></i>
+          </span>
+          
+          <span>Jobs </span>
+        </a>
+        
+        <a class="navbar-item " href="/team.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-people-group"></i>
+          </span>
+          
+          <span>Team </span>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+
+    <div class="content">
+            <div class="section-heading">
+        <h1 class="title is-1">Intelligent Multi-Robot Coordination Lab</h1>
+        <h2 class="subtitle is-2">TU Berlin</h2>
+    </div>
+
+    <div class="columns is-centered is-vcentered">
+      <div class="column is-three-quarters" style="max-width: 500px">
+        <figure class="image is-3by2">
+          <img src="assets/img/neuralswarm2.jpg" alt="Close-proximity flight of multirotors.">
+        </figure>
+      </div>
+      <div class="column is-one-quarter" >
+        <p class="buttons is-centered">
+          <a href="https://www.linkedin.com/company/imrclab" class="button is-dark">
+            <span class="icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/IMRCLab" class="button is-dark">
+            <span class="icon">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.youtube.com/channel/UCsFZxMGOnS8pC6DSeRVnDLg" class="button is-dark">
+            <span class="icon">
+              <i class="fa-brands fa-youtube"></i>
+            </span>
+            <span>YouTube</span>
+          </a>
+          <a href="https://www.google.com/maps/place/Marchstra%C3%9Fe+23,+10587+Berlin" class="button is-dark is-multiline">
+            <span class="icon">
+              <i class="fa-solid fa-map"></i>
+            </span>
+            <span>
+              Marchstr. 23<br>
+              10587 Berlin
+            </span>
+            <span class="note">
+              Rooms 4.013 ~ 4.018
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-half is-4-desktop">
+        <div class="content">
+          <p>
+          The Intelligent Multi-Robot Coordination Lab at <a href="https://www.tu.berlin">TU Berlin</a>, led by <a href="https://whoenig.github.io">Wolfgang Hönig</a>, is a research group at the <a href="https://www.tu.berlin/en/eecs/institutions/institutes/institute-of-computer-engineering-and-microelectronics">Institute of Computer Engineering and Microelectronics</a>, <a href="https://www.tu.berlin/en/eecs/">EECS Faculty</a>, <a href="https://www.tu.berlin">TU Berlin</a>.</p>
+
+          <p>In our research we propose diverse artificial intelligence techniques that enable decision making in high-dimensional search spaces.
+          We are motivated by aerial robots, which need to coordinate safely and efficiently in congested environments.
+          Our goal is to develop the algorithmic foundation, both theoretical and practical, that will enable future robot swarms to autonomously conduct search-and-rescue missions, advance just-in-time manufacturing, and function as aerial robot delivery systems.
+          Our research is funded by the prestigious <a href="https://www.dfg.de/en/research_funding/ai-initiative/enp_projects/index.html">DFG Emmy-Noether Program in the Field of Artificial Intelligence Methods</a>.
+        
+        </p>
+        </div>
+
+        <!--
+        <div class="alert">
+          <p>I am looking for two enthusiastic PhD students to join me in the Intelligent Multi-Robot Coordination Lab at <a href="https://www.eecs.tu-berlin.de/menue/einrichtungen/institute/itim/parameter/en/">TU Berlin</a> starting this year. Details are in the official <a href="https://tub.stellenticket.de/en/offers/90344">job announcement</a>. The position is fully funded with excellent collaboration opportunities at TU Berlin, e.g. with the <a href="https://argmin.lis.tu-berlin.de/">Learning & Intelligent Systems Lab</a>, led by <a href="https://www.user.tu-berlin.de/mtoussai/">Marc Toussaint</a>.
+          </p>
+        </div>
+      -->
+      </div>
+
+      <div class="column is-half is-4-desktop">
+
+        <div class="content paper">
+          <h2 class="subtitle is-6">News</h2>
+
+          <ul>
+            <li>
+              <span class="title">Two papers accepted at <a href="https://2024.ieee-icra.org/">ICRA</a>: <a href="https://arxiv.org/abs/2309.16445">db-CBS</a> and <a href="https://www.user.tu-berlin.de/mtoussai/24-CompletionTrees/">ELS</a>.</span>
+              <span class="note">01/2024</span>
+            </li>
+
+            <li>
+              <span class="title">We moved into new rooms with a larger flight space.</span>
+              <span class="note">01/2024</span>
+            </li>
+
+            <li>
+              <span class="title">IEEE RA-L <a href="https://arxiv.org/abs/2304.02359">paper</a> and EAAI (Model AI assignment) paper accepted.</span>
+              <span class="note">12/2023</span>
+            </li>
+
+            <li>
+              <span class="title">Two papers accepted at <a href="https://sites.bu.edu/mrs2023/">MRS</a>: <a href="https://arxiv.org/abs/2308.00344">Flying Patches</a> and <a href="https://arxiv.org/abs/2303.03898">Omni Percept</a>.</span>
+              <span class="note">09/2023</span>
+            </li>
+
+            <li>
+              <span class="title">We have <a href="publications.html">three workshop papers</a> at ICRA 2023 in London.</span>
+              <span class="note">05/2023</span>
+            </li>
+
+            <li>
+              <span class="title">We have <a href="jobs.html">one PhD and two student assistant positions</a>.</span>
+              <span class="note">05/2023</span>
+            </li>
+
+            <li>
+              <span class="title">Co-organization of summer school <a href="https://www.scienceofintelligence.de/summerschool/">Embodied Intelligence – Perception and Learning in Nature and Robotics</a>.</span>
+              <span class="note">03/2023</span>
+            </li>
+
+            <li>
+              <span class="title">Co-organization of the ICRA23 workshop on <a href="https://imrclab.github.io/workshop-uav-sims-icra2023/">The Role of Robotics Simulators for Unmanned Aerial Vehicles</a>.</span>
+              <span class="note">01/2023</span>
+            </li>
+
+            <!-- 
+            <li>
+              <span class="title">Crazyswarm2 presented at <a href="https://roscon.ros.org/2022/">ROSCon</a>.</span>
+              <span class="note">10/2022</span>
+            </li>
+
+            <li>
+              <span class="title">Two papers accepted at IROS Workshops: <a href="assets/pdf/hoenig2022benchmark.pdf">Motion Planning Benchmark</a> and <a href="assets/pdf/wahba2022payload.pdf">UAV Payload Transport</a>.</span>
+              <span class="note">10/2022</span>
+            </li>
+
+            <li>
+              <span class="title">Two papers accepted at IROS: <a href="https://arxiv.org/abs/2203.11108">db-A*</a> and <a href="https://arxiv.org/abs/2203.05390">SecMPC</a>.</span>
+              <span class="note">07/2022</span>
+            </li>
+
+            <li>
+              <span class="title">We have <a href="jobs.html">two student assistant positions</a>.</span>
+              <span class="note">04/2022</span>
+            </li>
+
+            <li>
+              <span class="title">We submitted two papers to IROS: <a href="https://arxiv.org/abs/2203.11108">db-A*</a> and <a href="https://arxiv.org/abs/2203.05390">SecMPC</a>.</span>
+              <span class="note">03/2022</span>
+            </li>
+
+            <li>
+              <span class="title"><a href="team.html">Akmaral and Khaled</a> join as PhD students.</span>
+              <span class="note">12/2021, 01/2022</span>
+            </li>
+
+            <li>
+              <span class="title">New group, funded by the <a href="https://www.dfg.de/en/research_funding/ai-initiative/enp_projects/index.html">DFG</a>, established.</span>
+              <span class="note">05/2021</span>
+            </li> 
+          -->
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    </div>
+  </body>
+</html>
