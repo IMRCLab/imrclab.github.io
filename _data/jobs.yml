@@ -34,7 +34,8 @@ phd: []
 shk:
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
-    deadline: March 18, 2024
+    deadline: Extended to April 8, 2024.
+    #March 18, 2024
     reference: IV-SB-0027-2024
     announcement: https://tub.stellenticket.de/de/offers/180149/?locale=en
     note: |
@@ -55,7 +56,8 @@ shk:
 
   - name: "Student Assistant (BS/MS)"
     hours: 40 to 80 per month
-    deadline: March 18, 2024
+    deadline: Extended to April 8, 2024.
+    # March 18, 2024
     reference: IV-SB-0026-2024
     announcement: https://tub.stellenticket.de/de/offers/180147/?locale=en
     note: |
