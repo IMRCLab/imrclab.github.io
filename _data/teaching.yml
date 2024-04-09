@@ -32,7 +32,7 @@ thesis:
 
 ss2024:
   - name: "Motion Planning"
-    time: tba
+    time: We, 8:15-9:45am (lecture); Th, 4:15-5:45pm (discussion)
     credits: 6
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?number=41049&version=2&sprache=2
     isis: https://isis.tu-berlin.de/course/view.php?id=37033
@@ -54,7 +54,7 @@ ss2024:
       • Use current academic and industrial tools such as the Open Motion Planning Library (OMPL).
 
   - name: "Multi-Robot Systems"
-    time: tba
+    time: Th, 10:15-11:45am (seminar)
     credits: 3
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41158&version=2&sprache=2
     isis: https://isis.tu-berlin.de/course/view.php?id=37034
@@ -62,11 +62,13 @@ ss2024:
       This course is a new seminar-style class to learn basics and current topics of multi-robot coordination.
 
   - name: "Robot Learning"
-    time: tba
+    time: Tue, 16:15-17:45am (lecture); Fr, 4:15-5:45pm (discussion)
     credits: 6
     moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41165&version=1&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=38900
     note: |
-      This course is a new class held with Marc Toussaint on how to apply learning to robotics problems.
+      This course is a new class held with Marc Toussaint, which aims to give a systematic overview on the many ways how
+learning methods can be used within robotics.
 
   - name: "Other Robotics Courses"
     isis: https://isis.tu-berlin.de/course/view.php?id=33668
