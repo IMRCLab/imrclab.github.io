@@ -1,0 +1,1255 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMRC Publications</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/academicons.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.solid.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.brands.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  
+          // Get "navbar-burger" element
+          const $myNavbarBurger = document.querySelector('.navbar-burger');
+          const $myNavbar = document.querySelector('.navbar-menu');
+  
+          // do not expand menu if JS is available
+          $myNavbarBurger.classList.remove('is-active');
+          $myNavbar.classList.remove('is-active');
+  
+          $myNavbarBurger.addEventListener('click', () => {
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            $myNavbarBurger.classList.toggle('is-active');
+            $myNavbar.classList.toggle('is-active');
+          });
+  
+          // Get all "navbar-item" elements
+          const $navbarItems = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
+          if ($navbarItems.length > 0) {
+  
+            // Add a click event on each of them
+            $navbarItems.forEach( el => {
+              el.addEventListener('click', () => {
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $myNavbarBurger.classList.remove('is-active');
+                $myNavbar.classList.remove('is-active');
+              });
+            });
+          }
+  
+        });
+      </script>
+
+  </head>
+  <body>
+      <!-- Navigation bar -->
+  <nav class="navbar is-dark" id="home">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://imrclab.github.io/">
+        <img src="assets/img/imrc_logo_dark_bg.png">
+      </a>
+
+      <div class="navbar-burger burger is-active" data-target="myNavbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="myNavbar" class="navbar-menu is-active">
+      <div class="navbar-end">
+        
+        <a class="navbar-item " href="/">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-info"></i>
+          </span>
+          
+          <span>About </span>
+        </a>
+        
+        <a class="navbar-item  is-active " href="/publications.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-book"></i>
+          </span>
+          
+          <span>Publications </span>
+        </a>
+        
+        <a class="navbar-item " href="/teaching.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-chalkboard"></i>
+          </span>
+          
+          <span>Teaching </span>
+        </a>
+        
+        <a class="navbar-item " href="/jobs.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-graduation-cap"></i>
+          </span>
+          
+          <span>Jobs </span>
+        </a>
+        
+        <a class="navbar-item " href="/team.html">
+          
+          <span class="icon">
+            <i class=" fa-solid fa-people-group"></i>
+          </span>
+          
+          <span>Team </span>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+
+    <div class="content">
+        <div class="section-heading">
+    <h2 class="title is-2">Publications</h2>
+</div>
+
+<div class="container">
+
+  <p>This list only includes publications since the lab was founded. For other relevant publications see Wolfgang Hönig's <a href="https://whoenig.github.io/">personal webpage</a>.
+  </p>
+
+  <div class="tile is-ancestor is-flex-wrap"><div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/moldagalieva2023dbcbs.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        db-CBS: Discontinuity-Bounded Conflict-Based Search for Multi-Robot Kinodynamic Motion Planning
+      </p>
+      <p class="venue">
+        
+            Accepted at ICRA,
+        
+        2024
+      </p>
+      
+      <p class="author">
+        
+            
+                Akmaral Moldagalieva,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Marc Toussaint,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2309.16445" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/1mglNQOmOLE" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+        <a href="https://github.com/IMRCLab/db-CBS" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/toussaint2023els.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Effort Level Search in Infinite Completion Trees with Application to Task-and-Motion Planning
+      </p>
+      <p class="venue">
+        
+            Accepted at ICRA,
+        
+        2024
+      </p>
+      
+      <p class="author">
+        
+            
+                Marc Toussaint,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Valentin N. Hartmann,
+            
+        
+            
+                Erez Karpas,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+        
+            <a href="https://www.user.tu-berlin.de/mtoussai/24-CompletionTrees/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/wahba2023a.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Efficient Optimization-based Cable Force Allocation for Geometric Control of Multiple Quadrotors Transporting a Payload
+      </p>
+      <p class="venue">
+        
+            IEEE Robotics and Automation Letters (RA-L),
+        
+        2024
+      </p>
+      
+      <p class="author">
+        
+            
+                Khaled Wahba,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2304.02359" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/xp1zCVMB7Gg" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://doi.org/10.1109/LRA.2024.3351001" class="card-footer-item"><span class="icon"> <i
+                    class="ai ai-doi"></i> </span> <span>DOI</span></a>
+        
+        <a href="https://github.com/IMRCLab/col-trans" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/bideau2024.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Model AI Assignment: Collective Intelligence from a Synthetic and Biological Perspective
+      </p>
+      <p class="venue">
+        
+            Accepted at Symposium on Educational Advances in Artificial Intelligence (EAAI),
+        
+        2024
+      </p>
+      
+      <p class="author">
+        
+            
+                Pia Bideau,
+            
+        
+            
+                David Bierbach,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/weingart2023msthesis.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Enhancing Sampling-Based Kinodynamic Motion Planning with Reinforcement Learning Policies
+      </p>
+      <p class="venue">
+        
+            MS Thesis (Computer Science),
+        
+        2023
+      </p>
+      
+      <p class="venue">
+        Examiners: Wolfgang Hönig, Marc Toussaint; Mentors: Joaquim Ortiz-Haro, Wolfgang Hönig
+      </p>
+      
+      <p class="author">
+        
+            
+                Alexander Weingart
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/weingart2023msthesis.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/laxmish2023msthesis.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Learning-Based Relative State Estimation for Ultralow-Power Multirotor Teams
+      </p>
+      <p class="venue">
+        
+            MS Thesis (Master of Science ICT Innovation),
+        
+        2023
+      </p>
+      
+      <p class="venue">
+        Examiners: Wolfgang Hönig, Oliver Brock; Mentors: Akmaral Moldagalieva, Pia Hanfeld
+      </p>
+      
+      <p class="author">
+        
+            
+                Keerthana Laxmish
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/laxmish2023msthesis.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/idbastar.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        iDb-A*: Iterative Search and Optimization for Optimal Kinodynamic Motion Planning
+      </p>
+      <p class="venue">
+        
+            arXiv (Submitted to IEEE T-RO),
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Valentin N. Hartmann,
+            
+        
+            
+                Marc Toussaint
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2311.03553" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/GoznOEWbUb8" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://quimortiz.github.io/idbastar" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/quimortiz/dynoplan" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/dimmig2023survey.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Survey of Simulators for Aerial Robots
+      </p>
+      <p class="venue">
+        
+            arXiv (Submitted to IEEE RAM),
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Cora A. Dimmig,
+            
+        
+            
+                Giuseppe Silano,
+            
+        
+            
+                Kimberly McGuire,
+            
+        
+            
+                Chiara Gabellieri,
+            
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Joseph Moore,
+            
+        
+            
+                Marin Kobilarov
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2311.02296" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/wahba2023coltransplanning.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Kinodynamic Motion Planning for a Team of Multirotors Transporting a Cable-Suspended Payload in Cluttered Environments
+      </p>
+      <p class="venue">
+        
+            arXiv,
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Khaled Wahba,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Marc Toussaint,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2310.03394" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/hjHR-yy6_kg" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://imrclab.github.io/coltrans-planning/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/IMRCLab/coltrans-planning" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/senbaslar2023mrnav.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        MRNAV: Multi-Robot Aware Planning and Control Stack for Collision and Deadlock-free Navigation in Cluttered Environments
+      </p>
+      <p class="venue">
+        
+            arXiv,
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Baskın Şenbaşlar,
+            
+        
+            
+                Pilar Luiz,
+            
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Gaurav S. Sukhatme
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2308.13499" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/6WC0YCEctoE" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/hanfeld2023kidnapping.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Kidnapping Deep Learning-based Multirotors using Optimized Flying Adversarial Patches
+      </p>
+      <p class="venue">
+        
+            International Symposium on Multi-Robot and Multi-Agent Systems (MRS),
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Pia Hanfeld,
+            
+        
+            
+                Khaled Wahba,
+            
+        
+            
+                Marina M.-C. Höhne,
+            
+        
+            
+                Michael Bussmann,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2308.00344" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/Yj5rTcEJ0XE" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://doi.org/10.1109/MRS60187.2023.10416782" class="card-footer-item"><span class="icon"> <i
+                    class="ai ai-doi"></i> </span> <span>DOI</span></a>
+        
+        <a href="https://github.com/IMRCLab/flying_adversarial_patch/" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/senbaslar2023rlss.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        RLSS: real-time, decentralized, cooperative, networkless multi-robot trajectory planning using linear spatial separations
+      </p>
+      <p class="venue">
+        
+            Autonomous Robots (AuRo), Special Issue "Robot Swarms in the Real World: from Design to Deployment",
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Baskın Şenbaşlar,
+            
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Nora Ayanian
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2302.12863" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/Jrdvf2qyzrg" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://doi.org/10.1007/s10514-023-10104-w" class="card-footer-item"><span class="icon"> <i
+                    class="ai ai-doi"></i> </span> <span>DOI</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/wahba2023payloadplanning.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Motion Planning for Cable-Suspended Payload Transportation with a Team of Multirotors in Cluttered Environments
+      </p>
+      <p class="venue">
+        
+            Future of Construction Workshop at ICRA,
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Khaled Wahba,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/wahba2023payloadplanning.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+            <a href="https://youtu.be/vKsa_Ali8OE" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://construction-robots.github.io" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://www.youtube.com/watch?v=lkysrHWZgME" class="card-footer-item"><span class="icon"> <i class="fas fa-chalkboard"></i> </span> <span>Talk</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/hanfeld2023flyingpatches.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Flying Adversarial Patches: Manipulating the Behavior of Deep Learning-based Autonomous Multirotors
+      </p>
+      <p class="venue">
+        
+            Multi-Robot Learning Workshop at ICRA,
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Pia Hanfeld,
+            
+        
+            
+                Marina M.-C. Höhne,
+            
+        
+            
+                Michael Bussmann,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2305.12859" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://sites.google.com/cam.ac.uk/multirobotlearningworkshopicra/home" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/IMRCLab/flying_adversarial_patch/tree/icra_mrlearn23" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/rehberg2023comparison.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Comparison of Optimization-Based Methods for Energy-Optimal Quadrotor Motion Planning
+      </p>
+      <p class="venue">
+        
+            Energy Efficient Aerial Robotic Systems Workshop at ICRA,
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Welf Rehberg,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Marc Toussaint,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2304.14062" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://aerial-robotics-workshop-icra2023.com" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/Zwoelf12/compare_croco_scvx_komo_casadi" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/schicke2023bsthesis.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Learning-based Multirotor System Model Enhancements
+      </p>
+      <p class="venue">
+        
+            BS Thesis (Computer Science),
+        
+        2023
+      </p>
+      
+      <p class="venue">
+        Examiners: Wolfgang Hönig, Marc Toussaint; Mentors: Akmaral Moldagalieva, Khaled Wahba
+      </p>
+      
+      <p class="author">
+        
+            
+                Jana Schicke
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/schicke2023bsthesis.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/moldagalieva2023a.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Virtual Omnidirectional Perception for Downwash Prediction within a Team of Nano Multirotors Flying in Close Proximity
+      </p>
+      <p class="venue">
+        
+            International Symposium on Multi-Robot and Multi-Agent Systems (MRS),
+        
+        2023
+      </p>
+      
+      <p class="author">
+        
+            
+                Akmaral Moldagalieva,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2303.03898" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/DTKB0QzB2Qk" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://doi.org/10.1109/MRS60187.2023.10416772" class="card-footer-item"><span class="icon"> <i
+                    class="ai ai-doi"></i> </span> <span>DOI</span></a>
+        
+        <a href="https://github.com/IMRCLab/dataset-cv-rel-pos" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/rehberg2022msthesis.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        K-Order Markov Optimization and Sequential Convex Programming for Multirotor Motion Planning
+      </p>
+      <p class="venue">
+        
+            MS Thesis (Computational Engineering Science),
+        
+        2022
+      </p>
+      
+      <p class="venue">
+        Examiners: Marc Toussaint, Oliver Brock; Mentors: Wolfgang Hönig, Joaquim Ortiz-Haro
+      </p>
+      
+      <p class="author">
+        
+            
+                Welf Rehberg
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/rehberg2022msthesis.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+        <a href="https://github.com/Zwoelf12/SCP_Multirotor_Motion_Planner" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/wahba2022payload.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Distributed Geometric and Optimization-based Control of Multiple Quadrotors for Cable-Suspended Payload Transport
+      </p>
+      <p class="venue">
+        
+            Decision Making in Multi-Agent Systems Workshop at IROS,
+        
+        2022
+      </p>
+      
+      <p class="author">
+        
+            
+                Khaled Wahba,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/wahba2022payload.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+            <a href="https://youtu.be/yLbzvuXErXY" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://dcslgatech.github.io/iros22-multi-agent-workshop" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/IMRCLab/pyCrazyflie" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/hoenig2022benchmark.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Benchmarking Sampling-, Search-, and Optimization-based Approaches for Time-Optimal Kinodynamic Mobile Robot Motion Planning
+      </p>
+      <p class="venue">
+        
+            Evaluating Motion Planning Performance: Metrics, Tools, Datasets, and Experimental Design Workshop at IROS,
+        
+        2022
+      </p>
+      
+      <p class="author">
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Marc Toussaint
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+            <a href="assets/pdf/hoenig2022benchmark.pdf" class="card-footer-item"><span class="icon"> <i
+                class="fas fa-file-pdf"></i> </span> <span>PDF</span></a>
+        
+            <a href="https://youtu.be/dLNheLa5wAc" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+            <a href="https://motion-planning-workshop.kavrakilab.org/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/IMRCLab/kinodynamic-motion-planning-benchmark" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/toussaint2022sequence.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Sequence-of-Constraints MPC: Reactive Timing-Optimal Control of Sequential Manipulation
+      </p>
+      <p class="venue">
+        
+            IEEE/RSJ international conference on intelligent robots and systems (IROS),
+        
+        2022
+      </p>
+      
+      <p class="author">
+        
+            
+                Marc Toussaint,
+            
+        
+            
+                Jason Harris,
+            
+        
+            
+                Jung-Su Ha,
+            
+        
+            
+                Danny Driess,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2203.05390" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://www.user.tu-berlin.de/mtoussai/22-SecMPC/" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>Webpage</span></a>
+        
+        <a href="https://github.com/MarcToussaint/22-SecMPC" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/hoenig2022dbAstar.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        db-A*: Discontinuity-bounded Search for Kinodynamic Mobile Robot Motion Planning
+      </p>
+      <p class="venue">
+        
+            IEEE/RSJ international conference on intelligent robots and systems (IROS),
+        
+        2022
+      </p>
+      
+      <p class="author">
+        
+            
+                Wolfgang Hönig,
+            
+        
+            
+                Joaquim Ortiz-Haro,
+            
+        
+            
+                Marc Toussaint
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2203.11108" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+            <a href="https://youtu.be/dLNheLa5wAc" class="card-footer-item"><span class="icon"> <i class="fas fa-video"></i>
+                </span> <span>Video</span></a>
+        <a href="https://github.com/IMRCLab/kinodynamic-motion-planning-benchmark" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div>
+<div class="tile is-parent">
+  <div class="tile is-child card">
+    <div class="card-image has-text-centered">
+      <figure class="image is-inline-block">
+        <img src="assets/img/taffanel2021lightHouse.jpg" alt="Paper image">
+      </figure>
+    </div>
+    <div class="card-content paper">
+      <p class="title">
+        Lighthouse Positioning System: Dataset, Accuracy, and Precision for UAV Research
+      </p>
+      <p class="venue">
+        
+            Robot Swarms in the Real World Workshop at ICRA,
+        
+        2021
+      </p>
+      
+      <p class="author">
+        
+            
+                Arnaud Taffanel,
+            
+        
+            
+                Barbara Rousselot,
+            
+        
+            
+                Jonas Danielsson,
+            
+        
+            
+                Kimberly McGuire,
+            
+        
+            
+                Kristoffer Richardsson,
+            
+        
+            
+                Marcus Eliasson,
+            
+        
+            
+                Tobias Antonsson,
+            
+        
+            
+                Wolfgang Hönig
+            
+        
+      </p>
+    </div>
+    <footer class="card-footer">
+         
+            <a href="https://arxiv.org/abs/2104.11523" class="card-footer-item"><span class="icon"> <i
+                class="ai ai-arxiv"></i> </span> <span>arXiv</span></a>
+        
+        <a href="https://github.com/bitcraze/positioning_dataset" class="card-footer-item"><span class="icon"> <i class="fab fa-github"></i> </span> <span>GitHub</span></a>
+
+    </footer>
+  </div>
+
+</div></div>
+
+</div>
+
+
+    </div>
+  </body>
+</html>
