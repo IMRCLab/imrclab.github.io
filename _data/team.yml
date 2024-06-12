@@ -69,6 +69,8 @@ team:
     github: den-schmidt
     image: dennis_schmidt.jpg
     start: 12/2022
+    end: 05/2024
+    next_role: MSc Thesis with Continental / IMRC
 
   - name: Nan Cai
     role: Student Assistant
@@ -123,6 +125,7 @@ team:
     role: BS Thesis (Computer Engineering)
     note: Hardware-in-the-loop Simulation for Crazyflie Multirotors
     start: 11/2023
+    end: 03/2024
 
   - name: Bojan Derajić
     role: External PhD student (Continental)
@@ -151,3 +154,38 @@ team:
     image: crazyflie20.png
     start: 2021
     note: Small (9 cm rotor-to-rotor) and lightweight (29 g) robots with off-the-shelf hardware and fully open-source software. We develop the the ROS2 driver for these robots, called Crazyswarm2.
+
+  - name: Max Perschen
+    role: Student Assistant
+    github: mmX42
+    image: max_perschen.jpg
+    start: 06/2024
+
+  - name: Jan Achermann
+    role: Student Assistant
+    email:  achermann (at) campus (dot) tu-berlin (dot) de
+    github: polyblank-5
+    image: jan_achermann.jpg
+    start: 06/2024
+
+  - name: Christoph Scherer
+    role: MS Thesis (Computational Engineering Science)
+    note: Learning Residual Physics Distributions of Multirotors with Cable-Suspended Payloads
+    start: 02/2023
+
+  - name: Julius Franke
+    role: MS Thesis (Computational Engineering Science)
+    note: Motion Primitive Selection for Kinodynamic Motion Planning
+    start: 05/2023
+
+  - name: Eckart Ferdinand Cobo Briesewitz
+    role: BS Thesis (Computer Science)
+    note: Learning-based Multirotor Control Enhancements
+    start: 05/2023
+
+  - name: Dennis Schmidt
+    role: MS Thesis (Electrical Engineering)
+    note: Development of an uncertainty-aware Motion Planner combining Branch MPC with Machine Learning
+    start: 06/2023
+
+

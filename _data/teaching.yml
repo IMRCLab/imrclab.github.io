@@ -1,25 +1,25 @@
 thesis:
 
-  - name: Small-time Locally Controllability for Flying Adversarial Patches (BS)
-    note: |
-      The goal of this thesis is to adapt the training algorithm of the Flying Adversarial Patch attack, such that the control over the attacked multirotor is increased. An empirical study should highlight the benefit of the improved method over previous work. Additionally, an adversarial patch should be introduced that specifically forces worst-case predictions of the DL model to compare against the STLC patches in 'safe' regions.
-    apply: https://www.theses.tu-berlin.de/en/theses/018a3f64-7f10-7afa-b386-9f3e94df59c6
+  # - name: Small-time Locally Controllability for Flying Adversarial Patches (BS)
+  #   note: |
+  #     The goal of this thesis is to adapt the training algorithm of the Flying Adversarial Patch attack, such that the control over the attacked multirotor is increased. An empirical study should highlight the benefit of the improved method over previous work. Additionally, an adversarial patch should be introduced that specifically forces worst-case predictions of the DL model to compare against the STLC patches in 'safe' regions.
+  #   apply: https://www.theses.tu-berlin.de/en/theses/018a3f64-7f10-7afa-b386-9f3e94df59c6
 
-  - name: Scaling Fyling Adversarial Patches to a Swarm of Attacker and Victim Multirotors (MS)
-    note: |
-      The goal of this thesis is to improve the overall control over the victim by scaling the Flying Adversarial Patch attack to a team or swarm of attacker multirotors. Furthermore, the extended method can be applied to a swarm of victim multirotors. The attack should be performed in a suitable simulation environment.
-    apply: https://www.theses.tu-berlin.de/en/theses/018a3f5c-2507-7007-aa53-96051dbf4942
+  # - name: Scaling Fyling Adversarial Patches to a Swarm of Attacker and Victim Multirotors (MS)
+  #   note: |
+  #     The goal of this thesis is to improve the overall control over the victim by scaling the Flying Adversarial Patch attack to a team or swarm of attacker multirotors. Furthermore, the extended method can be applied to a swarm of victim multirotors. The attack should be performed in a suitable simulation environment.
+  #   apply: https://www.theses.tu-berlin.de/en/theses/018a3f5c-2507-7007-aa53-96051dbf4942
 
   # - name: Vision-based residual force prediction for a team of UAV in close proximity (MS)
   #   note: |
   #     The goal of this MSc thesis project is to predict interaction forces between flying robots directly from low-resolution grayscale images.
   #   apply: https://www.theses.tu-berlin.de/en/theses/0189d953-673d-73ab-8cfd-0c24183be2fc
 
-  - name: Benchmarking Multi-Robot Planning Methods for Intralogistics (MS; in collaboration with Bosch)
-    note: |
-      The goal of this MSc thesis project is to build a benchmark dataset for multi-agent pickup and delivery (MAPD) planners, with a special focus on the application in industrial logistics or warehouses. The purpose of this benchmark set is to motivate and support research in MAPD planners. It should consist of discrete planning scenarios including an environment to plan in as well as time-steps with pickup and drop-off locations for multiple agents. The environment is represented as a roadmap graph, as this is the common modeling approach in industrial logistics or warehouses.
+  # - name: Benchmarking Multi-Robot Planning Methods for Intralogistics (MS; in collaboration with Bosch)
+  #   note: |
+  #     The goal of this MSc thesis project is to build a benchmark dataset for multi-agent pickup and delivery (MAPD) planners, with a special focus on the application in industrial logistics or warehouses. The purpose of this benchmark set is to motivate and support research in MAPD planners. It should consist of discrete planning scenarios including an environment to plan in as well as time-steps with pickup and drop-off locations for multiple agents. The environment is represented as a roadmap graph, as this is the common modeling approach in industrial logistics or warehouses.
 
-      More details on request.
+  #     More details on request.
 
   - name: Open Topic
     note: |
