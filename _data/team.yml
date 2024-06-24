@@ -120,6 +120,8 @@ team:
     github: julienthevenoz
     image: julien_thevenoz.jpg
     start: 11/2023
+    end: 06/2024
+    next_role: MSc Student at EPFL
 
   - name: Christian Hickstein
     role: BS Thesis (Computer Engineering)
