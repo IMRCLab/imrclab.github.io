@@ -1,35 +1,35 @@
-phd: []
-  # - name: "PhD Student for Decision Making for Aerial Multi-Robot Teams"
-  #   hours: TV-L 13, 100 %
-  #   deadline: Full consideration until August 4 (until filled thereafter).
-  #   reference:  	IV-186/23
-  #   announcement: https://tub.stellenticket.de/en/offers/170235
-  #   note: |
-  #     In our research we investigate artificial intelligence techniques that enable decision making (task planning, motion planning, and controls) in high-dimensional search spaces. We are motivated by aerial robots, which need to coordinate safely and efficiently in congested environments. Our goal is to develop the algorithmic foundations, both theoretical and practical, that will enable future robot swarms to autonomously conduct search-and-rescue missions, advance just-in-time manufacturing, and function as aerial robot delivery systems.
+phd:
+  - name: "PhD Student for Robotics Institute of Germany (RIG)"
+    hours: TV-L 13, 100 %
+    deadline: Full consideration until August 23 (until filled thereafter).
+    reference:  	IV-397/24
+    announcement: https://www.jobs.tu-berlin.de/en/job-postings/185484
+    note: |
+      In our research we investigate artificial intelligence techniques that enable decision making (task planning, motion planning, and controls) in high-dimensional search spaces. We are motivated by aerial robots, which need to coordinate safely and efficiently in congested environments. Our goal is to develop the algorithmic foundations, both theoretical and practical, that will enable future robot swarms to autonomously conduct search-and-rescue missions, advance just-in-time manufacturing, and function as aerial robot delivery systems.
 
-  #     Requirements:
-  #         • Successfully completed university degree (Master, Diplom or equivalent) in robotics, computer science, electrical engineering, mechanical engineering, or a related discipline with outstanding performance
-  #         • Strong analytical skills (such as linear algebra, calculus, AI theory)
-  #         • Strong programming skills, preferably in C++, Python, or Julia
-  #         • Excellent communication
-  #         • Excellent written and spoken English
-  #         • Above all, enthusiasm for the research area and a desire to develop cutting-edge solutions to challenging real-world problems
+      Requirements:
+          • Successfully completed university degree (Master, Diplom or equivalent) in robotics, computer science, electrical engineering, mechanical engineering, or a related discipline with outstanding performance
+          • Strong analytical skills (such as linear algebra, calculus, AI theory)
+          • Strong programming skills in C++, Python, or Rust
+          • Good knowledge of German and/or English required
+          • Above all, enthusiasm for the research area and a desire to develop cutting-edge solutions to challenging real-world problems
 
-  #     Desirable:
-  #         • Knowledge of trajectory optimization, informed search, machine learning, or planning
-  #         • Experience with multi-agent or multi-robot systems
-  #         • Experience with unmanned aerial vehicles (e.g., Crazyflie, PX4, Arducopter) or other robotic systems
-  #         • Experience with the Robot Operating System (ROS)
-  #         • Experience with embedded systems (e.g., firmware development in C)
-  #         • Working knowledge of Linux
+      Desirable:
+          • Knowledge of machine learning, trajectory optimization, informed search, or planning
+          • Experience with multi-agent or multi-robot systems
+          • Experience with uncrewed aerial vehicles (e.g., Crazyflie, PX4, Arducopter) or other robotic systems
+          • Working knowledge of Linux
+          • Experience with the Robot Operating System (ROS)
+          • Experience with embedded systems (e.g., firmware development in C)
+          • Excellent communication
 
-  #   apply: |
-  #         • Cover letter with your interest and experience related to the position%0D%0A
-  #         • Curriculum vitae%0D%0A
-  #         • Transcripts (BS and MS)%0D%0A
-  #         • Writing sample (e.g., BS thesis, MS thesis, or other authored manuscripts)%0D%0A
-  #         • Programming sample (e.g., link to github)%0D%0A
-  #         • Names and email addresses of up to two qualified persons who are willing to provide a reference on request
+    apply: |
+          • Cover letter with your interest and experience related to the position%0D%0A
+          • Curriculum vitae%0D%0A
+          • Transcripts (BS and MS)%0D%0A
+          • Writing sample (e.g., BS thesis, MS thesis, or other authored manuscripts)%0D%0A
+          • Programming sample (e.g., link to github)%0D%0A
+          • Names and email addresses of up to two qualified persons who are willing to provide a reference on request
 
 shk: []
   # - name: "Student Assistant (BS/MS)"

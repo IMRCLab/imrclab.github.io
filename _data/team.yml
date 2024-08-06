@@ -190,4 +190,22 @@ team:
     note: Development of an uncertainty-aware Motion Planner combining Branch MPC with Machine Learning
     start: 06/2023
 
+  - name: Natalie Huang
+    role: Visiting Research Student (MIT)
+    start: 06/2024
+
+  - name: Leon Thormeyer 
+    role: Student Assistant
+    email: leon (dot) thormeyer (at) campus (dot) tu-berlin (dot) de
+    #github: unknown
+    #image: leon_thormeyer.jpg
+    start: 08/2024
+
+  - name: Achim von Prittwitz
+    role: Student Assistant
+    email:  von (dot) prittwitz (dot) und (dot) gaffron (at) campus (dot) tu-berlin (dot) de
+    github: achimvp
+    image: achim_von_prittwitz.jpg
+    start: 08/2024
+
 
