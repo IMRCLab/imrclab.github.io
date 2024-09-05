@@ -193,12 +193,13 @@ team:
   - name: Natalie Huang
     role: Visiting Research Student (MIT)
     start: 06/2024
+    end: 08/2024
 
   - name: Leon Thormeyer 
     role: Student Assistant
     email: leon (dot) thormeyer (at) campus (dot) tu-berlin (dot) de
     github: leonthorm
-    #image: leon_thormeyer.jpg
+    image: leon_thormeyer.jpg
     start: 08/2024
 
   - name: Achim von Prittwitz
