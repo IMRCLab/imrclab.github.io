@@ -30,6 +30,22 @@ thesis:
     apply: |
         mailto: hoenig (at) tu-berlin (dot) de?subject=Application for MSc/BSc thesis&body=Please attach a single PDF with your motivation letter
 
+ws2024:
+  - name: "Flying Robots"
+    time: Fr, 10:15am-1:45pm (hours of practical parts vary; practicum)
+    credits: 9
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41159&version=1&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=41123
+    note: |
+      This course is a new practicum to learn foundational robotics algorithms for multirotors.
+      Use a software-in-the-loop development workflow to build something that works in the physical world.
+      Learn Rust, and use it for parts of the flight controller of a real hardware constrained platform (STM32).
+
+  - name: "Other Robotics Courses"
+    isis: https://isis.tu-berlin.de/course/view.php?id=33668
+    note: |
+      If you are interested in robotics, please enroll in the "Robotics Interest Group" on ISIS to receive notifications.
+
 ss2024:
   - name: "Motion Planning"
     time: We, 8:15-9:45am (lecture); Th, 4:15-5:45pm (discussion)

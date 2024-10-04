@@ -10,13 +10,6 @@ team:
     image: wolfgang_hoenig.jpg
     start: 05/2021
 
-  - name: Ilaria Cicchetti-Nilsson
-    role: Administration
-    email: office (at) mrs (dot) tu-berlin (dot) de
-    affiliation: TU Berlin
-    image: ilaria_cicchetti-nilsson.jpg
-    start: 05/2021
-
   - name: Akmaral Moldagalieva
     role: PhD student
     email: moldagalieva (at) tu-berlin (dot) de
@@ -162,6 +155,7 @@ team:
     github: mmX42
     image: max_perschen.jpg
     start: 06/2024
+    end: 10/2024
 
   - name: Jan Achermann
     role: Student Assistant
@@ -169,11 +163,6 @@ team:
     github: polyblank-5
     image: jan_achermann.jpg
     start: 06/2024
-
-  - name: Christoph Scherer
-    role: MS Thesis (Computational Engineering Science)
-    note: Learning Residual Physics Distributions of Multirotors with Cable-Suspended Payloads
-    start: 02/2023
 
   - name: Julius Franke
     role: MS Thesis (Computational Engineering Science)
@@ -209,4 +198,21 @@ team:
     image: achim_von_prittwitz.jpg
     start: 08/2024
 
+  - name: Christoph Scherer
+    role: MS Thesis (Computational Engineering Science)
+    note: Learning Residual Physics Distributions of Multirotors with Cable-Suspended Payloads
+    start: 02/2024
+    end: 09/2024
 
+  - name: Ilaria Cicchetti-Nilsson
+    role: Administration
+    email: office (at) mrs (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    image: ilaria_cicchetti-nilsson.jpg
+    start: 05/2021
+    end: 10/2024
+
+  - name: Tobias Jung
+    role: BS Thesis (Computer Science)
+    note: Software-in-the-loop Simulation for Crazyﬂie Multirotor Teams
+    start: 08/2024
