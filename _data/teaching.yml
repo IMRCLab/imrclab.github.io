@@ -30,6 +30,16 @@ thesis:
     apply: |
         mailto: hoenig (at) tu-berlin (dot) de?subject=Application for MSc/BSc thesis&body=Please attach a single PDF with your motivation letter
 
+material:
+  - name: "Motion Planning"
+    note: |
+      This class was jointly developed with Andreas Orthey (Realtime Robotics) and captures geometric and kinodynamic motion planning and modern algorithms (sampling, search, and optimization-based).
+    website: teaching/motion-planning
+  - name: "Robot Learning"
+    note: |
+      This class was developed by Marc Toussaint and Wolfgang Hönig and captures how learning can effectively be applied in robotics.
+    website: https://www.user.tu-berlin.de/mtoussai/teaching/RobotLearning/
+
 ws2024:
   - name: "Flying Robots"
     time: Fr, 10:15am-1:45pm (hours of practical parts vary; practicum)

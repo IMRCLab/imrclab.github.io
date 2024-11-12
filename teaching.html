@@ -4,6 +4,20 @@ title: IMRC Teaching
 ---
 
 <div class="section-heading">
+    <h2 class="title is-2">Teaching Material</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for material in site.data.teaching.material %}
+            {% include material.html %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+<div class="section-heading">
     <h2 class="title is-2">MSc/BSc Thesis</h2>
 </div>
 

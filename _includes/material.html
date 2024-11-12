@@ -1,0 +1,26 @@
+<div class="tile is-parent">
+    <div class="tile is-child card">
+      {% if material.image %}
+      <div class="card-image has-text-centered">
+        <figure class="image is-inline-block">
+          <img src="assets/img/{{ material.image }}" alt="{{ material.name }}">
+        </figure>
+      </div>
+      {% endif %}
+      <div class="card-content paper">
+        <p class="title">
+          {{ material.name }}
+        </p>
+        {% if material.note %}
+        <p class="note">
+          {{ material.note | newline_to_br}}
+        </p>
+        {% endif %}
+      </div>
+      <footer class="card-footer">
+        {% if material.website %}
+        <a href="{{material.website}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
+        {% endif %}
+      </footer>
+    </div>
+</div>
