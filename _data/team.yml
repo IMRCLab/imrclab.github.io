@@ -55,15 +55,15 @@ team:
     end: 3/2023
     next_role: MSc Student (Computer Science) ETH Zürich
 
-  - name: Dennis Schmidt
-    role: Student Assistant
-    email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
-    affiliation: TU Berlin
-    github: den-schmidt
-    image: dennis_schmidt.jpg
-    start: 12/2022
-    end: 05/2024
-    next_role: MSc Thesis with Continental / IMRC
+  # - name: Dennis Schmidt
+  #   role: Student Assistant
+  #   email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
+  #   affiliation: TU Berlin
+  #   github: den-schmidt
+  #   image: dennis_schmidt.jpg
+  #   start: 12/2022
+  #   end: 05/2024
+  #   next_role: MSc Thesis with Continental / IMRC
 
   - name: Nan Cai
     role: Student Assistant
@@ -216,3 +216,11 @@ team:
     role: BS Thesis (Computer Science)
     note: Software-in-the-loop Simulation for Crazyﬂie Multirotor Teams
     start: 08/2024
+
+  - name: Dennis Schmidt
+    role: Student Assistant
+    email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: den-schmidt
+    image: dennis_schmidt.jpg
+    start: 12/2022 - 05/2024, 11/2024
