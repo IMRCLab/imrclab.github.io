@@ -167,17 +167,20 @@ team:
   - name: Julius Franke
     role: MS Thesis (Computational Engineering Science)
     note: Motion Primitive Selection for Kinodynamic Motion Planning
-    start: 05/2023
+    start: 05/2024
+    end: 11/2024
 
   - name: Eckart Ferdinand Cobo Briesewitz
     role: BS Thesis (Computer Science)
     note: Learning-based Multirotor Control Enhancements
-    start: 05/2023
+    start: 05/2024
+    end: 10/2024
 
   - name: Dennis Schmidt
     role: MS Thesis (Electrical Engineering)
     note: Development of an uncertainty-aware Motion Planner combining Branch MPC with Machine Learning
-    start: 06/2023
+    start: 06/2024
+    end: 01/2025
 
   - name: Natalie Huang
     role: Visiting Research Student (MIT)
@@ -216,6 +219,22 @@ team:
     role: BS Thesis (Computer Science)
     note: Software-in-the-loop Simulation for Crazyﬂie Multirotor Teams
     start: 08/2024
+    end: 01/2025
+
+  - name: Leon Thormeyer
+    role: MS Thesis (Industrial Engineering and Management)
+    note: Decentralized Control Policy with Imitation Learning for Multiple Multirotors Transporting Cable Suspended Payloads
+    start: 11/2024
+
+  - name: Max Klemens
+    role: MS Thesis (Computer Engineering)
+    note: Learning Multirotor Vision-to-Action Control Policies via Imitation Learning
+    start: 12/2024
+
+  - name: Viktor Lorentz
+    role: MS Thesis (Computer Engineering)
+    note: Reinforcement Learning for Collaborative Transport of Cable Suspended Payloads with Multiple Multirotors
+    start: 01/2025
 
   - name: Dennis Schmidt
     role: Student Assistant
