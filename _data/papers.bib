@@ -1,9 +1,22 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
 @string{IROS = {IEEE/RSJ international conference on intelligent robots and systems (IROS)}}
+@string{ICRA = {IEEE International Conference on Robotics and Automation (ICRA)}}
 @string{AuRo = {Autonomous Robots (AuRo)}}
+@string{TRO = {IEEE Transactions on Robotics (T-RO)}}
+@string{preprint = {Under Review}}
+
+@article{derajic2024safesets,
+  title={Learning Approximated Maximal Safe Sets via Hypernetworks for MPC-Based Local Motion Planning},
+  author={Bojan Derajić and
+          Mohamed-Khalil Bouzidi and 
+          Sebastian Bernhard and
+          Wolfgang Hönig},
+  journal=preprint,
+  arxiv={2410.20267},
+  year={2024}
+}
 
 @article{vonprittwitz2024diffquad,
   title={Automatic Gain Tuning for Multirotors Using Differentiable Optimization},
@@ -22,8 +35,9 @@
   author={Christian Henkel and
           Marc Toussaint and 
           Wolfgang Hönig},
-  journal={Accepted at IROS},
-  pdf={assets/pdf/henkel2024gsrm.pdf},
+  journal=IROS,
+  arxiv={2410.11024},
+  doi={10.1109/IROS58592.2024.10801293},
   year={2024}
 }
 
@@ -34,8 +48,9 @@
           Valentin N. Hartmann
           Marc Toussaint and
           Ludovic Righetti},
-  journal={arXiv (Accepted at IROS)},
+  journal=IROS,
   arxiv={2403.10745},
+  doi={10.1109/IROS58592.2024.10802168},
   code={https://github.com/quimortiz/dynoplan},
   video={https://youtu.be/3ToQU-qLWg0},
   year={2024},
@@ -48,8 +63,9 @@
           Joaquim Ortiz-Haro and 
           Marc Toussaint and
           Wolfgang Hönig},
-  journal={Accepted at ICRA},
+  journal=ICRA,
   arxiv={2309.16445},
+  doi={10.1109/ICRA57147.2024.10610999},
   code={https://github.com/IMRCLab/db-CBS},
   video={https://youtu.be/1mglNQOmOLE},
   year={2024}
@@ -62,8 +78,9 @@
           Valentin N. Hartmann and
           Erez Karpas and
           Wolfgang Hönig},
-  journal={Accepted at ICRA},
+  journal=ICRA,
   webpage={https://www.user.tu-berlin.de/mtoussai/24-CompletionTrees/},
+  doi={10.1109/ICRA57147.2024.10611722},
   year={2024}
 }
 
@@ -116,12 +133,13 @@
         Wolfgang Hönig and
         Valentin N. Hartmann and
         Marc Toussaint},
-  journal={arXiv (Submitted to IEEE T-RO)},
+  journal=TRO,
   code={https://github.com/quimortiz/dynoplan},
   video={https://youtu.be/GoznOEWbUb8},
   webpage={https://quimortiz.github.io/idbastar},
+  doi={10.1109/TRO.2024.3502505},
   arxiv={2311.03553},
-  year={2023}
+  year={2024}
 }
 
 @article{dimmig2023survey,
@@ -145,12 +163,13 @@
           Joaquim Ortiz-Haro and 
           Marc Toussaint and
           Wolfgang Hönig},
-  journal={arXiv (Accepted at IROS)},
+  journal=IROS,
   arxiv={2310.03394},
   code={https://github.com/IMRCLab/coltrans-planning},
   video={https://youtu.be/hjHR-yy6_kg},
   year={2024},
-  webpage={https://imrclab.github.io/coltrans-planning/}
+  webpage={https://imrclab.github.io/coltrans-planning/},
+  doi={10.1109/IROS58592.2024.10802794},
 }
 
 @article{senbaslar2023mrnav,
