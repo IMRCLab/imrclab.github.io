@@ -29,11 +29,10 @@ team:
     start: 01/2022
 
   - name: Pia Hanfeld
-    role: External PhD student (CASUS)
+    role: PhD student MLSec (co-advised with <a href="https://www.mlsec.org/team/rieck/index.html">Konrad Rieck</a>)
     email: p.hanfeld (at) hzdr (dot) de
-    website: https://www.casus.science/team-members/pia-hanfeld/
     github: phanfeld
-    affiliation: CASUS, TU Berlin
+    affiliation: TU Berlin, BIFOLD
     image: pia_hanfeld.jpg
     start: 04/2022
 
@@ -163,6 +162,7 @@ team:
     github: polyblank-5
     image: jan_achermann.jpg
     start: 06/2024
+    end: 02/2025
 
   - name: Julius Franke
     role: MS Thesis (Computational Engineering Science)
@@ -193,6 +193,7 @@ team:
     github: leonthorm
     image: leon_thormeyer.jpg
     start: 08/2024
+    end: 02/2025
 
   - name: Achim von Prittwitz
     role: Student Assistant
@@ -200,6 +201,7 @@ team:
     github: achimvp
     image: achim_von_prittwitz.jpg
     start: 08/2024
+    end: 02/2025
 
   - name: Christoph Scherer
     role: MS Thesis (Computational Engineering Science)
@@ -243,3 +245,19 @@ team:
     github: den-schmidt
     image: dennis_schmidt.jpg
     start: 12/2022 - 05/2024, 11/2024
+
+  - name: Omar Elsayed
+    role: PhD student
+    email: o (dot) elsayed (at) tu-berlin (dot) de
+    github: OmarMElsayed
+    affiliation: TU Berlin
+    image: omar_elsayed.jpg
+    start: 02/2025
+
+  - name: Christoph Scherer
+    role: PhD student
+    email: c (dot) scherer (at) tu-berlin (dot) de
+    github: c-scherer
+    affiliation: TU Berlin
+    image: christoph_scherer.jpg
+    start: 02/2025
