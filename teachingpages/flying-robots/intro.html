@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Wolfgang Hönig">
+  <meta name="dcterms.date" content="2024-10-18">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">Intro</p>
+  <p class="author">Wolfgang Hönig</p>
+  <p class="date">October 18, 2024</p>
+</section>
+
+<section>
+<section id="introductions" class="title-slide slide level1">
+<h1>Introductions</h1>
+
+</section>
+<section id="about-me" class="slide level2">
+<h2>About Me</h2>
+</section>
+<section id="about-you" class="slide level2">
+<h2>About You</h2>
+<ul>
+<li>Interactive introduction next week</li>
+</ul>
+</section></section>
+<section>
+<section id="class-format" class="title-slide slide level1">
+<h1>Class Format</h1>
+
+</section>
+<section id="goals" class="slide level2">
+<h2>Goals</h2>
+<ol type="1">
+<li>Learn to transition from <em>math</em>/theory to a working
+(compute-constrained) <em>physical robot</em></li>
+<li>Understand the classic <em>robotics pipeline</em> on a concrete
+example
+<ul>
+<li>physics/simulation, controls, state estimation, planning</li>
+<li>Missing: perception</li>
+</ul></li>
+<li>Learn about flying robots (mostly <em>multirotors</em>, focused on
+algorithms)</li>
+</ol>
+</section>
+<section id="non-goals" class="slide level2">
+<h2>Non-Goals</h2>
+<ul>
+<li>Learning details about aerodynamics or flight dynamics</li>
+<li>Mechanical/electrical challenges when building flying robots</li>
+<li>Machine learning for flying robots</li>
+</ul>
+</section>
+<section id="format-learning-style" class="slide level2">
+<h2>Format / Learning Style</h2>
+<ol type="1">
+<li>Lectures on Foundations (<span class="math inline">\(\approx
+4\)</span>)
+<ul>
+<li>Dynamics/Physics/Simulation</li>
+<li>Controller</li>
+<li>State Estimation</li>
+<li>Motion Planning</li>
+</ul></li>
+<li>Programming in <em>Rust</em> (4 assignments)
+<ul>
+<li>Simulation</li>
+<li>Validation on physical robots (or with real data)</li>
+<li>Individual work (no teams)</li>
+</ul></li>
+<li>Seminar-style discussion</li>
+</ol>
+</section>
+<section id="robots" class="slide level2">
+<h2>Robots</h2>
+<div class="container">
+<div class="col">
+<p>Bitcraze <em>Crazyflie 2.1</em></p>
+<ul>
+<li>Commercial, off-the-shelf (270 EUR)</li>
+<li>Sensors:
+<ul>
+<li>Inertial Measurement Unit (IMU)</li>
+</ul></li>
+<li>Actuators:
+<ul>
+<li>4 brushed motors with propellers</li>
+</ul></li>
+<li>Compute:
+<ul>
+<li>Flight control: STM32 microcontroller (ARM Cortex-M4, 168 MHz, 192
+kb RAM, 1 MB flash)</li>
+<li>Communication: nRF51 (ARM Cortex-M0, 32 MHz, 16 kB RAM)</li>
+</ul></li>
+<li>Size: ca. 9cm rotor-to-rotor</li>
+<li>Weight: ca. 27g</li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/crazyflie.webp" /></p>
+</div>
+</div>
+</section>
+<section id="flight-space" class="slide level2">
+<h2>Flight Space</h2>
+<div class="container">
+<div class="col">
+<p><em>MAR 4.014</em></p>
+<ul>
+<li>7 x 4 x 2.75 m</li>
+<li>with safety nets and padding</li>
+<li>external tracking systems for ground truth
+<ul>
+<li>Optitrack motion capture</li>
+<li>LightHouse</li>
+</ul></li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/flightspace2.jpg" /></p>
+</div>
+</div>
+</section>
+<section id="time-commitment" class="slide level2">
+<h2>Time Commitment</h2>
+<p><em>9 ECTS</em> (270h):</p>
+<ul>
+<li><p>Lecture: <span class="math inline">\(5 \cdot 1.5 =
+8h\)</span></p></li>
+<li><p>Discussion <span class="math inline">\(15 \cdot 1.5 =
+23h\)</span></p></li>
+<li><p>230h <em>programming</em>, <em>testing</em>
+(i.e. <em>15h/week</em>)</p></li>
+<li><p>Lectures/Discussions on Friday (10am-2pm; with breaks; MAR
+4.062)</p></li>
+<li><p>Time slots for practical part throughout the week (MAR
+4.014)</p></li>
+</ul>
+</section>
+<section id="grading" class="slide level2">
+<h2>Grading</h2>
+<ul>
+<li>Portfolio: 4 assignments (20 points each) + oral exam (15min; 20
+points)</li>
+<li>Assignment deliverables: code (for simulation and real flights),
+flight demo (for 3 out of the 4), verbal discussion (10min)</li>
+<li>Grading scale: See MOSES</li>
+</ul>
+</section>
+<section id="schedule-1" class="slide level2">
+<h2>Schedule (1)</h2>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Topic</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 (Oct 18)</td>
+<td>Intro, Rust, Dynamics (1D + 2D)</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dynamics 3D</td>
+<td>Assignment 1 out</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Discussion</td>
+<td>Enrollment due</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Discussion</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Grading Assignment 1</td>
+<td>Grade Assignment 1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Geometric Controller (1D, 2D, 3D)</td>
+<td>Assignment 2 out</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Discussion</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Presentation of simulation results</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="schedule-2" class="slide level2">
+<h2>Schedule (2)</h2>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Topic</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>Flight tests</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Flight tests</td>
+<td>Grade Assignment 2</td>
+</tr>
+<tr>
+<td></td>
+<td>(holiday)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>(holiday)</td>
+<td></td>
+</tr>
+<tr>
+<td>11 (Jan 10)</td>
+<td>EKF</td>
+<td>Assignment 3 out</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Discussion</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Flight tests</td>
+<td>Grade Assignment 3</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Motion Planning</td>
+<td>Assignment 4 out</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Discussion</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Flight tests</td>
+<td>Grade Assignment 4</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="related-classes-tub" class="slide level2">
+<h2>Related Classes (TUB)</h2>
+<ul>
+<li>Robotics: Fundamentals, Robotics have a practical parts (ground
+robots and manipulators)</li>
+<li>Robotics Project, Event-based Robot Vision: Project, Learning and
+Intelligent Systems: Project often have practical parts</li>
+</ul>
+<div class="box-ex">
+<p>We focus on <em>compute-constrained</em> systems and use
+<em>Rust</em>.</p>
+</div>
+<div class="box-red">
+<p>It’s a regular class, not a project, with emphasis on the practical
+part.</p>
+</div>
+</section>
+<section id="related-material" class="slide level2">
+<h2>Related Material</h2>
+<ul>
+<li>Handbook of Robotics, Chapter 26 “Flying Robots”
+<ul>
+<li>More concerned with the mechanics than the algorithms</li>
+</ul></li>
+<li>Robotics: Aerial Robotics on Coursera
+<ul>
+<li>Only MATLAB simulations</li>
+</ul></li>
+<li>Underactuated Robotics by Russ Tedrake
+<ul>
+<li>Very mathy cross-section of robotics; simulation only</li>
+</ul></li>
+</ul>
+</section>
+<section id="prerequisites" class="slide level2">
+<h2>Prerequisites</h2>
+<ol type="1">
+<li>Background in robotics (e.g., Robotics course by Oliver Brock)</li>
+<li>Strong programming skills in a low-level language (e.g., C) and a
+high-level language (e.g., Python)</li>
+</ol>
+</section>
+<section id="enrollment-procedure" class="slide level2">
+<h2>Enrollment Procedure</h2>
+<div class="box-red">
+<p>Due to the flight tests, the class is limited to 10 students.</p>
+</div>
+<p>If you are still interested in taking the class:</p>
+<ol type="1">
+<li>Fill out the form of interest on ISIS by Oct. 20
+<ul>
+<li>course allocation, relevant courses/background, notes</li>
+</ul></li>
+<li>We let you know by Oct. 21 if we offer you a spot (via E-Mail)
+<ul>
+<li>Mostly random assignment after following the ranking by AlgStuPO
+§48</li>
+</ul></li>
+<li>Officially enroll on MOSES by Nov 1</li>
+</ol>
+<p>No waiting list.</p>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
