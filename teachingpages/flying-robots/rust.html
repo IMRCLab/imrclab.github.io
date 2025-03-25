@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Wolfgang Hönig">
+  <meta name="dcterms.date" content="2024-10-18">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">Programming for Robots: Software-in-the-Loop
+(SITL), Rust</p>
+  <p class="author">Wolfgang Hönig</p>
+  <p class="date">October 18, 2024</p>
+</section>
+
+<section>
+<section id="software-in-the-loop-sitl-or-sil"
+class="title-slide slide level1">
+<h1>Software-in-the-loop (SITL or SIL)</h1>
+
+</section>
+<section id="concept" class="slide level2">
+<h2>Concept</h2>
+<p><em>Software-in-the-loop</em>: Execute at least some part of the
+software <em>that would run</em> on the robot for simulation or
+validation.</p>
+<p><em>Hardware-in-the-loop</em>: Execute at least some part of the
+software <em>on the robot</em> for simulation or validation.</p>
+</section>
+<section id="typical-example-px4" class="slide level2">
+<h2>Typical Example: PX4</h2>
+<ul>
+<li><a href="https://docs.px4.io/main/en/">PX4</a> is a software stack
+for Pixhawk flight controllers</li>
+<li>PX4 uses <a href="https://nuttx.apache.org/">NuttX</a> as embbedded
+real-time operating system (Posix)</li>
+<li>The Posix standard allows to compile parts of the firmware on linux
+as executables</li>
+<li>Used for simulation (PX4 has state estimators and controllers)</li>
+</ul>
+<p><a href="https://docs.px4.io/main/en/simulation/">Details</a></p>
+</section>
+<section id="typical-example-crazyflie" class="slide level2">
+<h2>Typical Example: Crazyflie</h2>
+<ul>
+<li>Crazyflie uses <a href="https://www.freertos.org/">FreeRTOS</a>, not
+Posix-compliant</li>
+<li>Parts of the firmware can be compiled as library, with Python
+bindings</li>
+<li>Testing/simulation can be done using Python</li>
+</ul>
+<div class="fragment">
+<div class="box-ex">
+<p>Useful principle outside SIL: High-speed implementation in C/C++ and
+ease-of-use through Python bindings is typical for modern projects
+(e.g., PyTorch, numpy).</p>
+</div>
+</div>
+</section>
+<section id="advantages-disadvantages" class="slide level2">
+<h2>Advantages / Disadvantages</h2>
+<div class="box-ex">
+<ul>
+<li>Simulation-driven development</li>
+<li>Much easier debugging / logging</li>
+<li>Can test implementations that would be too inefficient on the real
+hardware</li>
+<li>Code tends to be cleaner (HAL abstraction)</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="box-red">
+<ul>
+<li>Timing (or other hardware-related) issues cannot be found</li>
+<li>Workflow overhead (especially for mix of programming languages)</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="programming-language-rust"
+class="title-slide slide level1">
+<h1>Programming Language Rust</h1>
+
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li>2006: Toy project at Mozilla research</li>
+<li>2009: Official work at Mozilla (10 engineers)</li>
+<li>2015: first stable release</li>
+<li>2021: Rust foundation formed (AWS, Huawei, Google, Microsoft, and
+Mozilla)</li>
+</ul>
+</section>
+<section id="current-usage-according-to-github-2023"
+class="slide level2">
+<h2>Current Usage (According to Github 2023)</h2>
+<p><img
+data-src="media/github-top-programming-languages-by-usage.webp" /></p>
+</section>
+<section id="current-usage-according-to-github-2023-1"
+class="slide level2">
+<h2>Current Usage (According to Github 2023)</h2>
+<p><img
+data-src="media/github-top-languages-by-percentage-growth.webp" /></p>
+</section>
+<section id="current-usage-according-to-stack-overflow-2024"
+class="slide level2">
+<h2>Current Usage (According to Stack Overflow 2024)</h2>
+<!-- ```{=html}
+<iframe width="1600" height="500" src="https://survey.stackoverflow.co/2024/technology#most-popular-technologies-language" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+``` -->
+<p><img data-src="media/stackoverflow-lang-use.png"
+style="width:70.0%" /></p>
+<p><a
+href="https://survey.stackoverflow.co/2024/technology#most-popular-technologies-language">Source</a></p>
+</section>
+<section id="current-admiration-according-to-stack-overflow-2024"
+class="slide level2">
+<h2>Current Admiration (According to Stack Overflow 2024)</h2>
+<!-- ```{=html}
+<iframe width="1600" height="500" src="https://survey.stackoverflow.co/2024/technology#admired-and-desired-language-desire-admire" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+``` -->
+<p><img data-src="media/stackoverflow-admired-desired.png" /></p>
+<p><a
+href="https://survey.stackoverflow.co/2024/technology#admired-and-desired-language-desire-admire">Source</a>,
+Blue=Admired, Red=Desired</p>
+</section>
+<section id="use-cases" class="slide level2">
+<h2>Use Cases</h2>
+<p><em>Professional Usage</em></p>
+<ul>
+<li>Firefox Browser</li>
+<li>Datacenter backend (Cisco, AWS)</li>
+<li>Linux drivers (since 2023)</li>
+<li>Rust Case Study <span class="citation"
+data-cites="DBLP:conf/soups/FultonCV0M21">(Fulton et al.
+2021)</span></li>
+</ul>
+<p><em>Academia</em></p>
+<ul>
+<li>Why Scientists Are Turning to Rust <span class="citation"
+data-cites="2020-perkel-WhyScientistsAre">(Perkel 2020)</span></li>
+</ul>
+</section>
+<section id="core-concepts" class="slide level2">
+<h2>Core Concepts</h2>
+<ul>
+<li>Syntax similar to C/C++</li>
+<li>Compiled, strongly typed</li>
+<li>No garbage collection
+<ul>
+<li>Compile-time checks for memory safety (<em>Borrow-checker</em>)</li>
+</ul></li>
+<li>Integrated build system and package manager</li>
+</ul>
+</section>
+<section id="learning-resources" class="slide level2">
+<h2>Learning Resources</h2>
+<ul>
+<li><a
+href="https://www.rust-lang.org/learn">https://www.rust-lang.org/learn</a></li>
+</ul>
+<div class="box-ex">
+<p>I used <a href="https://doc.rust-lang.org/book/">the book</a>.</p>
+</div>
+</section>
+<section id="comparison-to-other-languages" class="slide level2">
+<h2>Comparison to Other Languages</h2>
+<ul>
+<li>Python
+<ul>
+<li>Compiled (instead of interpreted), strongly typed (rather than
+scripting language), harder to use, fewer packages/libraries</li>
+</ul></li>
+<li>C
+<ul>
+<li>More features (some of which are not embedded friendly), memory
+safety guarantees</li>
+</ul></li>
+<li>C++
+<ul>
+<li>better module system (integrated package manager), fewer features,
+fewer packages/libraries</li>
+</ul></li>
+</ul>
+<p>Interoperability (e.g., calling Rust from C/C++ and vice versa)
+possible</p>
+</section>
+<section id="why-rust-in-this-course" class="slide level2">
+<h2>Why Rust in this Course?</h2>
+<div class="box-ex">
+<ul>
+<li>Robots are safety-critical and should use a (memory-)safe
+language.</li>
+<li>US government does not recommend using C/C++ for new projects.<span
+class="citation" data-cites="2024-oncd-report">(House 2024)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>For SITL, we can use a single language (no prototype in Python)</li>
+<li>Very difficult to peer review C++ code (memory issues hard to
+spot)</li>
+<li>Students know Python well, but C(++) poorly
+<ul>
+<li>Experiment: can Rust replace the typical C++/Python combination in
+research?</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="simulating-physics" class="title-slide slide level1">
+<h1>Simulating Physics</h1>
+
+</section>
+<section id="a-typical-simulator" class="slide level2">
+<h2>A Typical Simulator</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> initial_state()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>delta_t <span class="op">=</span> <span class="fl">0.01</span> <span class="co"># some timestep</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> KeepRunning:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> computeObservation(x) <span class="co"># state estimation</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> robotBehavior(y, ...) <span class="co"># control / planning</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> integrateDynamics(x, u, delta_t) <span class="co"># dynamics</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> t <span class="op">+</span> delta_t</span></code></pre></div>
+<ul>
+<li>In the simplest case we have
+<ul>
+<li><code>computeObservation(x)=x</code></li>
+<li><code>robotBehavior(...)=fixed value</code></li>
+</ul></li>
+<li><code>integrateDynamics(x, u, delta_t)</code> initial value problem
+(ODE solver!)</li>
+</ul>
+</section>
+<section id="euler-integration" class="slide level2">
+<h2>Euler Integration</h2>
+<p><span class="math display">\[
+\mathbf{x}_{t+\Delta t} = \mathbf{x}_t + f(\mathbf{x}_t, \mathbf{u}_t)
+\cdot \Delta t
+\]</span></p>
+<div class="fragment">
+<div class="box-ex">
+<ul>
+<li>Simple</li>
+<li>efficient</li>
+</ul>
+</div>
+<div class="box-red">
+<ul>
+<li>Inaccurate for large <span class="math inline">\(\Delta
+t\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="classic-rungekutta-method-rk4" class="slide level2">
+<h2>Classic Runge–Kutta Method (RK4)</h2>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{x}_{t+\Delta t} &amp;= \mathbf{x}_t + \frac{\Delta t}{6} (k_1 +
+2 k_2 + 2 k_3 + k_4)\\
+k_1 &amp;= f(\mathbf{x}_t, \mathbf{u}_t)\\
+k_2 &amp;= f(\mathbf{x}_t + \Delta t \frac{k_1}{2}, \mathbf{u}_t)\\
+k_3 &amp;= f(\mathbf{x}_t + \Delta t \frac{k_2}{2}, \mathbf{u}_t)\\
+k_4 &amp;= f(\mathbf{x}_t + \Delta t k_3, \mathbf{u}_t)
+\end{align}
+\]</span></p>
+<div class="box-ex">
+<p>More function evaluations of <span class="math inline">\(f\)</span>
+needed</p>
+</div>
+<div class="box-red">
+<p>More accurate (allows larger <span class="math inline">\(\Delta
+t\)</span>)</p>
+</div>
+</section></section>
+<section>
+<section id="building-a-1d-multirotor-simulator"
+class="title-slide slide level1">
+<h1>Building a 1D Multirotor Simulator</h1>
+
+</section>
+<section id="setting-up-rust" class="slide level2">
+<h2>Setting Up Rust</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--proto</span> <span class="st">&#39;=https&#39;</span> <span class="at">--tlsv1.2</span> <span class="at">-sSf</span> https://sh.rustup.rs <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> update</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> new lecture1a</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lecture1a</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> run</span></code></pre></div>
+</section>
+<section id="physics" class="slide level2">
+<h2>Physics</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Multirotor1dState <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    z<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    z_dot<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Multirotor1dAction <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    f1<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> Multirotor1d <span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    mass<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    g<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    dt<span class="op">:</span> <span class="dt">f32</span><span class="op">,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    x<span class="op">:</span> Multirotor1dState<span class="op">,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">impl</span> Multirotor1d <span class="op">{</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">fn</span> step(<span class="op">&amp;</span><span class="kw">mut</span> <span class="kw">self</span><span class="op">,</span> action<span class="op">:</span> Multirotor1dAction) <span class="op">{</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> z_new <span class="op">=</span> <span class="kw">self</span><span class="op">.</span>x<span class="op">.</span>z <span class="op">+</span> <span class="kw">self</span><span class="op">.</span>x<span class="op">.</span>z_dot <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>dt<span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> z_dot_new <span class="op">=</span> <span class="kw">self</span><span class="op">.</span>x<span class="op">.</span>z_dot <span class="op">+</span> ((action<span class="op">.</span>f1 <span class="op">/</span> <span class="kw">self</span><span class="op">.</span>mass) <span class="op">-</span> <span class="kw">self</span><span class="op">.</span>g) <span class="op">*</span> <span class="kw">self</span><span class="op">.</span>dt<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">self</span><span class="op">.</span>x<span class="op">.</span>z <span class="op">=</span> z_new<span class="op">;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">self</span><span class="op">.</span>x<span class="op">.</span>z_dot <span class="op">=</span> z_dot_new<span class="op">;</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="physics-demo" class="slide level2">
+<h2>Physics Demo</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> <span class="kw">mut</span> robot <span class="op">=</span> Multirotor1d <span class="op">{</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        mass<span class="op">:</span> <span class="dv">0.1</span><span class="op">,</span> g<span class="op">:</span> <span class="dv">9.81</span><span class="op">,</span> dt<span class="op">:</span> <span class="dv">0.1</span><span class="op">,</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        x<span class="op">:</span> Multirotor1dState <span class="op">{</span> z<span class="op">:</span> <span class="dv">0.0</span><span class="op">,</span> z_dot<span class="op">:</span> <span class="dv">0.0</span> <span class="op">}</span> <span class="op">};</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span><span class="op">,</span> robot)<span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="dv">1</span><span class="op">..</span><span class="dv">100</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        robot<span class="op">.</span>step(Multirotor1dAction <span class="op">{</span> f1<span class="op">:</span> <span class="dv">1.0</span> <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="pp">println!</span>(<span class="st">&quot;{:?}&quot;</span><span class="op">,</span> robot<span class="op">.</span>x)<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>(Demo the code)</p>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<p><em>Meshcat</em></p>
+<ul>
+<li><a href="https://github.com/meshcat-dev/meshcat">Server</a> runs in
+the browser (using three.js)</li>
+<li>Client available for <a
+href="https://github.com/meshcat-dev/meshcat-python">Python</a>, C++ (as
+part of <a href="https://drake.mit.edu/">Drake</a>), and <a
+href="https://crates.io/crates/meshcat">Rust</a></li>
+</ul>
+<p>(Small demo of meshcat Rust)</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install meshcat</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">meshcat-server</span> <span class="at">--open</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> new lecture1b</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> lecture1b</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> add meshcat</span></code></pre></div>
+</section>
+<section id="d-multirotor-demo" class="slide level2">
+<h2>1D Multirotor Demo</h2>
+<p>(Demo the provided example code)</p>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="learned-today" class="slide level2">
+<h2>Learned Today</h2>
+<ol type="1">
+<li>Types and use cases of flying robots</li>
+<li>Dynamics of multirotors (1D and 2D)</li>
+<li>How to build a simple simulator in Rust</li>
+</ol>
+<div class="box-red">
+<div class="box-red-title">
+<p>Assignment 0: Build a 2D Multirotor Simulator</p>
+</div>
+<ul>
+<li>Good way to learn Rust and see if you like the course.</li>
+<li>Next week
+<ul>
+<li>Discussion/presentation of your solutions</li>
+<li>Full 3D Multirotor dynamics and assignment 1</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-DBLP:conf/soups/FultonCV0M21" class="csl-entry"
+role="listitem">
+Fulton, Kelsey R., Anna Chan, Daniel Votipka, Michael Hicks, and
+Michelle L. Mazurek. 2021. <span>“Benefits and Drawbacks of Adopting a
+Secure Programming Language: Rust as a Case Study.”</span> In
+<em>Seventeenth Symposium on Usable Privacy and Security,
+<span>SOUPS</span> 2021, August 8-10, 2021</em>, edited by Sonia
+Chiasson, 597–616. <span>USENIX</span> Association. <a
+href="https://www.usenix.org/conference/soups2021/presentation/fulton">https://www.usenix.org/conference/soups2021/presentation/fulton</a>.
+</div>
+<div id="ref-2024-oncd-report" class="csl-entry" role="listitem">
+House, The White. 2024. <span>“Back to the Building Blocks: A Path
+Toward Secure and Measurable Software.”</span> <a
+href="https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf</a>.
+</div>
+<div id="ref-2020-perkel-WhyScientistsAre" class="csl-entry"
+role="listitem">
+Perkel, Jeffrey M. 2020. <span>“Why Scientists Are Turning to
+Rust.”</span> <em>Nature</em> 588 (7836): 185–86. <a
+href="https://doi.org/10.1038/d41586-020-03382-2">https://doi.org/10.1038/d41586-020-03382-2</a>.
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

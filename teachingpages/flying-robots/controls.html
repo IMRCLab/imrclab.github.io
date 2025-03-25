@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Khaled Wahba">
+  <meta name="dcterms.date" content="2024-11-22">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">Controllers</p>
+  <p class="author">Khaled Wahba</p>
+  <p class="date">November 22, 2024</p>
+</section>
+
+<section>
+<section id="assignment-1.5" class="title-slide slide level1">
+<h1>Assignment 1.5</h1>
+
+</section>
+<section id="feedback-or-questions" class="slide level2">
+<h2>Feedback or Questions</h2>
+<div class="box-red">
+<p>Any questions or issues?</p>
+</div>
+<div class="fragment">
+<div class="box-red">
+<p>More in-lab hours next week needed?</p>
+</div>
+</div>
+<div class="fragment">
+<div class="box-ex">
+<p>Role of github copilot (or similar) for development?</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="geometric-multirotor-control"
+class="title-slide slide level1">
+<h1>(Geometric) Multirotor Control</h1>
+
+</section>
+<section id="outline" class="slide level2">
+<h2>Outline</h2>
+<div>
+<ul>
+<li class="fragment"><p>Multirotor Control History</p>
+<ul>
+<li class="fragment">Challenges</li>
+</ul></li>
+<li class="fragment"><p>Geometric Control</p></li>
+<li class="fragment"><p>1D, 2D, 3D Multirotor Control</p></li>
+<li class="fragment"><p>Controller Stability<br />
+</p></li>
+</ul>
+</div>
+</section>
+<section id="multirotor-control-history" class="slide level2">
+<h2>Multirotor Control History</h2>
+<div>
+<ul>
+<li class="fragment">Near-hover linear controllers (PD, LQR) <span
+class="citation" data-cites="valenti2006indoor">(Valenti et al.
+2006)</span>,<span class="citation"
+data-cites="hoffmann2007quadrotor">(Hoffmann et al. 2007)</span></li>
+<li class="fragment">Nonlinear Controllers:
+<ul>
+<li class="fragment">Dynamic Feedback Linearization (DFL) <span
+class="citation" data-cites="mellinger2012trajectory">(Mellinger
+2012)</span></li>
+<li class="fragment">Backstepping and Sliding Mode Controllers <span
+class="citation" data-cites="bouabdallah2005backstepping">(Bouabdallah
+and Siegwart 2005)</span></li>
+<li class="fragment"><em>Geometric Controllers</em> <span
+class="citation" data-cites="lee2010geometric">(Lee, Leok, and
+McClamroch 2010a)</span></li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Reinforcement Learning (<span class="math inline">\(\approx
+2018\)</span>)</li>
+<li>Model Predictive Control (<span class="math inline">\(\approx
+2020\)</span>)</li>
+</ul>
+</div>
+</section>
+<section id="lqr-example" class="slide level2">
+<h2>LQR Example</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/FaI9SMLwJDU?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/FaI9SMLwJDU">YouTube</a></p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<!-- 
+TODO KHALED: Set start/end time here!
+ -->
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/6YEMxFgToyg?autoplay=1&mute=1&start=20&end=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/6YEMxFgToyg">YouTube</a></p>
+</section>
+<section id="challenges" class="slide level2">
+<h2>Challenges</h2>
+<div class="box-red">
+<ul>
+<li>These controllers are based on Euler angles representations<br />
+(small angle assumption)</li>
+<li>They exhibit singularities in complex rotational maneuvers<br />
+</li>
+</ul>
+</div>
+</section>
+<section
+id="small-angle-assumption-for-2d-multirotor-mellinger2012trajectory"
+class="slide level2">
+<h2>Small Angle Assumption for 2D Multirotor <span class="citation"
+data-cites="mellinger2012trajectory">(Mellinger 2012)</span></h2>
+<div class="container">
+<div class="col">
+<ul>
+<li><span class="math inline">\(e_p\)</span> and <span
+class="math inline">\(e_d\)</span> are position and velocity error
+vectors</li>
+<li><span class="math inline">\(k_p, k_d, k_{\theta}, k_{\omega} &gt;
+0\)</span>, positive constant gains</li>
+</ul>
+<p><span class="math inline">\(f = \frac{m}{\cos(\theta)} + \mathbf{g} +
+k_p e_p + k_d e_d\)</span><br />
+<span class="math inline">\(\boldsymbol{\tau_z} = k_{\theta}(\theta_d -
+\theta) + k_{\omega}(\dot{\theta_d} - \dot{\theta})\)</span></p>
+</div>
+<div class="col">
+<p><img data-src="media/2dmultirotorwithCOMinp.png"
+style="width:60.0%" /></p>
+</div>
+</div>
+<div>
+<div class="box-red">
+<ul>
+<li class="fragment">if <span
+class="math inline">\(\theta=\pi/2\)</span> then <span
+class="math inline">\(f = \infty\)</span><br />
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="large-angle-assumption" class="slide level2">
+<h2>Large Angle Assumption</h2>
+<p>More details in <span class="citation"
+data-cites="mellinger2012trajectory">(Mellinger 2012)</span> to see the
+problems when using<br />
+<em>Euler angles</em> representations</p>
+</section>
+<section id="flipping-example" class="slide level2">
+<h2>Flipping Example</h2>
+<!-- 
+TODO KHALED: Set start/end time here!
+ -->
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/huiBXyx-O7Q?autoplay=1&mute=1&start=10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/huiBXyx-O7Q">YouTube</a></p>
+</section>
+<section id="geometric-control" class="slide level2">
+<h2>Geometric Control</h2>
+<div class="box-title-def">
+<p>Why “Geometric”?</p>
+</div>
+<div class="fragment">
+<div class="box-ex">
+<ul>
+<li>Control of dynamic systems:
+<ul>
+<li>evolve on nonlinear manifolds</li>
+<li>cannot be <em>globally</em> identified by Euclidean metrics<br />
+(i.e. <span class="math inline">\(SE(3)=\mathbb{R}^3 \times
+SO(3)\)</span>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Geometric control adopt the geometric properties of the manifolds
+and provide insights to control theory</li>
+<li>already been done for <em>fully actuated</em> rigid bodies <span
+class="citation" data-cites="bullo2019geometric">(Bullo and Lewis
+2019)</span></li>
+</ul>
+</div>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="box-ex">
+<p>recall: quadrotors are underactuated systems!</p>
+</div>
+</section>
+<section id="controllers" class="slide level2">
+<h2>Controllers</h2>
+</section>
+<section id="d-multirotor" class="slide level2">
+<h2>1D Multirotor</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>State: <span class="math inline">\(\mathbf{x} = (z, \dot z)^\top \in
+\mathbb R^2\)</span>
+<ul>
+<li>Height <span class="math inline">\(z\)</span> [m]</li>
+<li>Vertical velocity <span class="math inline">\(\dot z\)</span>
+[m/s]</li>
+</ul></li>
+<li>Action: <span class="math inline">\(\mathbf{u} = (f_1) \in \mathbb
+R\)</span>
+<ul>
+<li>Upward thrust <span class="math inline">\(f_1\)</span> [N]</li>
+</ul></li>
+<li>Parameters
+<ul>
+<li>Mass <span class="math inline">\(m\)</span> [kg], Gravity <span
+class="math inline">\(g\)</span> [<span
+class="math inline">\(m/s^2\)</span>]</li>
+</ul></li>
+<li>Dynamics: <span class="math display">\[
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix} \dot z\\
+\frac{f_1}{m} - g \end{pmatrix}
+\end{align}
+\]</span></li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/multirotor1d.svg" /></p>
+</div>
+</div>
+</section>
+<section id="d-multirotor-controller" class="slide level2">
+<h2>1D Multirotor Controller</h2>
+<ul>
+<li>Reference trajectory tuple: <span class="math inline">\((\ddot{z}_d,
+\dot{z}_d, z_d)\)</span></li>
+<li>Position and velocity errors</li>
+</ul>
+<p><span class="math inline">\(e_p = z_d - z\)</span>, <span
+class="math inline">\(e_d = \dot{z}_d - \dot{z}\)</span></p>
+<ul>
+<li>PD controller + gravity compensation</li>
+</ul>
+<div class="box-ex">
+<p><span class="math inline">\(f_1 = m(\ddot{z}_d + k_pe_p + k_de_d +
+g)\)</span>, <span class="math inline">\(\quad\forall k_p, k_d &gt;
+0\)</span></p>
+</div>
+</section>
+<section id="d3d-multirotor-dynamics" class="slide level2">
+<h2>2D/3D Multirotor Dynamics</h2>
+<ul>
+<li>Dynamics: <span class="math display">\[
+\begin{align}
+  &amp;\dot{\mathbf{p}} = \mathbf{v}, &amp;&amp; m\mathbf{\dot{v}} =
+m\mathbf{g} + \mathbf{R}\mathbf{f}_u,\\
+  &amp;\dot{\mathbf{R}} = \mathbf{R}\boldsymbol{\hat{\omega}},
+&amp;&amp;
+  \mathbf{J}\dot{\boldsymbol{\omega}} =
+\mathbf{J}\boldsymbol{\omega}\times \boldsymbol{\omega} +
+\boldsymbol{\tau}_u,
+\end{align}
+\]</span></li>
+</ul>
+<div class="container">
+<div class="col">
+<p><img data-src="media/2dmultirotorwithCOMinp.png"
+style="width:80.0%" /></p>
+</div>
+<div class="col">
+<p><img data-src="media/cf2_props_dark.png" style="width:70.0%" /></p>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="container">
+<div class="col">
+<div class="box">
+<div class="box-title">
+<p>2D Multirotor</p>
+</div>
+<ul>
+<li><span class="math inline">\(\mathbf{p} \in \mathbb
+R^{2}\)</span></li>
+<li><span class="math inline">\(\mathbf{R} \in SO(2)\)</span>, <span
+class="math inline">\(\hat{\boldsymbol{\cdot}}:\)</span> <span
+class="math inline">\(\mathbb R^2 \rightarrow SO(2)\)</span></li>
+<li>Angular velocity <span class="math inline">\(w \in \mathbb
+R^{1}\)</span></li>
+<li><span class="math inline">\(\mathbf{u} = (f_1, f_2) \in \mathbb
+R^2\)</span></li>
+<li><span class="math inline">\(f_u = [0,f]^T\)</span></li>
+<li><span class="math inline">\(\tau_u \in \mathbb R^1\)</span></li>
+</ul>
+</div>
+</div>
+<div class="col">
+<div class="box">
+<div class="box-title">
+<p>3D Multirotor</p>
+</div>
+<ul>
+<li><span class="math inline">\(\mathbf{p} \in \mathbb
+R^{3}\)</span></li>
+<li><span class="math inline">\(\mathbf{R} \in SO(3)\)</span>, <span
+class="math inline">\(\hat{\boldsymbol{\cdot}}:\)</span> <span
+class="math inline">\(\mathbb R^3 \rightarrow SO(3)\)</span></li>
+<li>Angular velocity <span class="math inline">\(w \in \mathbb
+R^{3}\)</span></li>
+<li><span class="math inline">\(\mathbf{u} = (f_1, f_2, f_3, f_4) \in
+\mathbb R^4\)</span></li>
+<li><span class="math inline">\(f_u = [0,0,f]^T\)</span></li>
+<li><span class="math inline">\(\tau_u \in \mathbb R^3\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="d3d-multirotor-controller-lee2010geometric"
+class="slide level2">
+<h2>2D/3D Multirotor Controller <span class="citation"
+data-cites="lee2010geometric">(Lee, Leok, and McClamroch
+2010a)</span></h2>
+<p><img data-src="media/control_loops.png" style="width:100.0%" />
+Control Structure</p>
+</section>
+<section id="trajectory-tracking-controller" class="slide level2">
+<h2>Trajectory Tracking Controller</h2>
+<ul>
+<li>Reference trajectory tuple: <span
+class="math inline">\(\mathbf{r}_d  = (\dddot{\mathbf{p}}_d(t),
+\ddot{\mathbf{p}}_d(t), \dot{\mathbf{p}}_d(t),
+\mathbf{p}_d(t))\)</span></li>
+<li>Position and velocity errors <span
+class="math inline">\(\mathbf{e}_p = \mathbf{p}_d - \mathbf{p}\)</span>,
+<span class="math inline">\(\mathbf{e}_d = \dot{\mathbf{p}}_d -
+\dot{\mathbf{p}}\)</span></li>
+<li>Trajectory tracking controller: PD + gravity compensation</li>
+</ul>
+<p><span class="math inline">\(\mathbf{F}_d = m(\ddot{\mathbf{p}}_d +
+\mathbf{K}_p \mathbf{e}_p + \mathbf{K}_v \mathbf{e}_v +
+\mathbf{g})\)</span></p>
+<p><span class="math inline">\(f =  \mathbf{F}_d \cdot
+\mathbf{R}e_3\)</span></p>
+<p>where <span class="math inline">\(\mathbf{K}_p, \mathbf{K}_v \in
+\mathbb R^{3\times 3}\)</span> are positive definite diagonal gain
+matrices</p>
+</section>
+<section id="attitude-tracking-controller" class="slide level2">
+<h2>Attitude Tracking Controller</h2>
+<div class="box-ex">
+<p>We need to define a desired rotation <span
+class="math inline">\(\mathbf{R}_d\)</span> that<br />
+can align <span class="math inline">\(z_b\)</span> with <span
+class="math inline">\(\mathbf{F}_d\)</span><br />
+<span class="math inline">\(\mathbf{R}_d = [x_{b_d}\quad y_{b_d}\quad
+z_{b_d}]\)</span></p>
+</div>
+<p><img data-src="media/Rd.png" style="width:50.0%" /></p>
+</section>
+<section id="attitude-tracking-controller-1" class="slide level2">
+<h2>Attitude Tracking Controller</h2>
+<ul>
+<li><p>Define <span class="math inline">\(\mathbf{x}_{b_d} = [\cos(\psi)
+\quad \sin(\psi) \quad 0]^T\)</span> (e.g., <span
+class="math inline">\(\psi = 0\)</span>)</p></li>
+<li><p><span class="math inline">\(\mathbf{z}_{b_d} =
+\text{normalize}(\mathbf{F}_d)\)</span><br />
+</p></li>
+<li><p><span class="math inline">\(\mathbf{y}_{b_d} =
+\frac{\mathbf{z}_{b_d} \times \mathbf{x}_{b_d}}{\|\mathbf{z}_{b_d}
+\times \mathbf{x}_{b_d}\|}\)</span></p></li>
+</ul>
+<div class="box-ex">
+<p><span class="math inline">\(\mathbf{R}_d = \begin{bmatrix}
+\mathbf{y}_{b_d} \times \mathbf{z}_{b_d} &amp; \mathbf{y}_{b_d} &amp;
+\mathbf{z}_{b_d}  \end{bmatrix} \in SO(3)\)</span></p>
+</div>
+</section>
+<section id="attitude-tracking-controller-lee2010geometric"
+class="slide level2">
+<h2>Attitude Tracking Controller <span class="citation"
+data-cites="lee2010geometric">(Lee, Leok, and McClamroch
+2010a)</span></h2>
+<div class="box-ex">
+<p><span class="math inline">\(\mathbf{\tau}_u = -\mathbf{K}_R
+\mathbf{e}_R - \mathbf{K}_\omega \mathbf{e}_\omega + \omega \times
+\mathbf{J} \omega - \mathbf{J} (\hat{\omega} \mathbf{R}^T \mathbf{R}_d
+\omega_d - \mathbf{R}^T \mathbf{R}_d \dot{\omega}_d)\)</span></p>
+</div>
+<ul>
+<li>How to compute <span class="math inline">\(\tau_u\)</span>?</li>
+<li>Define an error metric on <span
+class="math inline">\(SO(3)\)</span></li>
+</ul>
+<p><span class="math inline">\(\Psi(\mathbf{R}, \mathbf{R}_d) =
+\frac{1}{2} \text{tr}(\mathbf{I} - \mathbf{R}^T
+\mathbf{R}_d)\)</span></p>
+<!-- $D_R \Psi(R, R_d) \cdot \hat{\eta} = -\frac{1}{2} \text{tr}[R_d^T R \hat{\eta}] = \frac{1}{2} (R^T R_d - R_d^T R)^V \cdot \eta$ 
+using  $-\frac{1}{2} \text{tr}(\hat{x} y) = x^T y$ -->
+<ul>
+<li>From this, you can derive the orientation error</li>
+</ul>
+<p><span class="math inline">\(\mathbf{e}_R = \frac{1}{2} \left(
+\mathbf{R}^T_d \mathbf{R} - \mathbf{R}^T \mathbf{R}_d
+\right)^\vee\)</span>, <span
+class="math inline">\((\cdot)^\vee\)</span>: <span
+class="math inline">\(SO(3) \rightarrow \mathbb R^3\)</span></p>
+<ul>
+<li>angular velocity error: computed from <span
+class="math inline">\(\dot{\mathbf{R}}\)</span> and <span
+class="math inline">\(\dot{\mathbf{R}}_d\)</span> (indirectly)</li>
+</ul>
+<p><span class="math inline">\(\mathbf{e}_\omega = \omega - \mathbf{R}^T
+\mathbf{R}_d \omega_d\)</span></p>
+</section>
+<section id="control-law" class="slide level2">
+<h2>Control Law</h2>
+<div>
+<div class="box-ex">
+<p><span class="math inline">\(f =  m(\ddot{\mathbf{p}}_d + \mathbf{K}_p
+\mathbf{e}_p + \mathbf{K}_v \mathbf{e}_v + \mathbf{g}) \cdot \mathbf{R}
+\mathbf{e}_3\)</span></p>
+<p><span class="math inline">\(\mathbf{\tau}_u = -\mathbf{K}_R
+\mathbf{e}_R - \mathbf{K}_\omega \mathbf{e}_\omega + \omega \times
+\mathbf{J} \omega - \mathbf{J} (\hat{\omega} \mathbf{R}^T \mathbf{R}_d
+\omega_d - \mathbf{R}^T \mathbf{R}_d \dot{\omega}_d)\)</span></p>
+</div>
+<ul>
+<li class="fragment">How to compute <span
+class="math inline">\(\omega_d\)</span> and <span
+class="math inline">\(\dot{\omega}_d\)</span>?</li>
+</ul>
+</div>
+</section>
+<section id="desired-angular-states-mellingerminimumsnaptrajectory2011"
+class="slide level2">
+<h2>Desired Angular States <span class="citation"
+data-cites="mellingerMinimumSnapTrajectory2011">(Mellinger and Kumar
+2011)</span></h2>
+<p><span class="math inline">\(\mathbf{h}_\omega = \frac{m}{f}
+(\dddot{\mathbf{p}_d} - (\mathbf{z}_{b_d} \cdot
+\dddot{\mathbf{p}_d})\mathbf{z}_{b_d})\)</span>, <span
+class="math inline">\(\quad \mathbf{e}_3 = [0,0,1]^T\)</span></p>
+<p><span class="math inline">\(\omega_{x_d} = -\mathbf{h}_\omega \cdot
+\mathbf{y}_{b_d}, \quad \omega_{y_d} = \mathbf{h}_\omega \cdot
+\mathbf{x}_{b_d}, \quad \omega_{z_d} =
+\dot{\psi}\mathbf{e}_{3}\cdot\mathbf{z}_{b_d}\)</span></p>
+<ul>
+<li>For <span class="math inline">\(\dot{\omega}_d\)</span>, compute the
+analytical <em>derivative</em> of <span
+class="math inline">\(\omega_d\)</span> w.r.t time.</li>
+<li>Will be revisited in the motion planning part</li>
+</ul>
+</section>
+<section id="controller-stability-properties" class="slide level2">
+<h2>Controller Stability Properties</h2>
+<ul>
+<li><p>Lyapunov stability analysis</p></li>
+<li><p>Proof is in the appendix <span class="citation"
+data-cites="lee2010geometric_appendix">(Lee, Leok, and McClamroch
+2010b)</span></p></li>
+<li><p>The dynamics are exponentially stable, when the initial
+conditions satisfy two conditions:</p></li>
+</ul>
+<p><span class="math inline">\(\Psi (\mathbf{R}, \mathbf{R}_d) &lt;
+2\)</span></p>
+<p><span class="math inline">\(\|\mathbf{e}_\omega\|^2 &lt;
+\frac{2}{\lambda_{\text{max}}(\mathbf J)} k_R (2 - \Psi (\mathbf{R},
+\mathbf{R}_d))\)</span>,</p>
+<ul>
+<li>where <span class="math inline">\(\lambda_{\text{max}}(\mathbf
+J)\)</span> is the maximum eigenvalue of the inertia matrix</li>
+<li><span class="math inline">\(k_R\)</span> is the minimum value in the
+<span class="math inline">\(\mathbf{K}_R\in \mathbb R^{3\times
+3}\)</span> gain diagonal matrix.</li>
+</ul>
+</section></section>
+<section>
+<section id="advanced-topics" class="title-slide slide level1">
+<h1>Advanced Topics</h1>
+
+</section>
+<section id="nonlinear-mpc" class="slide level2">
+<h2>Nonlinear MPC</h2>
+<ul>
+<li>At a fixed frequency, solve an optimal control problem</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\arg\min_{\mathbf u} \|\mathbf x_N - \mathbf x_{N_d}\| +
+\sum_{k=0}^{N-1} \left( \|\mathbf x_k - \mathbf x_{k_d}\| + \|\mathbf
+u_k - \mathbf u_{k_d}\| \right) s.t.\newline
+\mathbf x_0 = \text{current state}\\
+\mathbf x_{k+1} = \text{step}(\mathbf x_{k}, \mathbf u_{k})\\
+\text{actuation and state bounds}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>Execute first action and repeat</li>
+</ul>
+</section>
+<section id="example-foehntimeoptimalplanningquadrotor2021"
+class="slide level2">
+<h2>Example <span class="citation"
+data-cites="foehnTimeoptimalPlanningQuadrotor2021">(Foehn, Romero, and
+Scaramuzza 2021)</span></h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/ZPI8U1uSJUs?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/ZPI8U1uSJUs">YouTube</a></p>
+</section>
+<section id="rl" class="slide level2">
+<h2>RL</h2>
+<ol type="1">
+<li>Use a simulator to train a policy
+<ul>
+<li>Input: state</li>
+<li>Output: motor RPM, desired force/torque, or attitude setpoint</li>
+</ul></li>
+<li>For sim-to-real transfer use <em>domain randomization</em>
+<ul>
+<li>Sample different inertia and physical parameters</li>
+<li>Potentially add (motor) delays</li>
+</ul></li>
+</ol>
+</section>
+<section id="example-2019-molchanov-simmultirealtransfer"
+class="slide level2">
+<h2>Example <span class="citation"
+data-cites="2019-molchanov-SimMultiRealTransfer">(Molchanov et al.
+2019)</span></h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/Rkj1_gwrtAg?autoplay=1&mute=1&start=30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/Rkj1_gwrtAg">YouTube</a></p>
+</section>
+<section id="controller-comparison-suncomparativestudynonlinear"
+class="slide level2">
+<h2>Controller Comparison <span class="citation"
+data-cites="sunComparativeStudyNonlinear">(Sun et al., n.d.)</span></h2>
+<ul>
+<li>Geometric controllers and NMPC have similar performance if reference
+is valid</li>
+<li>NMPC handles invalid trajectories better</li>
+<li>For both, more advanced attitude controllers are important
+<ul>
+<li>Incremental nonlinear dynamic inversion (INDI) (uses IMU rather than
+model)</li>
+<li>QP-based control allocation</li>
+</ul></li>
+<li>RL has no (stability) guarantees, but works best in drone
+racing</li>
+</ul>
+</section>
+<section id="payload-transport" class="slide level2">
+<h2>Payload Transport</h2>
+<video data-autoplay src="media/3cfstriangle.mp4" width="80%">
+</video>
+<p>3 Crazyflies transporting a triangular payload with cables</p>
+</section>
+<section id="payload-transport-1" class="slide level2">
+<h2>Payload Transport</h2>
+<p><img data-src="media/control_pltransport.png"
+style="width:100.0%" /><br />
+<em>Hierarchical</em> control structure multiple UAVs transporting a
+payload</p>
+</section></section>
+<section>
+<section id="assignment-2" class="title-slide slide level1">
+<h1>Assignment 2</h1>
+
+</section>
+<section id="task" class="slide level2">
+<h2>Task</h2>
+<p>Implement the Lee geometric controller for the Bitcraze Crazyflie 2.1
+robot. Test and tune in your simulator (Assignment 1). Execute physical
+test flights with your controller and report the tracking errors.</p>
+</section>
+<section id="simulation" class="slide level2">
+<h2>Simulation</h2>
+<ul>
+<li>The output of the controller is essentially <span
+class="math inline">\(\eta\)</span>; avoid using PWM conversion
+altogether</li>
+<li>For working gains (and other inspiration), see the Lee controller in
+the firmware</li>
+</ul>
+<p>Testing steps:</p>
+<ol type="1">
+<li>Start with a step response (i.e., slight change in position, zero
+for derivatives)</li>
+<li>Test with a circle trajectory in the <span
+class="math inline">\(xy\)</span>-plane</li>
+<li>Add support for csv-file setpoints</li>
+<li>Tune the gains with the goal to minimize the cumulative position
+error on the figure-8 trajectory</li>
+</ol>
+</section>
+<section id="physical-flight" class="slide level2">
+<h2>Physical Flight</h2>
+<ul>
+<li>Be careful with the units - the gyro is deg/s in the firmware</li>
+</ul>
+<p>Steps:</p>
+<ol type="1">
+<li>Prepare the bindings using `bindgen’</li>
+<li>Add your controller code, make sure to switch to <code>f32</code>
+and switch from std to core</li>
+<li>Try flying with cfclient, similar to the initial demo</li>
+<li>Use the uSD-card deck to log flight data</li>
+<li>Report the cumulative position error for the figure-8 trajectory
+(you can run it via an official <a
+href="https://github.com/bitcraze/crazyflie-lib-python/blob/master/examples/autonomy/autonomous_sequence_high_level.py">example
+script</a>)</li>
+</ol>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="learned-today" class="slide level2">
+<h2>Learned Today</h2>
+<ul>
+<li>Multirotor controllers
+<ul>
+<li>Linearized controllers, geometric controllers, nonlinear MPC,
+RL</li>
+<li>Details of the state-of-the-art geometric controller</li>
+</ul></li>
+<li>Assignment 2</li>
+</ul>
+<div class="box-ex">
+<div class="box-ex-title">
+<p>Next 3.75 Weeks</p>
+</div>
+<ul>
+<li>Discussion for Assignment 2.</li>
+<li>Presentations of simulation (not graded).</li>
+<li>Discussions and flight demos (2 weeks).</li>
+</ul>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section>
+<section id="references-suggested-reading" class="slide level2">
+<h2>References / Suggested Reading</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-bouabdallah2005backstepping" class="csl-entry"
+role="listitem">
+Bouabdallah, Samir, and Roland Siegwart. 2005. <span>“Backstepping and
+Sliding-Mode Techniques Applied to an Indoor Micro Quadrotor.”</span> In
+<em>Proceedings of the 2005 IEEE International Conference on Robotics
+and Automation</em>, 2247–52. IEEE.
+</div>
+<div id="ref-bullo2019geometric" class="csl-entry" role="listitem">
+Bullo, Francesco, and Andrew D Lewis. 2019. <em>Geometric Control of
+Mechanical Systems: Modeling, Analysis, and Design for Simple Mechanical
+Control Systems</em>. Vol. 49. Springer.
+</div>
+<div id="ref-foehnTimeoptimalPlanningQuadrotor2021" class="csl-entry"
+role="listitem">
+Foehn, Philipp, Angel Romero, and Davide Scaramuzza. 2021.
+<span>“Time-Optimal Planning for Quadrotor Waypoint Flight.”</span>
+<em>Science Robotics</em> 6 (56). <a
+href="https://doi.org/10.1126/scirobotics.abh1221">https://doi.org/10.1126/scirobotics.abh1221</a>.
+</div>
+<div id="ref-hoffmann2007quadrotor" class="csl-entry" role="listitem">
+Hoffmann, Gabriel, Haomiao Huang, Steven Waslander, and Claire Tomlin.
+2007. <span>“Quadrotor Helicopter Flight Dynamics and Control: Theory
+and Experiment.”</span> In <em>AIAA Guidance, Navigation and Control
+Conference and Exhibit</em>, 6461.
+</div>
+<div id="ref-lee2010geometric" class="csl-entry" role="listitem">
+Lee, Taeyoung, Melvin Leok, and N Harris McClamroch. 2010a.
+<span>“Geometric Tracking Control of a Quadrotor UAV on SE (3).”</span>
+In <em>49th IEEE Conference on Decision and Control (CDC)</em>, 5420–25.
+IEEE.
+</div>
+<div id="ref-lee2010geometric_appendix" class="csl-entry"
+role="listitem">
+———. 2010b. <span>“Geometric Tracking Control of a Quadrotor UAV on SE
+(3).”</span> In. <a
+href="https://arxiv.org/pdf/1003.2005v1">https://arxiv.org/pdf/1003.2005v1</a>.
+</div>
+<div id="ref-mellinger2012trajectory" class="csl-entry" role="listitem">
+Mellinger, Daniel. 2012. <em>Trajectory Generation and Control for
+Quadrotors</em>. University of Pennsylvania.
+</div>
+<div id="ref-mellingerMinimumSnapTrajectory2011" class="csl-entry"
+role="listitem">
+Mellinger, Daniel, and Vijay Kumar. 2011. <span>“Minimum Snap Trajectory
+Generation and Control for Quadrotors.”</span> In <em>2011 IEEE
+International Conference on Robotics and Automation</em>, 2520–25. <a
+href="https://doi.org/10.1109/ICRA.2011.5980409">https://doi.org/10.1109/ICRA.2011.5980409</a>.
+</div>
+<div id="ref-2019-molchanov-SimMultiRealTransfer" class="csl-entry"
+role="listitem">
+Molchanov, Artem, Tao Chen, Wolfgang Hönig, James A. Preiss, Nora
+Ayanian, and Gaurav S. Sukhatme. 2019. <span>“Sim-to-(multi)-Real:
+Transfer of Low-Level Robust Control Policies to Multiple
+Quadrotors.”</span> In <em>2019 IEEE/RSJ International Conference on
+Intelligent Robots and Systems (IROS)</em>, 59–66. <a
+href="https://doi.org/10.1109/IROS40897.2019.8967695">https://doi.org/10.1109/IROS40897.2019.8967695</a>.
+</div>
+<div id="ref-sunComparativeStudyNonlinear" class="csl-entry"
+role="listitem">
+Sun, Sihao, Angel Romero, Philipp Foehn, Elia Kaufmann, and Davide
+Scaramuzza. n.d. <span>“A Comparative Study of Nonlinear MPC and
+Differential-Flatness-Based Control for Quadrotor Agile Flight.”</span>
+<a
+href="https://arxiv.org/abs/2109.01365">https://arxiv.org/abs/2109.01365</a>.
+</div>
+<div id="ref-valenti2006indoor" class="csl-entry" role="listitem">
+Valenti, Mario, Brett Bethke, Gaston Fiore, Jonathan How, and Eric
+Feron. 2006. <span>“Indoor Multi-Vehicle Flight Testbed for Fault
+Detection, Isolation, and Recovery.”</span> In <em>AIAA Guidance,
+Navigation, and Control Conference and Exhibit</em>, 6200.
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

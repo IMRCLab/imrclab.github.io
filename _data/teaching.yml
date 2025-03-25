@@ -39,6 +39,11 @@ material:
     note: |
       This class was developed by Marc Toussaint and Wolfgang Hönig and captures how learning can effectively be applied in robotics.
     website: https://www.user.tu-berlin.de/mtoussai/teaching/RobotLearning/
+  - name: "Flying Robots"
+    note: |
+      This class is largely a practical course with focus on simulation and (embedded) Rust programming.
+      The material contains the fundamental theory to build a custom flight controller: dynamics, nonlinear control, state estimation, motion planning.
+    website: teaching/flying-robots
 
 ws2024:
   - name: "Flying Robots"
