@@ -36,6 +36,21 @@ title: IMRC Teaching
 </div>
 
 <div class="section-heading">
+    <h2 class="title is-2">Summer 2025</h2>
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for course in site.data.teaching.ss2025 %}
+            {% include course.html %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+
+<div class="section-heading">
     <h2 class="title is-2">Winter 2024/25</h2>
 </div>
 
