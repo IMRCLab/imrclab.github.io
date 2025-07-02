@@ -227,6 +227,7 @@ team:
     role: MS Thesis (Industrial Engineering and Management)
     note: Decentralized Control Policy with Imitation Learning for Multiple Multirotors Transporting Cable Suspended Payloads
     start: 11/2024
+    end: 06/2025
 
   - name: Max Klemens
     role: MS Thesis (Computer Engineering)
@@ -245,6 +246,7 @@ team:
     github: den-schmidt
     image: dennis_schmidt.jpg
     start: 12/2022 - 05/2024, 11/2024
+    end: 03/2025
 
   - name: Omar Elsayed
     role: PhD student
@@ -261,3 +263,21 @@ team:
     affiliation: TU Berlin
     image: christoph_scherer.jpg
     start: 02/2025
+
+  - name: Hendrik Berg
+    role: MS Thesis (Computational Engineering Science)
+    note: Motion Planning and Control for Fully Submerged Hydrofoil Vessels
+    start: 03/2025
+
+  - name: Mathieu Siegenthaler
+    role: MS Thesis (Computer Engineering)
+    note: Kinodynamic Multi-Robot Traveling Salesman Problems with Applications to Ocean Cleanup
+    start: 05/2025
+
+  - name: Jiaming Li
+    role: Student Assistant
+    email:  jiaming (dot) li (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: Vincentive1232
+    image: jiaming_li.jpg
+    start: 07/2025

@@ -31,29 +31,29 @@ phd: []
   #         • Programming sample (e.g., link to github)%0D%0A
   #         • Names and email addresses of up to two qualified persons who are willing to provide a reference on request
 
-shk:
-  - name: "Student Assistant (BS/MS)"
-    hours: 40 per month
-    deadline: April 28, 2025
-    reference: IV-SB-0030-2025
-    announcement: https://www.jobs.tu-berlin.de/en/job-postings/193732
-    note: |
-      Help with research and development activities in the field of multi-robot systems, in particular:
-        • preparatory and supporting work in the Programming in Python within the scope of multi-robot motion planning (40%).
-        • preparatory and supporting work with the development of hardware extensions for flying robots (40%)
-        • Support in the execution of experiments with robot teams (flying robots and other mobile robots) (20%)
+shk: []
+  # - name: "Student Assistant (BS/MS)"
+  #   hours: 40 per month
+  #   deadline: April 28, 2025
+  #   reference: IV-SB-0030-2025
+  #   announcement: https://www.jobs.tu-berlin.de/en/job-postings/193732
+  #   note: |
+  #     Help with research and development activities in the field of multi-robot systems, in particular:
+  #       • preparatory and supporting work in the Programming in Python within the scope of multi-robot motion planning (40%).
+  #       • preparatory and supporting work with the development of hardware extensions for flying robots (40%)
+  #       • Support in the execution of experiments with robot teams (flying robots and other mobile robots) (20%)
 
-      Requirements:
-        1. very good programming skills in Python
-        2. very good knowledge in the area of prototype development (electronics and 3d printing)
-        3. very good knowledge in robotics and controls engineering (model predictive control)
-        4. good written and spoken English skills
+  #     Requirements:
+  #       1. very good programming skills in Python
+  #       2. very good knowledge in the area of prototype development (electronics and 3d printing)
+  #       3. very good knowledge in robotics and controls engineering (model predictive control)
+  #       4. good written and spoken English skills
 
-      Desirable:
-        1. experience with flying robots
-        2. experience with machine learning
-        3. experience with the Robot Operating System (ROS)
-        4. enthusiasm for the research topic and the desire to participate in a research group
+  #     Desirable:
+  #       1. experience with flying robots
+  #       2. experience with machine learning
+  #       3. experience with the Robot Operating System (ROS)
+  #       4. enthusiasm for the research topic and the desire to participate in a research group
 
 
   # - name: "Student Assistant (BS/MS)"
