@@ -233,11 +233,13 @@ team:
     role: MS Thesis (Computer Engineering)
     note: Learning Multirotor Vision-to-Action Control Policies via Imitation Learning
     start: 12/2024
+    end: 06/2025
 
   - name: Viktor Lorentz
     role: MS Thesis (Computer Engineering)
     note: Reinforcement Learning for Collaborative Transport of Cable Suspended Payloads with Multiple Multirotors
     start: 01/2025
+    end: 07/2025
 
   - name: Dennis Schmidt
     role: Student Assistant
@@ -281,3 +283,11 @@ team:
     github: Vincentive1232
     image: jiaming_li.jpg
     start: 07/2025
+
+  - name: Charlotte Stentzler
+    role: Student Assistant
+    email:  charlotte (dot) stentzler (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: Olumat
+    #image: jiaming_li.jpg
+    start: 08/2025

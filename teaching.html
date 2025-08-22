@@ -22,7 +22,8 @@ title: IMRC Teaching
 </div>
 
 <div class="container">
-    We recommend <a href="https://www.theses.tu-berlin.de/de/theses?currentEvents%5Bfilter%5D%5Bcustom_value_institutes%5D%5B0%5D=45c0629f-1a41-4ee9-927c-130e394f6354">(I)STROD - (International) Student Thesis and Research Opportunities Database</a> to find a thesis topic.
+    <!-- We recommend <a href="https://www.theses.tu-berlin.de/de/theses?currentEvents%5Bfilter%5D%5Bcustom_value_institutes%5D%5B0%5D=45c0629f-1a41-4ee9-927c-130e394f6354">(I)STROD - (International) Student Thesis and Research Opportunities Database</a> to find a thesis topic. -->
+    For past thesis topics as well as submitted theses, please take a look at our <a href="team.html#alumni">alumni page</a>.
 </div>
 
 <div class="container">
@@ -34,6 +35,25 @@ title: IMRC Teaching
 
     </div>
 </div>
+
+<!-- <div class="section-heading">
+    <h3 class="title is-3">Past MSc/BSc Thesis</h3>
+</div>
+
+<div class="container">
+    <ul class="paper">
+
+        {% for member in site.data.team.team reversed %}
+            {% if member.end %}
+                {% if member.role contains "Thesis" %}
+                    {% include teammember_list.html %}
+                {% endif %}
+            {% endif %}
+        {%- endfor %}
+
+    </ul>
+</div> -->
+
 
 <div class="section-heading">
     <h2 class="title is-2">Summer 2025</h2>
