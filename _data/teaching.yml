@@ -49,6 +49,30 @@ material:
       This course is a seminar-style class to learn basics and current topics of multi-robot coordination.
     website: teaching/mrs-seminar
 
+ws2025:
+  - name: "Flying Robots"
+    time: Fr, 10:15am-1:45pm (hours of practical parts vary; practicum)
+    credits: 9
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41159&version=1&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=45061
+    note: |
+      This course is a practicum to learn foundational robotics algorithms for multirotors.
+      Use a software-in-the-loop development workflow to build something that works in the physical world.
+      Learn Rust, and use it for parts of the flight controller of a real hardware constrained platform (STM32).
+
+  - name: "Robotics Lecture Series"
+    time: Th, 14:15-15:45am (seminar)
+    credits: 3
+    moses: https://moseskonto.tu-berlin.de/moses/modultransfersystem/bolognamodule/beschreibung/anzeigen.html?nummer=41005&version=4&sprache=2
+    isis: https://isis.tu-berlin.de/course/view.php?id=45603
+    note: |
+      This course is a seminar-style class to learn about state-of-the-art research conducted by roboticists in Germany.
+
+  - name: "Other Robotics Courses"
+    isis: https://isis.tu-berlin.de/course/view.php?id=33668
+    note: |
+      If you are interested in robotics, please enroll in the "Robotics Interest Group" on ISIS to receive notifications.
+
 ss2025:
   - name: "Motion Planning"
     time: We, 8:15-9:45am (lecture); Th, 10:15-11:45am (discussion)

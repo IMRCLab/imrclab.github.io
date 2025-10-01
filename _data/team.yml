@@ -64,14 +64,6 @@ team:
   #   end: 05/2024
   #   next_role: MSc Thesis with Continental / IMRC
 
-  - name: Nan Cai
-    role: Student Assistant
-    email:  nan (dot) cai (at) campus (dot) tu-berlin (dot) de
-    affiliation: TU Berlin
-    github: NannCai
-    image: nan_cai.jpg
-    start: 06/2023
-
   - name: Jana Schicke
     role: BS Thesis (Computer Science)
     note: Learning-based Multirotor System Model Enhancements
@@ -270,6 +262,7 @@ team:
     role: MS Thesis (Computational Engineering Science)
     note: Motion Planning and Control for Fully Submerged Hydrofoil Vessels
     start: 03/2025
+    end: 09/2025
 
   - name: Mathieu Siegenthaler
     role: MS Thesis (Computer Engineering)
@@ -291,3 +284,12 @@ team:
     github: Olumat
     #image: jiaming_li.jpg
     start: 08/2025
+
+  - name: Nan Cai
+    role: Student Assistant
+    email:  nan (dot) cai (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: NannCai
+    image: nan_cai.jpg
+    start: 06/2023
+    end: 09/2025
