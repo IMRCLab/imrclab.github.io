@@ -10,6 +10,13 @@ team:
     image: wolfgang_hoenig.jpg
     start: 05/2021
 
+  - name: Thalia Prokopiou
+    role: Administration
+    email: office (at) mrs (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    image: thalia.jpg
+    start: 11/2025
+
   - name: Akmaral Moldagalieva
     role: PhD student
     email: moldagalieva (at) tu-berlin (dot) de
