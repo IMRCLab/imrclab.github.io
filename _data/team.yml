@@ -300,3 +300,11 @@ team:
     image: nan_cai.jpg
     start: 06/2023
     end: 09/2025
+
+  - name: Johannes Roser
+    role: Student Assistant
+    email:  johannes (dot) roser (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: JoJoRosero
+    image: johannes_roser.jpg
+    start: 12/2025
