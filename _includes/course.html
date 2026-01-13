@@ -32,6 +32,9 @@
         {% if course.isis %}
         <a href="{{course.isis}}" class="card-footer-item"><span class="icon"><i class="fas fa-external-link-alt"></i></span><span>ISIS</span></a>
         {% endif %}
+        {% if course.pdf %}
+        <a href="{{course.pdf}}" class="card-footer-item"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Details</span></a>
+        {% endif %}
         {% if course.apply %}
         <a href="{{course.apply}}" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span><span>Apply</span></a>
         {% endif %}

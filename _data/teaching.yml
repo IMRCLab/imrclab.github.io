@@ -21,6 +21,19 @@ thesis:
 
   #     More details on request.
 
+
+  - name: "Active Learning for Tuning Controller Parameters (MS)"
+    note: |
+      The goal of this thesis is to develop an active learning algorithm that can effectively automatically tune controller gains. The key idea is to tune the gains in simulation and incrementally improve the quality of the simulation accuracy by collecting data on the real platform. Active learning is used to automatically compute experiments to be executed on the physical platform that promise to improve the simulator accuracy most significantly.
+
+      This is a joint thesis with the LIS group (Prof. Toussaint) and requires knowledge in machine learning, motion planning, and controls.
+
+      If you are interested in the topic, please contact <a href="mailto:office@mrs.tu-berlin.de">Wolfgang Hönig</a> with a motivation letter. In your letter, please describe why you are interested and your technical background. We are a highly interdisciplinary and diverse team and we explicitly encourage applications from underrepresented groups.
+
+    pdf: assets/pdf/2026_ms_topic_active_learning.pdf
+    apply: |
+        mailto: office@mrs.tu-berlin.de?subject=Application for Active Learning MS Thesis&body=Please write in plain text or attach a single PDF with your motivation letter
+
   - name: Open Topic
     note: |
       We offer MS and BS thesis topics for students with a strong interest in robotics who are already enrolled at TU Berlin. In addition to our fixed list of topics, we offer customized topics based on mutual interest and technical background. Our highest priorities are that students learn new technical and theoretical skills and enjoy their time working on the thesis. Good mentoring takes time (we meet with our students at least one hour per week); we therefore can only mentor a few students.
