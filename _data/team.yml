@@ -283,6 +283,7 @@ team:
     github: Vincentive1232
     image: jiaming_li.jpg
     start: 07/2025
+    end: 01/2026
 
   - name: Charlotte Stentzler
     role: Student Assistant
@@ -312,3 +313,4 @@ team:
   - name: Issa-Noel Yamamura
     role: High School Student
     start: 01/2026
+    end: 01/2026

@@ -5,11 +5,16 @@
 <div class="tile is-parent">
 {% endcomment %}
   <div class="tile is-child card">
+
+    {% assign filename = entry.key | append: '.jpg' %}
+    {% assign img_file_exists = site.static_files | find: "name", filename %}
+    {% if img_file_exists %}
     <div class="card-image has-text-centered">
       <figure class="image is-inline-block">
         <img src="assets/img/{{entry.key}}.jpg" alt="Paper image">
       </figure>
     </div>
+    {% endif %}
     <div class="card-content paper">
       <p class="title">
         {{entry.title}}
