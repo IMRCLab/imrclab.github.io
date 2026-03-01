@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Wolfgang Hönig">
+  <meta name="dcterms.date" content="2024-11-15">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">Physical Hardware Experiments</p>
+  <p class="author">Wolfgang Hönig</p>
+  <p class="date">November 15, 2024</p>
+</section>
+
+<section>
+<section id="grading" class="title-slide slide level1">
+<h1>Grading</h1>
+
+</section>
+<section id="grading-criteria" class="slide level2">
+<h2>Grading Criteria</h2>
+<ul>
+<li>20 (/ 100) points: simulation code and verbal discussion
+<ul>
+<li>14 points code (written core math routines; correct dynamics;
+infrastructure code for simulation)</li>
+<li>3 points integration schema analysis</li>
+<li>3 points validation analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="assignment-1" class="slide level2">
+<h2>Assignment 1</h2>
+<ol type="1">
+<li>Show an example run of your code.</li>
+<li>Show your table/plot/results comparing two integration schemes.</li>
+<li>Show your validation of the dynamics.</li>
+</ol>
+<ul>
+<li>What was difficult?</li>
+<li>What was easy?</li>
+</ul>
+</section>
+<section id="notes-and-lessons-learned" class="slide level2">
+<h2>Notes and Lessons Learned</h2>
+<div class="box-red">
+<p>Open loop control for UAVs impossible!</p>
+</div>
+<ul>
+<li>Please use <code>f32</code>, not <code>f64</code> (the real hardware
+has a single-precision FPU)</li>
+<li>Avoid committing/pushing temporary files (e.g., <code>target</code>
+folder; use <code>.gitignore</code>)</li>
+</ul>
+</section></section>
+<section>
+<section id="physical-flights" class="title-slide slide level1">
+<h1>Physical Flights</h1>
+
+</section>
+<section id="crazyflie-2.1-hardware-overview" class="slide level2">
+<h2>Crazyflie 2.1 Hardware Overview</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>Sensors:
+<ul>
+<li>Accelerometer / Gyroscope (BMI088)</li>
+<li>Pressure sensor (BMP388)</li>
+</ul></li>
+<li>Actuators:
+<ul>
+<li>4 brushed motors with propellers</li>
+</ul></li>
+<li>Compute:
+<ul>
+<li>Flight control: STM32 microcontroller (ARM Cortex-M4, 168 MHz, 192
+kb RAM, 1 MB flash)</li>
+<li>Communication: nRF51 (ARM Cortex-M0, 32 MHz, 16 kB RAM)</li>
+</ul></li>
+<li>Extendable with add-on boards (<em>decks</em>)</li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/crazyflie.webp" /></p>
+</div>
+</div>
+</section>
+<section id="crazyflie-2.1-hardware-schema" class="slide level2">
+<h2>Crazyflie 2.1 Hardware Schema</h2>
+<p><img data-src="media/crazyflieArchitecture.svg" /></p>
+</section>
+<section id="crazyflie-2.1-notable-extensions" class="slide level2">
+<h2>Crazyflie 2.1 Notable Extensions</h2>
+<div class="container">
+<div class="col">
+<p>Flow-Deck</p>
+<p><img data-src="media/flow_deck_v2.jpg" /></p>
+<ul>
+<li>Measures height (ToF up to 4m, VL53L1x)</li>
+<li>Measures horizontal velocity (PMW3901)</li>
+</ul>
+</div>
+<div class="col">
+<p>uSD-deck</p>
+<p><img data-src="media/SD-deck.JPG" /></p>
+<ul>
+<li>Can store binary flight logs</li>
+</ul>
+</div>
+<div class="col">
+<p>AI Deck</p>
+<p><img data-src="media/ai-deck.jpg" /></p>
+<ul>
+<li>Camera (320x320)</li>
+<li>8+1 core RISC-V MCU (no FPU)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="crazyradio" class="slide level2">
+<h2>Crazyradio</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>nRF52840 with power amplifier and external antenna
+<ul>
+<li>Cortex-M4F (64MHz, 1MB flash, 256Kb RAM)</li>
+<li>2.4 GHz band
+<ul>
+<li>BlueTooth LE</li>
+<li>proprietary Nordic modes (low latency)</li>
+</ul></li>
+</ul></li>
+<li>USB interface</li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/Crazyradio2.jpg" /></p>
+</div>
+</div>
+</section>
+<section id="crazyflie-2.1-official-software" class="slide level2">
+<h2>Crazyflie 2.1 Official Software</h2>
+<ul>
+<li>User facing libraries
+<ol type="1">
+<li>Phone applications (Android, iPhone)</li>
+<li><a
+href="https://github.com/bitcraze/crazyflie-lib-python">cflib</a>:
+Python API to control robot(s) via Crazyradio</li>
+<li><a
+href="https://github.com/bitcraze/crazyflie-clients-python">cfclient</a>:
+GUI for a single robot (Python, based on cflib)</li>
+</ol></li>
+<li>Low-level (mostly C)
+<ol type="1">
+<li><a href="https://github.com/bitcraze/crazyflie-firmware">STM32
+Firmware</a>: Primary flight control firmware</li>
+<li>AI deck examples</li>
+<li>NRF51 firmware, various Bootloaders, Crazyradio firmware</li>
+</ol></li>
+</ul>
+</section>
+<section id="flight-demo" class="slide level2">
+<h2>Flight Demo</h2>
+<ul>
+<li>Crazyflie with flow deck controlled in cfclient</li>
+</ul>
+</section>
+<section id="flight-control-firmware-cf" class="slide level2">
+<h2>Flight Control Firmware (CF)</h2>
+<ul>
+<li><a
+href="https://github.com/bitcraze/crazyflie-firmware/tree/master/src/hal">Hardware
+Abstraction Layer (HAL)</a></li>
+<li><a
+href="https://github.com/bitcraze/crazyflie-firmware/blob/b046745801fc2ad6888aa4359bcb36e3292b268c/src/modules/src/stabilizer.c#L311-L378">Stabilizer
+loop</a>, <a
+href="https://github.com/bitcraze/crazyflie-firmware/tree/master/src/modules/src/estimator">state
+estimation</a>, <a
+href="https://github.com/bitcraze/crazyflie-firmware/tree/master/src/modules/src/controller">controller</a>,
+<a
+href="https://github.com/bitcraze/crazyflie-firmware/blob/master/src/modules/src/crtp_commander_high_level.c">commander</a>
+/ <a
+href="https://github.com/bitcraze/crazyflie-firmware/blob/master/src/modules/src/planner.c">planner</a></li>
+</ul>
+</section>
+<section id="flight-control-firmware-px4" class="slide level2">
+<h2>Flight Control Firmware (PX4)</h2>
+<ul>
+<li><a
+href="https://github.com/PX4/PX4-Autopilot/tree/main/src/modules/ekf2">state
+estimation</a></li>
+<li><a
+href="https://github.com/PX4/PX4-Autopilot/blob/main/src/modules/mc_pos_control/MulticopterPositionControl.cpp">controller</a></li>
+</ul>
+</section>
+<section id="flight-control-demo-hello-rust" class="slide level2">
+<h2>Flight Control Demo: Hello Rust</h2>
+<p>Install Rust for our target:</p>
+<pre><code>rustup target add thumbv7em-none-eabihf</code></pre>
+<p>Build official example:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:bitcraze/crazyflie-firmware.git</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> crazyflie-firmware</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> submodule update <span class="at">--init</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> examples/app_hello_rs</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clean</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
+<p>Flash:</p>
+<ol type="1">
+<li>Turn of the Crazyflie (short press power button)</li>
+<li>Put in bootloader (press power button for about 3 seconds)</li>
+<li><code>make cload</code></li>
+</ol>
+</section>
+<section id="flight-control-demo-custom-controller"
+class="slide level2">
+<h2>Flight Control Demo: Custom Controller</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ../app_out_of_tree_controller</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clean</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="rust-interoperability" class="title-slide slide level1">
+<h1>Rust Interoperability</h1>
+
+</section>
+<section id="background" class="slide level2">
+<h2>Background</h2>
+<ul>
+<li>Projects are often written in several different languages</li>
+</ul>
+<p>How can we cross the language barrier?</p>
+<div class="fragment">
+<ul>
+<li>exec/fork (input/output via files)</li>
+<li>Inter-process communication (MPI, shared memory, …)</li>
+<li>Share the same Application Binary Interface (<em>ABI</em>) and link
+code
+<ul>
+<li>Most common example: C, C++ to be called from Python (e.g., numpy,
+pyTorch)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="calling-rust-from-c" class="slide level2">
+<h2>Calling Rust From C</h2>
+<ul>
+<li>Mark as <code>extern C</code> and disable name mangling</li>
+</ul>
+<p>Export a function written in Rust</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">#[</span>no_mangle<span class="at">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">extern</span> <span class="st">&quot;C&quot;</span> <span class="kw">fn</span> hello_from_rust() <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="pp">println!</span>(<span class="st">&quot;Hello from Rust!&quot;</span>)<span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Call the function from C</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">extern</span> <span class="dt">void</span> hello_from_rust<span class="op">();</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    hello_from_rust<span class="op">();</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="calling-c-from-rust" class="slide level2">
+<h2>Calling C From Rust</h2>
+<ul>
+<li>Import a function (need to use Rust syntax and types!)</li>
+</ul>
+<p>C function to import</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> consolePutchar<span class="op">(</span><span class="dt">int</span> ch<span class="op">);</span></span></code></pre></div>
+<p>Rust code to call that function</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">extern</span> <span class="st">&quot;C&quot;</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> <span class="kw">fn</span> consolePutchar(ch<span class="op">:</span> <span class="dt">i32</span>) <span class="op">-&gt;</span> <span class="dt">i32</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> main() <span class="op">{</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    consolePutchar(<span class="dv">82</span>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="revisiting-app_hello_rs" class="slide level2">
+<h2>Revisiting app_hello_rs</h2>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="at">#![</span>no_std<span class="at">]</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> panic_halt <span class="kw">as</span> _<span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">extern</span> <span class="st">&quot;C&quot;</span> <span class="op">{</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> <span class="kw">fn</span> vTaskDelay(ticks<span class="op">:</span> <span class="dt">u32</span>)<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> <span class="kw">fn</span> consolePutchar(ch<span class="op">:</span> <span class="dt">i32</span>) <span class="op">-&gt;</span> <span class="dt">i32</span><span class="op">;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">fn</span> console_print(msg<span class="op">:</span> <span class="op">&amp;</span><span class="dt">str</span>) <span class="op">{</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> c <span class="kw">in</span> msg<span class="op">.</span>as_bytes() <span class="op">{</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">unsafe</span><span class="op">{</span> consolePutchar(<span class="op">*</span>c <span class="kw">as</span> <span class="dt">i32</span>)<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="at">#[</span>no_mangle<span class="at">]</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">extern</span> <span class="st">&quot;C&quot;</span> <span class="kw">fn</span> appMain() <span class="op">-&gt;</span> <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    console_print(<span class="st">&quot;Hello from Rust2!</span><span class="sc">\n</span><span class="st">&quot;</span>)<span class="op">;</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">loop</span> <span class="op">{</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">unsafe</span> <span class="op">{</span> vTaskDelay(<span class="dv">1000</span>)<span class="op">;</span> <span class="op">}</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="practical-considerations-and-other-languages"
+class="slide level2">
+<h2>Practical Considerations and Other Languages</h2>
+<ul>
+<li>More details: see <a
+href="https://doc.rust-lang.org/nomicon/ffi.html">Foreign Function
+Interface</a></li>
+<li>Converting C(++) syntax to Rust can be hard for custom data types
+(nested structs, unions, …)
+<ul>
+<li>use <a href="https://rust-lang.github.io/rust-bindgen/">bindgen</a>
+instead</li>
+</ul></li>
+<li>Python ⇔ Rust: <a href="https://github.com/pyo3/pyo3">pyo3</a></li>
+</ul>
+</section></section>
+<section>
+<section id="assignment-1.5-not-graded"
+class="title-slide slide level1">
+<h1>Assignment 1.5 (Not Graded)</h1>
+
+</section>
+<section id="instructions" class="slide level2">
+<h2>Instructions</h2>
+<ol type="1">
+<li>Make sure you can compile the firmware (<a
+href="https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/building-and-flashing/build/">instructions</a>)</li>
+<li>Create your own “app” example for assignment1</li>
+<li>Add and compile your existing math library
+<ul>
+<li>Trigonometric functions are not in core; import <code>sinf</code>,
+<code>cosf</code> etc. from C</li>
+</ul></li>
+<li>Generate bindings for the controller using <code>bindgen</code>
+<ul>
+<li>The easiest (to not deal with errors) is to copy
+<code>stabilizer_types.h</code> and only include the structs that you
+need</li>
+</ul></li>
+<li>Test flight with stock software
+<ul>
+<li>Tuesday 12:30 - 14:00, or</li>
+<li>Thursday 13:00 - 14:00</li>
+<li><a href="https://calendly.com/whoenig/flying-robots">Schedule a
+timeslot online</a></li>
+</ul></li>
+</ol>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="learned-today" class="slide level2">
+<h2>Learned Today</h2>
+<ul>
+<li>Assignment 1 grading</li>
+<li>Specifics of the hard- and software used for the class</li>
+<li>Rust: Interoperability with other languages</li>
+<li>Assignment 1.5 (as preparation for assignment 2)</li>
+</ul>
+<div class="box-ex">
+<div class="box-ex-title">
+<p>Next Week</p>
+</div>
+<p>Controls lecture and Assignment 2.</p>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

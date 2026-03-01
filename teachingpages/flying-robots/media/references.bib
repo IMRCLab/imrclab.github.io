@@ -1,0 +1,246 @@
+@string{IROS = {IEEE/RSJ international conference on intelligent robots and systems (IROS)}}
+@string{ICRA = {IEEE International Conference on Robotics and Automation (ICRA)}}
+@string{CoRL = {Conference on Robot Learning (CoRL)}}
+@string{AuRo = {Autonomous Robots (AuRo)}}
+@string{TRO = {IEEE Transactions on Robotics (T-RO)}}
+@string{RAL = {IEEE Robotics and Automation Letters (R-AL)}}
+@string{preprint = {Under Review}}
+
+@article{2025-dbecbs,
+  title={db-ECBS: Interaction-Aware Multi-Robot Kinodynamic Motion Planning},
+  author={Akmaral Moldagalieva and 
+          Joaquim Ortiz-Haro and 
+          Wolfgang Hönig},
+  journal=TRO,
+  code={https://github.com/IMRCLab/db-CBS/tree/dbecbs-tro},
+  video={https://youtu.be/OcG-59Pq3oY},
+  year={2025},
+}
+
+@article{2025-crazymarl,
+  title={CrazyMARL: Decentralized Direct Motor Control Policies for Cooperative Aerial Transport of Cable-Suspended Payloads},
+  author={Viktor Lorentz and 
+          Khaled Wahba and 
+          Sayantan Auddy and
+          Marc Toussaint and
+          Wolfgang Hönig},
+  journal={Submitted to ICRA 2026},
+  doi={https://doi.org/10.48550/arXiv.2509.14126},
+  year={2025},
+}
+
+@article{2025-pc-dbCBS,
+  title={pc-dbCBS: Kinodynamic Motion Planning of Physically-Coupled Robot
+Teams},
+  author={Khaled Wahba and
+          Wolfgang Hönig},
+  journal=RAL,
+  doi={10.1109/LRA.2025.3607267},
+  arxiv={2505.10355},
+  year={2025},
+}
+
+
+@inproceedings{Eykholt2018,
+  title     = {Robust physical-world attacks on deep learning visual classification},
+  author    = {Eykholt, Kevin and Evtimov, Ivan and Fernandes, Earlence and Li, Bo and Rahmati, Amir and Xiao, Chaowei and Prakash, Atul and Kohno, Tadayoshi and Song, Dawn},
+  booktitle = {{IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}},
+  pages     = {1625--1634},
+  year      = {2018}
+}
+
+@inproceedings{Thys2019,
+  author    = {Thys, Simen and Ranst, Wiebe Van and Goedeme, Toon},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+  doi       = {10.1109/CVPRW.2019.00012},
+  pages     = {49--55},
+  title     = {{Fooling Automated Surveillance Cameras: Adversarial Patches to Attack Person Detection}},
+  year      = {2019}
+}
+
+@article{Palossi2022,
+  author  = {Palossi, Daniele and Zimmerman, Nicky and Burrello, Alessio and Conti, Francesco and Muller, Hanna and Gambardella, Luca Maria and Benini, Luca and Giusti, Alessandro and Guzzi, Jerome},
+  doi     = {10.1109/JIOT.2021.3091643},
+  journal = {IEEE Internet of Things Journal},
+  number  = {3},
+  pages   = {1913--1929},
+  title   = {{Fully Onboard AI-Powered Human-Drone Pose Estimation on Ultralow-Power Autonomous Flying Nano-UAVs}},
+  url     = {https://ieeexplore.ieee.org/document/9462495/},
+  volume  = {9},
+  year    = {2022}
+}
+
+@inproceedings{deepsets,
+  author    = {Manzil Zaheer and
+               Satwik Kottur and
+               Siamak Ravanbakhsh and
+               Barnab{\'{a}}s P{\'{o}}czos and
+               Ruslan Salakhutdinov and
+               Alexander J. Smola},
+  title     = {Deep Sets},
+  booktitle = NeurIPS,
+  pages     = {3391--3401},
+  year      = {2017},
+  url       = {http://papers.nips.cc/paper/6931-deep-sets},
+  timestamp = {Tue, 23 Jul 2019 12:44:35 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/nips/ZaheerKRPSS17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{crazyplanning-ieeetro,
+  author    = {Wolfgang Hönig and
+               James A. Preiss and
+               T. K. Satish Kumar and
+               Gaurav S. Sukhatme and
+               Nora Ayanian},
+  title     = {Trajectory Planning for Quadrotor Swarms},
+  journal   = {{IEEE} Transactions on Robotics, Special Issue on Aerial Swarm Robotics},
+  volume    = {34},
+  number    = {4},
+  pages     = {856--869},
+  year      = {2018},
+  url       = {https://doi.org/10.1109/TRO.2018.2853613},
+  doi       = {10.1109/TRO.2018.2853613},
+  timestamp = {Thu, 13 Sep 2018 18:11:30 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/trob/HonigPKSA18},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  keywords  = {myPapers,journal}
+}
+
+@online{dbcbs,
+  title       = {Db-{{CBS}}: {{Discontinuity-Bounded Conflict-Based Search}} for {{Multi-Robot Kinodynamic Motion Planning}}},
+  shorttitle  = {Db-{{CBS}}},
+  author      = {Moldagalieva, Akmaral and Ortiz-Haro, Joaquim and Toussaint, Marc and Hönig, Wolfgang},
+  date        = {2024-03-05},
+  eprint      = {2309.16445},
+  eprinttype  = {arxiv},
+  eprintclass = {cs},
+  url         = {http://arxiv.org/abs/2309.16445},
+  urldate     = {2024-06-10},
+  abstract    = {This paper presents a multi-robot kinodynamic motion planner that enables a team of robots with different dynamics, actuation limits, and shapes to reach their goals in challenging environments. We solve this problem by combining Conflict-Based Search (CBS), a multi-agent path finding method, and discontinuity-bounded A*, a single-robot kinodynamic motion planner. Our method, db-CBS, operates in three levels. Initially, we compute trajectories for individual robots using a graph search that allows bounded discontinuities between precomputed motion primitives. The second level identifies inter-robot collisions and resolves them by imposing constraints on the first level. The third and final level uses the resulting solution with discontinuities as an initial guess for a joint space trajectory optimization. The procedure is repeated with a reduced discontinuity bound. Our approach is anytime, probabilistically complete, asymptotically optimal, and finds near-optimal solutions quickly. Experimental results with robot dynamics such as unicycle, double integrator, and car with trailer in different settings show that our method is capable of solving challenging tasks with a higher success rate and lower cost than the existing state-of-the-art.},
+  langid      = {english},
+  pubstate    = {preprint},
+  keywords    = {Computer Science - Robotics},
+  file        = {/home/whoenig/Zotero/storage/S8DQRFRG/Moldagalieva et al. - 2024 - db-CBS Discontinuity-Bounded Conflict-Based Searc.pdf}
+}
+
+@article{Neural-Swarm2,
+  author  = {Shi, Guanya and Hönig, Wolfgang and Shi, Xichen and Yue, Yisong and Chung, Soon-Jo},
+  journal = {IEEE Transactions on Robotics},
+  title   = {Neural-Swarm2: Planning and Control of Heterogeneous Multirotor Swarms Using Learned Interactions},
+  year    = {2021},
+  volume  = {},
+  number  = {},
+  pages   = {1-17},
+  doi     = {10.1109/TRO.2021.3098436}
+}
+
+@article{GLAS,
+  author    = {Benjamin Rivi{\`{e}}re and
+               Wolfgang H{\"{o}}nig and
+               Yisong Yue and
+               Soon{-}Jo Chung},
+  title     = {{GLAS:} Global-to-Local Safe Autonomy Synthesis for Multi-Robot Motion
+               Planning With End-to-End Learning},
+  journal   = {{IEEE} Robotics Autom. Lett.},
+  volume    = {5},
+  number    = {3},
+  pages     = {4249--4256},
+  year      = {2020},
+  url       = {https://doi.org/10.1109/LRA.2020.2994035},
+  doi       = {10.1109/LRA.2020.2994035},
+  timestamp = {Wed, 26 Aug 2020 11:04:11 +0200},
+  biburl    = {https://dblp.org/rec/journals/ral/RiviereHYC20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@online{2024-wahba-KinodynamicMotionPlanning,
+  title       = {Kinodynamic {{Motion Planning}} for a {{Team}} of {{Multirotors Transporting}} a {{Cable-Suspended Payload}} in {{Cluttered Environments}}},
+  author      = {Wahba, Khaled and Ortiz-Haro, Joaquim and Toussaint, Marc and Hönig, Wolfgang},
+  date        = {2024-03-28},
+  eprint      = {2310.03394},
+  eprinttype  = {arxiv},
+  eprintclass = {cs},
+  doi         = {10.48550/arXiv.2310.03394},
+  url         = {http://arxiv.org/abs/2310.03394},
+  urldate     = {2024-06-10},
+  abstract    = {We propose a motion planner for cable-driven payload transportation using multiple unmanned aerial vehicles (UAVs) in an environment cluttered with obstacles. Our planner is kinodynamic, i.e., it considers the full dynamics model of the transporting system including actuation constraints. Due to the high dimensionality of the planning problem, we use a hierarchical approach where we first solve the geometric motion planning using a sampling-based method with a novel sampler, followed by constrained trajectory optimization that considers the full dynamics of the system. Both planning stages consider inter-robot and robot/obstacle collisions. We demonstrate in a software-in-the-loop simulation and real flight experiments that there is a significant benefit in kinodynamic motion planning for such payload transport systems with respect to payload tracking error and energy consumption compared to the standard methods of planning for the payload alone. Notably, we observe a significantly higher success rate in scenarios where the team formation changes are needed to move through tight spaces.},
+  pubstate    = {preprint},
+  keywords    = {Computer Science - Multiagent Systems,Computer Science - Robotics},
+  file        = {/home/whoenig/Zotero/storage/QFAZV7UK/Wahba et al. - 2024 - Kinodynamic Motion Planning for a Team of Multirot.pdf;/home/whoenig/Zotero/storage/HL7S7FEJ/2310.html}
+}
+
+@article{NTE,
+  author     = {Benjamin Rivi{\`{e}}re and
+                Wolfgang H{\"{o}}nig and
+                Matthew Anderson and
+                Soon{-}Jo Chung},
+  title      = {Neural Tree Expansion for Multi-Robot Planning in Non-Cooperative
+                Environments},
+  journal    = {CoRR},
+  volume     = {abs/2104.09705},
+  year       = {2021},
+  url        = {https://arxiv.org/abs/2104.09705},
+  eprinttype = {arXiv},
+  eprint     = {2104.09705},
+  timestamp  = {Mon, 26 Apr 2021 17:25:10 +0200},
+  biburl     = {https://dblp.org/rec/journals/corr/abs-2104-09705.bib},
+  bibsource  = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{2023-hanfeld-KidnappingDeepLearningbased,
+  title      = {Kidnapping {{Deep Learning-based Multirotors}} Using {{Optimized Flying Adversarial Patches}}},
+  booktitle  = {2023 {{International Symposium}} on {{Multi-Robot}} and {{Multi-Agent Systems}} ({{MRS}})},
+  author     = {Hanfeld, Pia and Wahba, Khaled and Höhne, Marina M.-C. and Bussmann, Michael and Hönig, Wolfgang},
+  date       = {2023-12},
+  pages      = {78--84},
+  doi        = {10.1109/MRS60187.2023.10416782},
+  url        = {https://ieeexplore.ieee.org/document/10416782},
+  urldate    = {2024-06-10},
+  abstract   = {Autonomous flying robots, such as multirotors, often rely on deep learning models that make predictions based on a camera image, e.g. for pose estimation. These models can predict surprising results if applied to input images outside the training domain. This fault can be exploited by adversarial attacks, for example, by computing small images, so-called adversarial patches, that can be placed in the environment to manipulate the neural network’s prediction. We introduce flying adversarial patches, where multiple images are mounted on at least one other flying robot and therefore can be placed anywhere in the field of view of a victim multirotor. By introducing the attacker robots, the system is extended to an adversarial multi-robot system. For an effective attack, we compare three methods that simultaneously optimize multiple adversarial patches and their position in the input image. We show that our methods scale well with the number of adversarial patches. Moreover, we demonstrate physical flights with two robots, where we employ a novel attack policy that uses the computed adversarial patches to kidnap a robot that was supposed to follow a human.},
+  eventtitle = {2023 {{International Symposium}} on {{Multi-Robot}} and {{Multi-Agent Systems}} ({{MRS}})},
+  keywords   = {Autonomous aerial vehicles,Cameras,Computational modeling,Drones,Optimization,Predictive models,Robots},
+  file       = {/home/whoenig/Zotero/storage/DFHHYN7B/Hanfeld et al. - 2023 - Kidnapping Deep Learning-based Multirotors using O.pdf;/home/whoenig/Zotero/storage/QC4CQDYJ/10416782.html}
+}
+
+@inproceedings{dbastar-conf,
+  author       = {Wolfgang H{\"{o}}nig and
+                  Joaquim Ortiz de Haro and
+                  Marc Toussaint},
+  title        = {db-A*: Discontinuity-bounded Search for Kinodynamic Mobile Robot Motion
+                  Planning},
+  booktitle    = {{IEEE/RSJ} International Conference on Intelligent Robots and Systems,
+                  {IROS} 2022, Kyoto, Japan, October 23-27, 2022},
+  pages        = {13540--13547},
+  publisher    = {{IEEE}},
+  year         = {2022},
+  url          = {https://doi.org/10.1109/IROS47612.2022.9981577},
+  doi          = {10.1109/IROS47612.2022.9981577},
+  timestamp    = {Sun, 04 Aug 2024 19:37:13 +0200},
+  biburl       = {https://dblp.org/rec/conf/iros/HonigHT22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{dbastar-journal,
+  author       = {Joaquim Ortiz de Haro and
+                  Wolfgang H{\"{o}}nig and
+                  Valentin N. Hartmann and
+                  Marc Toussaint},
+  title        = {iDb-A*: Iterative Search and Optimization for Optimal Kinodynamic
+                  Motion Planning},
+  journal      = {IEEE T-RO (Accepted)},
+  year         = {2024},
+}
+
+@article{wahbaEfficientOptimizationBasedCable2024,
+  title = {Efficient Optimization-Based Cable Force Allocation for Geometric Control of a Multirotor Team Transporting a Payload},
+  author = {Wahba, Khaled and Hönig, Wolfgang},
+  date = {2024-04},
+  journaltitle = {IEEE Robotics and Automation Letters},
+  shortjournal = {IEEE Robot. Autom. Lett.},
+  volume = {9},
+  number = {4},
+  pages = {3688--3695},
+  issn = {2377-3766, 2377-3774},
+  doi = {10.1109/LRA.2024.3351001}
+}

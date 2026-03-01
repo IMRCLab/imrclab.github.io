@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Wolfgang Hönig">
+  <meta name="dcterms.date" content="2024-10-18">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">Robotic Systems and Flight Dynamics</p>
+  <p class="author">Wolfgang Hönig</p>
+  <p class="date">October 18, 2024</p>
+</section>
+
+<section>
+<section id="robotic-systems-overview" class="title-slide slide level1">
+<h1>Robotic Systems Overview</h1>
+
+</section>
+<section id="acronyms" class="slide level2">
+<h2>Acronyms</h2>
+<ul>
+<li><em>UAV</em>: Uncrewed Aerial Vehicle</li>
+</ul>
+<p>“<strong>an aircraft which is designed or modified, not to carry a
+human pilot and is operated through electronic input initiated by the
+flight controller or by an onboard autonomous flight management control
+system that does not require flight controller intervention</strong>”
+[American Institute of Aeronautics and Astronautics (AIAA)]</p>
+<ul>
+<li><em>UAS</em>: Uncrewed Aerial System</li>
+</ul>
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<p><img data-src="media/springer_handbook_fig26_1.png" /></p>
+</section>
+<section id="classification" class="slide level2">
+<h2>Classification</h2>
+<ul>
+<li>Fixed-wing (FW)</li>
+<li>Rotary-wing (RW)</li>
+<li>Flapping-wing (FW)</li>
+<li>Lighter-than-air (LtA)</li>
+</ul>
+<div class="box-red">
+<ul>
+<li>Tradeoff: Agility vs. Endurance
+<ul>
+<li>Agile/highly maneuverable robots have less endurance</li>
+</ul></li>
+<li>Tradeoff: Scale/Size vs. Endurance
+<ul>
+<li>Smaller vehicles tend to have less endurance</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="classification-1" class="slide level2">
+<h2>Classification</h2>
+<p><img data-src="media/springer_handbook_fig26_2.png" /></p>
+</section>
+<section id="applications" class="slide level2">
+<h2>Applications</h2>
+<p><img data-src="media/springer_handbook_fig26_43.png"
+style="width:80.0%" /></p>
+<!-- 
+Try to find research and real applications for each
+ -->
+</section></section>
+<section>
+<section id="examples" class="title-slide slide level1">
+<h1>Examples</h1>
+
+</section>
+<section id="fixed-wing-commercial" class="slide level2">
+<h2>Fixed-Wing (Commercial)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/l6bypm7jPwQ?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/l6bypm7jPwQ">YouTube</a></p>
+</section>
+<section id="lighter-than-air-academic" class="slide level2">
+<h2>Lighter-than-air (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/qXvl3anK3w0?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/qXvl3anK3w0">YouTube</a></p>
+</section>
+<section id="flapping-wing-academic" class="slide level2">
+<h2>Flapping-Wing (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/tNPfD9l14Js?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/tNPfD9l14Js">YouTube</a></p>
+</section>
+<section id="flapping-wing-commercial" class="slide level2">
+<h2>Flapping-Wing (Commercial)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/fCv0iK65qA4?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/fCv0iK65qA4">YouTube</a></p>
+</section>
+<section id="rotary-wing-helicopter-academic" class="slide level2">
+<h2>Rotary-Wing: Helicopter (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/M-QUkgk3HyE?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/M-QUkgk3HyE">YouTube</a></p>
+</section>
+<section id="rotary-wing-multirotor-academic" class="slide level2">
+<h2>Rotary-Wing: Multirotor (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/CCDIuZUfETc?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/CCDIuZUfETc">YouTube</a></p>
+</section>
+<section id="rotary-wing-multirotor-academic-1" class="slide level2">
+<h2>Rotary-Wing: Multirotor (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/_sUeGC-8dyk?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/_sUeGC-8dyk">YouTube</a></p>
+</section>
+<section id="rotary-wing-multirotor-academic-2" class="slide level2">
+<h2>Rotary-Wing: Multirotor (Academic)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/fBiataDpGIo?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/fBiataDpGIo">YouTube</a></p>
+</section>
+<section id="rotary-wing-multirotor-commercial" class="slide level2">
+<h2>Rotary-Wing: Multirotor (Commercial)</h2>
+<iframe width="1600" height="500" src="https://www.youtube.com/embed/xwQ31-vSgfs?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><a href="https://youtu.be/xwQ31-vSgfs">YouTube</a></p>
+<p><!-- {background-image="media/frame.svg" background-size="contain"} --></p>
+</section></section>
+<section>
+<section id="flight-dynamics" class="title-slide slide level1">
+<h1>Flight Dynamics</h1>
+
+</section>
+<section id="d-multirotor" class="slide level2">
+<h2>1D Multirotor</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>State: <span class="math inline">\(\mathbf{x} = (z, \dot z)^\top \in
+\mathbb R^2\)</span>
+<ul>
+<li>Height <span class="math inline">\(z\)</span> [m]</li>
+<li>Vertical velocity <span class="math inline">\(\dot z\)</span>
+[m/s]</li>
+</ul></li>
+<li>Action: <span class="math inline">\(\mathbf{u} = (f_1) \in \mathbb
+R\)</span>
+<ul>
+<li>Upward thrust <span class="math inline">\(f_1\)</span> [N]</li>
+</ul></li>
+<li>Parameters
+<ul>
+<li>Mass <span class="math inline">\(m\)</span> [kg], Gravity <span
+class="math inline">\(g\)</span> [<span
+class="math inline">\(m/s^2\)</span>]</li>
+</ul></li>
+<li>Dynamics: <span class="math display">\[
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix} \dot z\\
+\frac{f_1}{m} - g \end{pmatrix}
+\end{align}
+\]</span></li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/multirotor1d.svg" /></p>
+</div>
+</div>
+</section>
+<section id="d-multirotor-1" class="slide level2">
+<h2>2D Multirotor</h2>
+<!-- 
+The implementation in https://github.com/utiasDSL/safe-control-gym/blob/main/safe_control_gym/envs/gym_pybullet_drones/quadrotor.py#L504-L508
+seems wrong
+
+Instead, using
+
+https://underactuated.csail.mit.edu/acrobot.html#section3
+
+(also the same in the Penn Aerial course)
+
+
+ -->
+<div class="container">
+<div class="col">
+<ul>
+<li>State: <span class="math inline">\(\mathbf{x} = (x, \dot x, z, \dot
+z, \theta, \dot \theta)^\top \in \mathbb R^4 \times SO(2) \times \mathbb
+R\)</span>
+<ul>
+<li>Position <span class="math inline">\(x\)</span>, Height <span
+class="math inline">\(z\)</span> [m]</li>
+<li>Velocities <span class="math inline">\(\dot x\)</span>, <span
+class="math inline">\(\dot z\)</span> [m/s]</li>
+<li>Rotation around <span class="math inline">\(x\)</span>-axis <span
+class="math inline">\(\theta\)</span> [rad]</li>
+<li>Angular velocity <span class="math inline">\(\dot \theta\)</span>
+[rad/s]</li>
+</ul></li>
+<li>Action: <span class="math inline">\(\mathbf{u} = (f_1, f_2) \in
+\mathbb R^2\)</span>
+<ul>
+<li>Thrust left <span class="math inline">\(f_1\)</span>, Thrust right
+<span class="math inline">\(f_2\)</span> [N]</li>
+</ul></li>
+<li>Parameters
+<ul>
+<li>Mass <span class="math inline">\(m\)</span> [kg], Arm length <span
+class="math inline">\(l\)</span> [m], inertia <span
+class="math inline">\(\mathbf J_{yy}\)</span> [<span
+class="math inline">\(kg\cdot m^2\)</span>], Gravity <span
+class="math inline">\(g\)</span> [<span
+class="math inline">\(m/s^2\)</span>]</li>
+</ul></li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/multirotor2d.svg" /></p>
+</div>
+</div>
+</section>
+<section id="d-multirotor-2" class="slide level2">
+<h2>2D Multirotor</h2>
+<!-- 
+The implementation in https://github.com/utiasDSL/safe-control-gym/blob/main/safe_control_gym/envs/gym_pybullet_drones/quadrotor.py#L504-L508
+seems wrong
+
+Instead, using
+
+https://underactuated.csail.mit.edu/acrobot.html#section3
+
+(also the same in the Penn Aerial course)
+
+
+ -->
+<div class="container">
+<div class="col">
+<ul>
+<li>Dynamics: <!-- $$
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix} 
+\dot x\\
+\frac{(f_1 + f_2) \sin \theta}{m}\\
+\dot z\\
+\frac{(f_1 + f_2) \cos \theta}{m} - g\\
+\dot \theta\\
+\frac{(f_1 + f_2) l}{\sqrt{2} \mathbf J_{yy}}
+\end{pmatrix}
+\end{align}
+$$ --></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix}
+\dot x\\
+\frac{-(f_1 + f_2) \sin \theta}{m}\\
+\dot z\\
+\frac{(f_1 + f_2) \cos \theta}{m} - g\\
+\dot \theta\\
+\frac{(f_2 - f_1) l}{\mathbf J_{yy}}
+\end{pmatrix}
+\end{align}
+\]</span></p>
+</div>
+<div class="col">
+<p><img data-src="media/multirotor2d.svg" class="absolute"
+data-top="200" data-left="0" width="350" height="300" /></p>
+</div>
+</div>
+</section>
+<section id="suggested-reading" class="slide level2">
+<h2>Suggested Reading</h2>
+<ul>
+<li>Springer Handbook of Robotics, Chapter 26</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

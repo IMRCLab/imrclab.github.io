@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Wolfgang Hönig">
+  <meta name="dcterms.date" content="2025-01-10">
+  <title>Flying Robots</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="custom.css"/>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="media/title_dark.svg" data-background-size="contain">
+  <h1 class="title">Flying Robots</h1>
+  <p class="subtitle">State Estimation</p>
+  <p class="author">Wolfgang Hönig</p>
+  <p class="date">January 10, 2025</p>
+</section>
+
+<section id="math-definitions" class="slide level2"
+data-visibility="hidden">
+<h2 data-visibility="hidden">Math definitions</h2>
+<p>% vectors % custom math commands % </p>
+</section>
+<section>
+<section id="state-estimation" class="title-slide slide level1">
+<h1>State Estimation</h1>
+
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<ul>
+<li>Robot’s do not know the current state</li>
+<li>Sensors provide <em>observations</em> <span
+class="math inline">\(\mathbf{o}_i\)</span> to be used to predict the
+state</li>
+</ul>
+<div class="box-ex">
+<p>We have:</p>
+<ul>
+<li>State: <span class="math inline">\(\mathbf{x}= (\mathbf{p},
+\mathbf{v}, \mathbf{R}, \boldsymbol{\omega})^\top \in \mathbb R^3 \times
+\mathbb R^3 \times SO(3) \times \mathbb R^3\)</span></li>
+<li>Action: <span class="math inline">\(\mathbf{u}= (f_1, f_2, f_3,
+f_4)^\top \in \mathbb R^4\)</span></li>
+</ul>
+</div>
+<p>State estimation: find a mapping from <span
+class="math inline">\(\{\mathbf{o}_i \}_{i=1}^n \mapsto
+\mathbf{x}\)</span></p>
+</section>
+<section id="sensors-for-flying-robots" class="slide level2">
+<h2>Sensors (for Flying Robots)</h2>
+<div class="box-red">
+<p>What sensors do you know? What are the observations?</p>
+</div>
+<div class="fragment">
+<ul>
+<li>Camera
+<ul>
+<li>RGB</li>
+<li>RGBD</li>
+</ul></li>
+<li>LIDAR</li>
+<li>IMU
+<ul>
+<li>accelerometer</li>
+<li>gyroscope</li>
+<li>magnetometer</li>
+</ul></li>
+<li>Barometer</li>
+<li>Optical Flow</li>
+<li>Ultrasound</li>
+<li>Time-of-flight, radio signal strength</li>
+</ul>
+</div>
+</section>
+<section id="inertial-measurement-unit-imu" class="slide level2">
+<h2>Inertial Measurement Unit (IMU)</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>Bosch BMI088</li>
+<li>3-axis gyroscope:
+<ul>
+<li>measures <span class="math inline">\(\mathbf{o}_g =
+\boldsymbol{\omega}\)</span></li>
+<li>up to 2000 <span class="math inline">\(\deg/s\)</span>, 16 bit
+resolution</li>
+</ul></li>
+<li>3-axis accelerometer:
+<ul>
+<li>measures <span class="math inline">\(\mathbf{o}_a = \mathbf{q}^*
+\odot \dot{\mathbf{v}}\)</span></li>
+<li>up to 24 G, 16 bit resolution</li>
+</ul></li>
+<li>Sampling up to 2 kHz</li>
+<li>Power: 18 mW</li>
+<li>Cost: 3 Euro</li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/BMI088.png" /></p>
+</div>
+</div>
+</section>
+<section id="height-tof" class="slide level2">
+<h2>Height (ToF)</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>ST VL53L1x ToF sensor</li>
+<li>940nm emitter + receiver (<span
+class="math inline">\(27\deg\)</span> FoV)</li>
+<li>facing downwards: <span class="math inline">\(\mathbf{o}_z =
+\mathbf{p}_z\)</span> (for small <span
+class="math inline">\(\mathbf{q}\)</span> w.r.t. FoV)</li>
+<li>Range: up to 4m</li>
+<li>Sampling: 50 Hz</li>
+<li>Power: 40 mW</li>
+<li>Cost: 4 Euro</li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/VL53L1X.png" /></p>
+</div>
+</div>
+</section>
+<section id="downward-optical-flow" class="slide level2">
+<h2>Downward Optical Flow</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>PMW3901 optical flow sensor (similar to optical mice)</li>
+<li>outputs motion in pixels: <span
+class="math inline">\(\mathbf{o}_{xy} = [\Delta n_x, \Delta n_y
+]^\top\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+    \mathbf{v}_m = \mathbf{q}\odot \begin{pmatrix}
+    \frac{\mathbf{p}_z \theta_p}{N_p} \frac{\Delta n_x}{\Delta t}\\
+    \frac{\mathbf{p}_z \theta_p}{N_p} \frac{\Delta n_y}{\Delta t}\\
+    0
+    \end{pmatrix}
+\end{align}
+\]</span></p>
+<p>where <span class="math inline">\(N_p = 350\)</span>, <span
+class="math inline">\(\theta_p = 0.71674\)</span>, and <span
+class="math inline">\(\Delta t\)</span> is the time since last sensor
+data</p>
+</div>
+<div class="col">
+<p><img data-src="media/flow_deck_v2.jpg" /></p>
+</div>
+</div>
+</section>
+<section id="basic-complementary-filter" class="slide level2">
+<h2>Basic Complementary Filter</h2>
+<ul>
+<li>Assume we can measure/compute part of the state directly</li>
+<li>Use a <em>convex combination</em>, weighing previous estimate <span
+class="math inline">\(\hat{\mathbf{x}}_{t}\)</span> with the new
+measurement <span class="math inline">\(\mathbf{x}_m\)</span>: <span
+class="math display">\[\begin{align}
+\hat{\mathbf{x}}_{t+1} = \alpha \hat{\mathbf{x}}_{t} + (1 - \alpha)
+\mathbf{x}_m,\quad \alpha \in [0,1]
+\end{align}\]</span></li>
+</ul>
+<div class="fragment">
+<div class="box-ex">
+<p>Multirotor case: <span class="math display">\[\begin{align}
+\mathbf{p}_z &amp;= \alpha_z \mathbf{p}_z + (1 - \alpha_z)
+\mathbf{o}_z,\quad \alpha_z \in [0,1]\\
+\mathbf{v}&amp;= \alpha_{xy} \mathbf{v}+ (1 - \alpha_{xy})
+\mathbf{v}_m,\quad \alpha_{xy} \in [0,1]
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{o}_z\)</span> is the
+measurement of the height sensor and <span
+class="math inline">\(\mathbf{v}_m\)</span> the (computed) measurement
+of the flow sensor.</p>
+</div>
+</div>
+</section>
+<section
+id="so3-explicit-complementary-filter-ecf-by-mahony-2008-mahony-nonlinearcomplementaryfilters-2008-euston-complementaryfilterattitudea"
+class="slide level2">
+<h2>SO(3) Explicit Complementary Filter (ECF) by Mahony <span
+class="citation"
+data-cites="2008-mahony-NonlinearComplementaryFilters 2008-euston-ComplementaryFilterAttitudea">(Mahony,
+Hamel, and Pflimlin 2008; Euston et al. 2008)</span></h2>
+<ul>
+<li><p>measured values are: <span
+class="math inline">\(\mathbf{o}_g\)</span> (gyroscope) and <span
+class="math inline">\(\mathbf{o}_a\)</span> (accelerometer)</p></li>
+<li><p>Use <span class="math inline">\(n(\mathbf{x}) =
+\frac{\mathbf{x}}{\| \mathbf{x}\|}\)</span>, and <span
+class="math inline">\(k_p, k_I \in \mathbb R\)</span> tuning
+gains</p></li>
+<li><p>Each step, compute: <span class="math display">\[
+\begin{align}
+\mathbf{e}&amp;= n(\mathbf{o}_a) \times \left(\mathbf{q}\odot
+\mathbf{e}_3 \right) &amp;
+\delta &amp;= k_p \mathbf{e}+ k_I \int \mathbf{e}\\
+\dot{\mathbf{q}}_{next} &amp;= \frac{1}{2} \mathbf{q}\otimes
+\overline{\mathbf{o}_g + \delta} &amp;
+\mathbf{q}_{next} &amp;= n(\mathbf{q}+ \dot{\mathbf{q}}_{next} \Delta t)
+\end{align}
+\]</span></p></li>
+<li><p>In words: Define the error as the cross product between measured
+gravity from the accelerometer and current estimate; use a PI controller
+to drive the error to zero.</p></li>
+<li><p>Sample implementation is <a
+href="https://github.com/xioTechnologies/Open-Source-AHRS-With-x-IMU/blob/master/x-IMU%20IMU%20and%20AHRS%20Algorithms/x-IMU%20IMU%20and%20AHRS%20Algorithms/AHRS/MahonyAHRS.cs">here</a></p></li>
+</ul>
+</section>
+<section
+id="so3-complementary-filter-by-madgwick-2014-madgwick-ahrsalgorithmscalibration"
+class="slide level2">
+<h2>SO(3) Complementary Filter by Madgwick <span class="citation"
+data-cites="2014-madgwick-AHRSAlgorithmsCalibration">(Madgwick
+2014)</span></h2>
+<ul>
+<li>Measured values are: <span
+class="math inline">\(\mathbf{o}_g\)</span> (gyroscope) and <span
+class="math inline">\(\mathbf{o}_a\)</span> (accelerometer)</li>
+<li>Step 1: Estimate <span class="math inline">\(\mathbf{q}\)</span>
+from <span class="math inline">\(\mathbf{o}_a\)</span> by solving: <span
+class="math display">\[
+\begin{align}
+\min_{\mathbf{q}}f(\mathbf{q}, \mathbf{o}_a) = \mathbf{q}^* \odot
+\mathbf{e}_3 - \frac{\mathbf{o}_a}{\|\mathbf{o}_a\|_2}
+\end{align}
+\]</span>
+<ul>
+<li>In words: Find the rotation such that accelerometer frame and world
+frame align</li>
+<li>Solve by gradient descent</li>
+</ul></li>
+<li>Step 2: Fuse gyroscope and accelerometer data <span
+class="math display">\[
+\begin{align}
+\dot{\mathbf{q}}_{next} &amp;= \frac{1}{2} \mathbf{q}\otimes
+\overline{\mathbf{o}_g} - \beta\,n(J(\mathbf{q})^\top f(\mathbf{q},
+\mathbf{o}_a))\\
+\mathbf{q}_{next} &amp;= n(\mathbf{q}+ \dot{\mathbf{q}}_{next} \Delta t)
+\end{align}
+\]</span></li>
+<li>Sample implementation is <a
+href="https://github.com/xioTechnologies/Open-Source-AHRS-With-x-IMU/blob/c233c3d6564684616c957c6ea44e92cb3f9792a2/x-IMU%20IMU%20and%20AHRS%20Algorithms/x-IMU%20IMU%20and%20AHRS%20Algorithms/AHRS/MadgwickAHRS.cs#L212-L269">here</a></li>
+</ul>
+</section>
+<section
+id="so3-complementary-filter-by-madgwick-2014-madgwick-ahrsalgorithmscalibration-1"
+class="slide level2">
+<h2>SO(3) Complementary Filter by Madgwick <span class="citation"
+data-cites="2014-madgwick-AHRSAlgorithmsCalibration">(Madgwick
+2014)</span></h2>
+<ul>
+<li>Efficient implementation needs analytical Jacobian <img
+data-src="media/madgwick.png" /></li>
+</ul>
+<div class="box-red">
+<p>Here, <span class="math inline">\(\mathbf{a}=
+n(\mathbf{o}_a)\)</span></p>
+</div>
+<ul>
+<li>Sympy demo: <code>filter_madgwick.py</code></li>
+</ul>
+</section>
+<section id="complementary-filter-uav-summary" class="slide level2">
+<h2>Complementary Filter UAV Summary</h2>
+<ul>
+<li>Fuse measurements from different source or prior knowledge (convex
+combination, control gains, or gradient descent)</li>
+</ul>
+<div class="box-ex">
+<ul>
+<li>No dynamics model needed</li>
+<li>Very low computational effort</li>
+<li>Few hyperparameters</li>
+</ul>
+</div>
+<div class="box-red">
+<ul>
+<li>Larger <span class="math inline">\(\alpha\)</span> introduces
+(significant) delays</li>
+<li>Requires that state is measured/computed directly</li>
+<li>Does not provide an estimate of accuracy of prediction</li>
+</ul>
+</div>
+</section>
+<section id="background-kalman-filter-kf-thrunprobabilisticrobotics2005"
+class="slide level2">
+<h2>Background: Kalman Filter (KF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<ul>
+<li>Assume <em>linear system</em> dynamics with Gaussian white noise
+(<em>process noise</em> <span
+class="math inline">\(\mathbf{R}\)</span>): <span
+class="math display">\[
+\begin{align}
+\mathbf{x}_{t+1} = \mathbf{A}\mathbf{x}_t + \mathbf{B}\mathbf{u}_t +
+\epsilon_t,\quad \epsilon_t \sim \mathcal{N}(0, \mathbf{R})
+\end{align}
+\]</span></li>
+<li>Assume <em>linear observations</em> with Gaussian white noise
+(<em>measurement noise</em> <span
+class="math inline">\(\mathbf{Q}\)</span>): <span
+class="math display">\[
+\begin{align}
+\mathbf{o}_{t} = \mathbf{C}\mathbf{x}_t + \delta_t,\quad \delta_t \sim
+\mathcal{N}(0, \mathbf{Q})
+\end{align}
+\]</span></li>
+</ul>
+<div class="box-ex">
+<div class="box-ex-title">
+<p>1D Multirotor</p>
+</div>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix} \dot z\\
+\frac{f_1}{m} - g \end{pmatrix}
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section
+id="background-kalman-filter-kf-thrunprobabilisticrobotics2005-1"
+class="slide level2">
+<h2>Background: Kalman Filter (KF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<div class="box-ex">
+<div class="box-ex-title">
+<p>1D Multirotor</p>
+</div>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{\dot x} &amp;= f(\mathbf x, \mathbf u) = \begin{pmatrix} \dot
+z\\ \frac{f_1}{m} - g \end{pmatrix}\\
+\mathbf{x}_{t+1} &amp;= \mathbf{x}_t+\dot{\mathbf{x}}_t \Delta t =
+\begin{pmatrix} z\\ \dot z\end{pmatrix}+\begin{pmatrix} \dot z\\
+\frac{f_1}{m} - g \end{pmatrix} \Delta t\\
+\mathbf{x}_{t+1} &amp;= \begin{pmatrix}1 &amp; \Delta t \\ 0 &amp; 1
+\end{pmatrix} \mathbf{x}_t + \begin{pmatrix}0\\ \frac{\Delta t}{m}
+\end{pmatrix}\mathbf{u}_t + \begin{pmatrix}0 \\ -g \end{pmatrix}\\
+\mathbf{o}_t &amp;= \begin{pmatrix}1 &amp; 0 \end{pmatrix} \mathbf{x}_t
+\end{align}
+\]</span></p>
+</div>
+</section>
+<section
+id="background-kalman-filter-kf-thrunprobabilisticrobotics2005-2"
+class="slide level2">
+<h2>Background: Kalman Filter (KF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<ul>
+<li><p>Goal: Gaussian estimate of the state, i.e. the mean <span
+class="math inline">\(\mu\)</span> and covariance <span
+class="math inline">\(\Sigma\)</span>.</p></li>
+<li><p>KF has two parts:</p></li>
+</ul>
+<ol type="1">
+<li>Prediction step: given the current estimate (<span
+class="math inline">\(\hat{\mathbf{x}}_t\)</span> and <span
+class="math inline">\(\Sigma_t\)</span>) and action <span
+class="math inline">\(\mathbf{u}_t\)</span>, compute a new
+estimate:</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+\hat{\mathbf{x}}_{t+1} &amp;= \mathbf{A}\hat{\mathbf{x}}_t +
+\mathbf{B}\mathbf{u}_t\\
+\Sigma_{t+1} &amp;= \mathbf{A}\Sigma_t \mathbf{A}^\top + \mathbf{R}
+\end{align}\]</span></p>
+<ol start="2" type="1">
+<li>Measurement update: given the current estimate (<span
+class="math inline">\(\hat{\mathbf{x}}_t\)</span> and <span
+class="math inline">\(\Sigma_t\)</span>) and measurement <span
+class="math inline">\(\mathbf{o}_t\)</span>, compute a new
+estimate:</li>
+</ol>
+<p><span class="math display">\[\begin{align}
+\mathbf{K}&amp;= \Sigma_t \mathbf{C}^\top \left(\mathbf{C}\Sigma_t
+\mathbf{C}^\top + \mathbf{Q}\right)^{-1}\\
+\hat{\mathbf{x}}_{t+1} &amp;= \hat{\mathbf{x}}_t +
+\mathbf{K}(\mathbf{o}_t - \mathbf{C}\hat{\mathbf{x}}_t)\\
+\Sigma_{t+1} &amp;= (\mathbf{I}- \mathbf{K}\mathbf{C}) \Sigma_t
+\end{align}\]</span></p>
+</section>
+<section
+id="background-kalman-filter-kf-thrunprobabilisticrobotics2005-3"
+class="slide level2">
+<h2>Background: Kalman Filter (KF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<div class="box-ex">
+<ul>
+<li>Optimal (least square) for the given system assumptions</li>
+<li>Computes uncertainty as well</li>
+</ul>
+</div>
+<div class="box-red">
+<ul>
+<li>Strong assumptions do not reflect real systems (linear
+dynamics/measurements, Gaussian white noise)</li>
+<li>Computational effort: Kalman gain requires matrix inversion of
+potentially large matrix</li>
+</ul>
+</div>
+</section>
+<section
+id="background-extended-kalman-filter-ekf-thrunprobabilisticrobotics2005"
+class="slide level2">
+<h2>Background: Extended Kalman Filter (EKF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<ul>
+<li>Generalize system dynamics and measurement model to: <span
+class="math display">\[
+\begin{align}
+\mathbf{x}_{t+1} &amp;= g(\mathbf{x}_t, \mathbf{u}_t) + \epsilon_t,\quad
+\epsilon_t \sim \mathcal{N}(0, \mathbf{R})\\
+\mathbf{z}_{t} &amp;= h(\mathbf{x}_t) + \delta_t,\quad \delta_t \sim
+\mathcal{N}(0, \mathbf{Q})
+\end{align}
+\]</span></li>
+</ul>
+<div class="fragment">
+<div class="box-red">
+<p>How could one apply KF here?</p>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Key idea: linearize using first-order Taylor around prior estimate;
+then use KF</li>
+</ul>
+</div>
+</section>
+<section
+id="background-extended-kalman-filter-ekf-thrunprobabilisticrobotics2005-1"
+class="slide level2">
+<h2>Background: Extended Kalman Filter (EKF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<div class="container">
+<div class="col">
+<ol type="1">
+<li>Prediction step: <span class="math display">\[
+\begin{align}
+\hat{\mathbf{x}}_{t+1} &amp;= g(\hat{\mathbf{x}}_t, \mathbf{u}_t)\\
+\mathbf{G}&amp;= \frac{\partial g(\mathbf{x}, \mathbf{u})}{\partial
+\mathbf{x}} \vert_{\mathbf{x}=\hat{\mathbf{x}}_t,
+\mathbf{u}=\mathbf{u}_t}\\
+\Sigma_{t+1} &amp;= \mathbf{G}\Sigma_t \mathbf{G}^\top + \mathbf{R}
+\end{align}
+\]</span></li>
+</ol>
+</div>
+<div class="col">
+<ol start="2" type="1">
+<li>Measurement update: <span class="math display">\[
+\begin{align}
+\mathbf{H}&amp;= \frac{\partial h(\mathbf{x})}{\partial \mathbf{x}}
+\vert_{\mathbf{x}=\hat{\mathbf{x}}_t}\\
+\mathbf{K}&amp;= \Sigma_t \mathbf{H}^\top \left(\mathbf{H}\Sigma_t
+\mathbf{H}^\top + \mathbf{Q}\right)^{-1}\\
+\hat{\mathbf{x}}_{t+1} &amp;= \hat{\mathbf{x}}_t +
+\mathbf{K}(\mathbf{o}_t - h(\hat{\mathbf{x}}_t))\\
+\Sigma_{t+1} &amp;= (\mathbf{I}- \mathbf{K}\mathbf{H}) \Sigma_t
+\end{align}
+\]</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section
+id="background-extended-kalman-filter-ekf-thrunprobabilisticrobotics2005-2"
+class="slide level2">
+<h2>Background: Extended Kalman Filter (EKF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>Dynamics: <span class="math display">\[
+\begin{align}
+\mathbf{\dot x} = f(\mathbf x, \mathbf u) = \begin{pmatrix}
+\dot x\\
+\frac{-(f_1 + f_2) \sin \theta}{m}\\
+\dot z\\
+\frac{(f_1 + f_2) \cos \theta}{m} - g\\
+\dot \theta\\
+\frac{(f_2 - f_1) l}{\mathbf J_{yy}}
+\end{pmatrix}
+\end{align}
+\]</span></li>
+</ul>
+</div>
+<div class="col">
+<p><img data-src="media/multirotor2d.svg" class="absolute"
+data-top="200" data-left="0" width="350" height="300" /></p>
+</div>
+</div>
+<p>Sympy demo: <code>ekf.py</code></p>
+</section>
+<section
+id="background-extended-kalman-filter-ekf-thrunprobabilisticrobotics2005-3"
+class="slide level2">
+<h2>Background: Extended Kalman Filter (EKF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<div class="box-ex">
+<ul>
+<li>Works for arbitrary (smooth) dynamics</li>
+<li>Computes uncertainty as well</li>
+<li>“Optimal”</li>
+</ul>
+</div>
+<div class="box-red">
+<ul>
+<li>Linearization only correct, if <span
+class="math inline">\(\hat{\mathbf{x}}\)</span> is correct</li>
+<li>Unclear how to handle SO(2) and SO(3) correctly</li>
+</ul>
+</div>
+</section>
+<section
+id="so3-multiplicative-extended-kalman-filter-mekf-2003-markley-attitudeerrorrepresentations2008-hall-quaternionattitudeestimation2015-mueller-fusingultrawidebandrange"
+class="slide level2">
+<h2>SO(3) Multiplicative Extended Kalman Filter (MEKF) <span
+class="citation"
+data-cites="2003-markley-AttitudeErrorRepresentations 2008-hall-QuaternionAttitudeEstimation 2015-mueller-FusingUltrawidebandRange">(Markley
+2003; Hall, Knoebel, and McLain 2008; Mueller, Hamer, and D’Andrea
+2015)</span></h2>
+<ul>
+<li>Split SO(3) state <span class="math inline">\(\mathbf{q}\)</span> in
+error angle part (<span class="math inline">\(\boldsymbol{\delta}\in
+\mathbb R^3\)</span>) and external absolute orientation part (<span
+class="math inline">\(\mathbf{q}_{ref}\)</span>)</li>
+</ul>
+<!-- alternatives in Markley, Eq (18) -->
+<!-- Approximation from Markley, Eq (19) -->
+<p><span class="math display">\[
+\begin{align}
+\mathbf{q}&amp;= \mathbf{q}_{ref} \otimes
+\mathbf{q}(\boldsymbol{\delta})  \\
+\mathbf{q}(\boldsymbol{\delta}) &amp;= \begin{pmatrix}
+\cos(\| \boldsymbol{\delta}\| /2)\\
+\frac{\boldsymbol{\delta}}{\| \boldsymbol{\delta}\|} \sin (\|
+\boldsymbol{\delta}\| /2)
+\end{pmatrix}
+\approx \begin{pmatrix}
+1.0 - \| \boldsymbol{\delta}\|^2 / 8\\
+\boldsymbol{\delta}/2
+\end{pmatrix}
+\end{align}
+\]</span></p>
+<ul>
+<li>The filter state only contains <span
+class="math inline">\(\boldsymbol{\delta}\)</span>; <span
+class="math inline">\(\mathbf{q}_{ref}\)</span> is treated as
+constant</li>
+<li>Add <em>reset</em> step, that recomputes <span
+class="math inline">\(\mathbf{q}_{ref}\)</span></li>
+</ul>
+<div class="fragment">
+<div class="box-ex">
+<p>The name comes from quaternion multiplication <span
+class="math inline">\(\otimes\)</span>. Others refer to it as “indirect
+EKF” <span class="citation"
+data-cites="2005-trawny-IndirectKalmanFilter">(Trawny and Roumeliotis
+2005)</span></p>
+</div>
+</div>
+</section>
+<section id="so3-mekf-prediction-step" class="slide level2">
+<h2>SO(3) MEKF Prediction Step</h2>
+<ul>
+<li>State: <span class="math inline">\(\mathbf{x}= [ \mathbf{p},
+\mathbf{b}, \boldsymbol{\delta}]^\top \in \mathbb R^9\)</span> (and
+<span class="math inline">\(\mathbf{q}_{ref}\)</span> outside the
+filter)
+<ul>
+<li><span class="math inline">\(\boldsymbol{\omega}\)</span> can be
+directly observed and often remains not part of the EKF</li>
+<li><span class="math inline">\(\mathbf{b}\)</span> is velocity in
+<em>body frame</em> (<span class="math inline">\(\mathbf{v}=
+\mathbf{q}\odot \mathbf{b}\)</span>) (will simplify some math
+later!)</li>
+</ul></li>
+<li>Action: <span class="math inline">\(\mathbf{u}= [ \mathbf{o}_g,
+\mathbf{o}_a ]^\top\)</span> (i.e., gyroscope and accelerometer are
+“actions” not measurements)</li>
+<li>Dynamics (step) <span class="math inline">\(\hat{\mathbf{x}}_{t+1} =
+g(\hat{\mathbf{x}}_t, \mathbf{u}_t)\)</span>: <span
+class="math display">\[
+\begin{align}
+  \hat{\mathbf{p}}_{t+1} &amp;= \hat{\mathbf{p}}_t + ((\mathbf{q}_{ref}
+\otimes \mathbf{q}(\hat{\boldsymbol{\delta}}_{t})) \odot
+\hat{\mathbf{b}}_t) \Delta t\\
+  \hat{\mathbf{b}}_{t+1} &amp;= \hat{\mathbf{b}}_t + \left(
+(\mathbf{q}_{ref} \otimes \mathbf{q}(\hat{\boldsymbol{\delta}}_{t}))^*
+\odot \mathbf{g}+ \mathbf{o}_a \right) \Delta t\\
+  \hat{\boldsymbol{\delta}}_{t+1} &amp;= \hat{\boldsymbol{\delta}}_{t} +
+\mathbf{o}_g \Delta t
+\end{align}
+\]</span></li>
+</ul>
+</section>
+<section id="so3-mekf-prediction-step-1" class="slide level2">
+<h2>SO(3) MEKF Prediction Step</h2>
+<div class="box-red">
+<p>Benefits of using IMU as actions rather than measurements?</p>
+</div>
+<div class="fragment">
+<div class="box-ex">
+<ul>
+<li>True motor forces/torques can often not be measured in-flight</li>
+<li><span class="math inline">\(\mathbf{o}_a \neq
+h(\mathbf{x})\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="so3-mekf-prediction-step-2" class="slide level2">
+<h2>SO(3) MEKF Prediction Step</h2>
+<p><span class="math display">\[
+\begin{align}
+\hat{\mathbf{x}}_{t+1} &amp;= g(\hat{\mathbf{x}}_t, \mathbf{u}_t)\\
+\mathbf{G}&amp;= \frac{\partial g(\mathbf{x}, \mathbf{u})}{\partial
+\mathbf{x}} \vert_{\mathbf{x}=\hat{\mathbf{x}}_t,
+\mathbf{u}=\mathbf{u}_t}\\
+\Sigma_{t+1} &amp;= \mathbf{G}\Sigma_t \mathbf{G}^\top + \mathbf{R}
+\end{align}
+\]</span></p>
+<div class="box-ex">
+<p><span class="math inline">\(G\)</span> can be computed analytically
+or by numerical approximation:</p>
+<p><span class="math display">\[\begin{align}
+G \approx
+\begin{pmatrix} \frac{\partial g_1(\mathbf{x}, \mathbf{u})}{\partial
+\mathbf{x}_1} &amp; \ldots &amp; \frac{\partial g_1(\mathbf{x},
+\mathbf{u})}{\partial \mathbf{x}_N}\\
+\vdots &amp; \ldots &amp; \vdots\\
+\frac{\partial g_N(\mathbf{x}, \mathbf{u})}{\partial \mathbf{x}_1} &amp;
+\ldots &amp; \frac{\partial g_N(\mathbf{x}, \mathbf{u})}{\partial
+\mathbf{x}_N}
+\end{pmatrix}
+\end{align}\]</span></p>
+<p><span class="math inline">\(G\)</span> becomes an easy expression, if
+just using <span class="math inline">\(\mathbf{q}_{ref}\)</span>. (Demo:
+<code>mekf.py</code>)</p>
+</div>
+</section>
+<section id="so3-mekf-reset-step" class="slide level2">
+<h2>SO(3) MEKF Reset Step</h2>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{q}_{ref} &amp;= \mathbf{q}_{ref} \otimes
+\mathbf{q}(\boldsymbol{\delta}) \\
+\boldsymbol{\delta}&amp;= \mathbf{0}
+\end{align}
+\]</span></p>
+<p>Optional: rotate <span class="math inline">\(\Sigma\)</span> <span
+class="citation"
+data-cites="2017-mueller-CovarianceCorrectionStep">(Mueller, Hehn, and
+D’Andrea 2017)</span></p>
+</section>
+<section id="measurement-equation-for-height" class="slide level2">
+<h2>Measurement Equation for Height</h2>
+<ul>
+<li><span class="math inline">\(\mathbf{o}_z = h(\mathbf{x}) =
+\mathbf{p}_z\)</span> (for small <span
+class="math inline">\(\mathbf{q}\)</span> w.r.t. FoV)</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{H}&amp;= \frac{\partial h(\mathbf{x})}{\partial \mathbf{x}}
+\vert_{\mathbf{x}=\hat{\mathbf{x}}_t}\\
+&amp;= \begin{pmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+&amp; 0 &amp; 0 \end{pmatrix}
+\end{align}
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+\mathbf{K}&amp;= \Sigma_t \mathbf{H}^\top \left(\mathbf{H}\Sigma_t
+\mathbf{H}^\top + \mathbf{Q}\right)^{-1}\\
+\hat{\mathbf{x}}_{t+1} &amp;= \hat{\mathbf{x}}_t +
+\mathbf{K}(\mathbf{o}_z - h(\hat{\mathbf{x}}_t))\\
+\Sigma_{t+1} &amp;= (\mathbf{I}- \mathbf{K}\mathbf{H}) \Sigma_t
+\end{align}
+\]</span></p>
+<p>sympy demo: <code>mekf_measurement_height.py</code></p>
+<!-- % \mH \Sigma_t \mH^\top \Rightarrow \mathbb R^{1\times 9} R^{9\times 9} R^{9\times 1} \Rightarrow \text{inversion becomes division} -->
+<!-- \mK = \Sigma_t \mH^\top \left(\mH \Sigma_t \mH^\top + \mQ \right)^{-1}\\
+\hat{\vx}_{t+1} = \hat{\vx}_t + \mK (\vo_t - h(\hat{\vx}_t))\\
+\Sigma_{t+1} = (\mI - \mK \mH) \Sigma_t
+\end{align} -->
+</div>
+</section>
+<section id="measurement-equation-for-flow" class="slide level2">
+<h2>Measurement Equation for Flow</h2>
+<ul>
+<li>outputs motion in pixels: <span
+class="math inline">\(\mathbf{o}_{xy} = [\Delta n_x, \Delta n_y
+]^\top\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+    \mathbf{v}_m = \mathbf{q}\odot \begin{pmatrix}
+    \frac{\mathbf{p}_z \theta_p}{N_p} \frac{\Delta n_x}{\Delta t}\\
+    \frac{\mathbf{p}_z \theta_p}{N_p} \frac{\Delta n_y}{\Delta t}\\
+    0
+    \end{pmatrix}
+\end{align}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\mathbf{o}_{xy} = [\Delta n_x, \Delta
+n_y ]^\top = h(\mathbf{x}) = \left( \frac{\Delta t N_p}{\mathbf{p}_z
+\theta_{p}} \left( (\mathbf{q}(\boldsymbol{\delta}) \otimes
+\mathbf{q}_{ref})^* \odot \mathbf{v}\right) \right)_{xy}\)</span></li>
+</ul>
+<div class="box-ex">
+<p>If the filter tracks the velocity in body frame, this becomes much
+simpler.</p>
+</div>
+</section>
+<section id="measurement-equation-for-flow-1" class="slide level2">
+<h2>Measurement Equation for Flow</h2>
+<ul>
+<li><span class="math inline">\(\mathbf{o}_{xy} = [\Delta n_x, \Delta
+n_y ]^\top;  h(\mathbf{x}) = \frac{\Delta t N_p}{\mathbf{p}_z
+\theta_{p}} \begin{pmatrix}
+\mathbf{b}_x\\\mathbf{b}_y\end{pmatrix}\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{H}&amp;= \frac{\partial h(\mathbf{x})}{\partial \mathbf{x}}
+\vert_{\mathbf{x}=\hat{\mathbf{x}}_t}\\
+&amp;=
+\begin{pmatrix}
+0 &amp; 0 &amp; \frac{-N_p \mathbf{b}_x \Delta t}{\mathbf{p}_z^2
+\theta_p} &amp; \frac{N_p \Delta t}{\mathbf{p}_z \theta} &amp; 0 &amp; 0
+&amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; \frac{-N_p \mathbf{b}_y \Delta t}{\mathbf{p}_z^2
+\theta_p} &amp; 0 &amp; \frac{N_p \Delta t}{\mathbf{p}_z \theta} &amp; 0
+&amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\end{align}
+\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[
+\begin{align}
+\mathbf{K}&amp;= \Sigma_t \mathbf{H}^\top \left(\mathbf{H}\Sigma_t
+\mathbf{H}^\top + \mathbf{Q}\right)^{-1}\\
+\hat{\mathbf{x}}_{t+1} &amp;= \hat{\mathbf{x}}_t +
+\mathbf{K}(\mathbf{o}_{xy} - h(\hat{\mathbf{x}}_t))\\
+\Sigma_{t+1} &amp;= (\mathbf{I}- \mathbf{K}\mathbf{H}) \Sigma_t
+\end{align}
+\]</span></p>
+<p>sympy demo: <code>mekf_measurement_flow.py</code></p>
+</div>
+</section>
+<section id="large-matrices-and-embedded-systems" class="slide level2">
+<h2>Large Matrices (and Embedded Systems)</h2>
+<ul>
+<li>Matrix inversions are slow (roughly cubic)</li>
+<li>We have <span class="math inline">\(\left(\mathbf{H}\Sigma_t
+\mathbf{H}^\top + \mathbf{Q}\right)^{-1}\)</span>
+<ul>
+<li>If <span class="math inline">\(\mathbf{H}\)</span> has one row, the
+inversion becomes a division</li>
+</ul></li>
+</ul>
+<div class="box-ex">
+<div class="box-ex-title">
+<p>Scalar Update</p>
+</div>
+<p>Apply measurement update for each row of <span
+class="math inline">\(\mathbf{H}\)</span> separately. (Justification:
+the measurement was taken at different times).</p>
+</div>
+<div class="box-red">
+<p>Works well in practice, but only for highly observable systems.</p>
+</div>
+</section>
+<section id="mekf-summary-1" class="slide level2">
+<h2>MEKF Summary (1)</h2>
+<ol start="0" type="1">
+<li><p>Initialize state <span
+class="math inline">\(\hat{\mathbf{x}}\)</span>, covariance <span
+class="math inline">\(\Sigma\)</span></p></li>
+<li><p>On IMU update</p>
+<ol type="a">
+<li>Reset: <span class="math display">\[
+\begin{align}
+\mathbf{q}_{ref} &amp;= \mathbf{q}_{ref} \otimes
+\mathbf{q}(\hat{\boldsymbol{\delta}}) \\
+\boldsymbol{\delta}&amp;= \mathbf{0}
+\end{align}
+\]</span></li>
+<li>Convert <span class="math inline">\(\mathbf{b}\)</span> to <span
+class="math inline">\(\mathbf{v}\)</span></li>
+<li>Predict <span class="math display">\[
+\begin{align}
+\hat{\mathbf{x}}_{t+1} &amp;= g(\hat{\mathbf{x}}_t, \mathbf{u}_t)\\
+\mathbf{G}&amp;= \frac{\partial g(\mathbf{x}, \mathbf{u})}{\partial
+\mathbf{x}} \vert_{\mathbf{x}=\hat{\mathbf{x}}_t,
+\mathbf{u}=\mathbf{u}_t}\\
+\Sigma_{t+1} &amp;= \mathbf{G}\Sigma_t \mathbf{G}^\top + \mathbf{R}
+\end{align}
+\]</span></li>
+</ol></li>
+</ol>
+</section>
+<section id="mekf-summary-2" class="slide level2">
+<h2>MEKF Summary (2)</h2>
+<ol start="2" type="1">
+<li>On Measurement update</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+\mathbf{H}&amp;= \frac{\partial h(\mathbf{x})}{\partial \mathbf{x}}
+\vert_{\mathbf{x}=\hat{\mathbf{x}}_t}\\
+\mathbf{K}&amp;= \Sigma_t \mathbf{H}^\top \left(\mathbf{H}\Sigma_t
+\mathbf{H}^\top + \mathbf{Q}\right)^{-1}\\
+\hat{\mathbf{x}}_{t+1} &amp;= \hat{\mathbf{x}}_t +
+\mathbf{K}(\mathbf{o}_z - h(\hat{\mathbf{x}}_t))\\
+\Sigma_{t+1} &amp;= (\mathbf{I}- \mathbf{K}\mathbf{H}) \Sigma_t
+\end{align}
+\]</span></p>
+<div class="box-ex">
+<ul>
+<li>State of the art filter (used in PX4, Crazyflie, etc.)</li>
+</ul>
+</div>
+<div class="box-red">
+<ul>
+<li>Computationally heavy</li>
+<li>Difficult to tune (and implement)</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="advanced-topics" class="title-slide slide level1">
+<h1>Advanced Topics</h1>
+
+</section>
+<section id="unscented-kalman-filter-ukf-thrunprobabilisticrobotics2005"
+class="slide level2">
+<h2>Unscented Kalman Filter (UKF) <span class="citation"
+data-cites="thrunProbabilisticRobotics2005">(Thrun, Burgard, and Fox
+2005)</span></h2>
+<ul>
+<li>Linearization using statistical linear regression
+<ul>
+<li>derivative-free</li>
+<li>more computation (factor, not complexity)</li>
+</ul></li>
+</ul>
+<div class="box-red">
+<p>“In many practical applications, the difference between EKF and UKF
+is negligible.” (Probabilstic Robotics, page 70)</p>
+</div>
+</section>
+<section id="other-sensors" class="slide level2">
+<h2>Other Sensors</h2>
+<ul>
+<li>Global Navigation System (e.g., GPS)
+<ul>
+<li>Measure directly absolute position <span
+class="math inline">\(\mathbf{p}\)</span>, easy to integrate</li>
+</ul></li>
+<li>Ultra-wideband ranging
+<ul>
+<li>Measure distance to known anchors, or other robots</li>
+<li>Often used for indoor drone shows (e.g., Verity Studios)</li>
+<li>Can be used for formation flight of multiple drones</li>
+</ul></li>
+<li>Lighthouse (HTC Vive)
+<ul>
+<li>Basestations (at known position) have a rotating laser (at known
+frequency)</li>
+<li>Receivers can essentially use triangulation</li>
+</ul>
+<img data-src="media/lighthouse_deck.jpg" style="width:20.0%" /></li>
+</ul>
+</section>
+<section
+id="visual-inertial-odomotry-vio-2020-scaramuzza-aerialrobotsvisualinertiala"
+class="slide level2">
+<h2>Visual-Inertial Odomotry (VIO) <span class="citation"
+data-cites="2020-scaramuzza-AerialRobotsVisualInertiala">(Scaramuzza and
+Zhang 2020)</span></h2>
+<p><img
+data-src="media/Encyclopedia19VIO_Scaramuzza.2019-06-07-21-33-10.png"
+style="width:90.0%" /></p>
+<ul>
+<li>Predict motion using IMU (integration)</li>
+<li>Predict motion using camera (typically using keypoints)</li>
+<li>Variants and more details in <span class="citation"
+data-cites="2020-scaramuzza-AerialRobotsVisualInertiala">(Scaramuzza and
+Zhang 2020)</span></li>
+</ul>
+</section>
+<section id="state-estimation-in-the-crazyflie-firmware"
+class="slide level2">
+<h2>State Estimation in the Crazyflie Firmware</h2>
+<ul>
+<li><a
+href="https://github.com/bitcraze/crazyflie-firmware/tree/master/src/modules/src/estimator">Most
+state estimators</a></li>
+<li><a
+href="https://github.com/bitcraze/crazyflie-firmware/tree/master/src/modules/src/kalman_core">EKF</a></li>
+</ul>
+</section></section>
+<section>
+<section id="assignment-3" class="title-slide slide level1">
+<h1>Assignment 3</h1>
+
+</section>
+<section id="task" class="slide level2">
+<h2>Task</h2>
+<p>Implement the MEKF. Validate offline using the provided logging data
+and compare with the on-board EKF. Execute a physical test flight and
+qualitatively compare to the on-board EKF.</p>
+<p>Variants:</p>
+<ol type="1">
+<li>Implement one of the complementary filters instead in simulation and
+physical flight (up to 15/20 points).</li>
+<li>MEKF in simulation, complementary on-board (up to 18/20
+points).</li>
+</ol>
+</section>
+<section id="simulation" class="slide level2">
+<h2>Simulation</h2>
+<ul>
+<li>Given is a dataset of “our” figure-8 flight
+<ul>
+<li>reference estimate of the on-board EKF (<span
+class="math inline">\(\mathbf{p}, \mathbf{v}, \mathbf{q}\)</span> over
+time)</li>
+<li>Gyroscope over time (<span
+class="math inline">\(\mathbf{o}_g\)</span> in deg/s <em>!</em>)</li>
+<li>Accelerometer over time (<span
+class="math inline">\(\mathbf{o}_a\)</span> in Gs <em>!</em>)</li>
+<li>Height over time (<span class="math inline">\(\mathbf{o}_z\)</span>
+in mm)</li>
+<li>Flow over time (<span class="math inline">\(\Delta n_x, \Delta
+n_y\)</span>) (<em>needs to be swapped, flipped, done in conversion
+script</em>)</li>
+</ul></li>
+<li>Given is a conversion script for *.csv (show example)</li>
+<li>Read the csv line-by-line
+<ul>
+<li>collect data that you need simultanously (e.g., gyroscope and
+accelerometer)</li>
+<li>then call the appropriate function (e.g., mekf_predict)</li>
+<li>write your output to a file, plot with e.g., Python</li>
+</ul></li>
+</ul>
+</section>
+<section id="physical-flight" class="slide level2">
+<h2>Physical Flight</h2>
+<ul>
+<li>Sufficient to show it hover, using an existing (non-Rust)
+controller</li>
+<li>Approach:
+<ol type="1">
+<li>In <code>app-config</code>, add
+<code>CONFIG_ESTIMATOR_OOT=y</code></li>
+<li>In <code>lib.rs</code> add <code>estimatorOutOfTreeInit</code>,
+<code>estimatorOutOfTreeTest</code>, and
+<code>estimatorOutOfTree</code></li>
+<li>In the state estimator, use the following to loop over
+measurements</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> <span class="kw">mut</span> measurement <span class="op">=</span> measurement_t <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    type_<span class="op">:</span> <span class="dv">255</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">:</span> <span class="pp">bindings::</span>measurement_t__bindgen_ty_1 <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            gyroscope<span class="op">:</span> <span class="pp">bindings::</span>gyroscopeMeasurement_t <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            gyro<span class="op">:</span> <span class="pp">bindings::</span>Axis3f <span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                axis<span class="op">:</span> [<span class="dv">0.0</span><span class="op">,</span> <span class="dv">0.0</span><span class="op">,</span> <span class="dv">0.0</span>]<span class="op">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="op">}}}};</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">loop</span> <span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">unsafe</span> <span class="op">{</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> ok <span class="op">=</span> estimatorDequeue(<span class="op">&amp;</span><span class="kw">mut</span> measurement)<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">!</span>ok <span class="op">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">let</span> <span class="kw">mut</span> t <span class="op">=</span> measurement<span class="op">.</span>type_ <span class="op">&amp;</span> <span class="dv">0xFF</span><span class="op">;</span> <span class="co">// the &amp; 0xFF is important</span></span></code></pre></div></li>
+</ul>
+</section>
+<section id="rust" class="slide level2">
+<h2>Rust</h2>
+<ul>
+<li>The MEKF requires different matrix sizes; Use generics to avoid code
+duplication</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode rust"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pub</span> <span class="kw">struct</span> Mat<span class="op">&lt;</span><span class="kw">const</span> Rows<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span> <span class="kw">const</span> Columns<span class="op">:</span> <span class="dt">usize</span><span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">pub</span> m<span class="op">:</span> [[<span class="dt">f32</span><span class="op">;</span> Columns]<span class="op">;</span> Rows]<span class="op">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Rows1xColumns1 X Rows2 x Columns2</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">// where columns1 == rows2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">impl</span><span class="op">&lt;</span><span class="kw">const</span> R1<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span> <span class="kw">const</span> C1<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="kw">const</span> R2<span class="op">:</span> <span class="dt">usize</span><span class="op">,</span> <span class="kw">const</span> C2<span class="op">:</span> <span class="dt">usize</span><span class="op">&gt;</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Mul</span><span class="op">&lt;</span>Mat<span class="op">&lt;</span>R2<span class="op">,</span> C2<span class="op">&gt;&gt;</span> <span class="cf">for</span> Mat<span class="op">&lt;</span>R1<span class="op">,</span> C1<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">type</span> Output <span class="op">=</span> Mat<span class="op">&lt;</span>R1<span class="op">,</span> C2<span class="op">&gt;;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">fn</span> mul(<span class="kw">self</span><span class="op">,</span> other<span class="op">:</span> Mat<span class="op">&lt;</span>R2<span class="op">,</span> C2<span class="op">&gt;</span>) <span class="op">-&gt;</span> Mat<span class="op">&lt;</span>R1<span class="op">,</span> C2<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">// ...</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="timeline" class="slide level2">
+<h2>Timeline</h2>
+<ul>
+<li>Jan 17: discussion/simulation presentation</li>
+<li>Jan 24: flight tests (no class meeting)</li>
+<li>Jan 31: Motion Planning lecture (&amp; Assignment 4)</li>
+</ul>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1">
+<h1>Conclusion</h1>
+
+</section>
+<section id="learned-today" class="slide level2">
+<h2>Learned Today</h2>
+<ul>
+<li>State Estimation to estimate <span
+class="math inline">\(\mathbf{x}\)</span> (and uncertainty)
+<ul>
+<li><em>Complementary Filter</em>: simple, efficient, no dynamics
+model</li>
+<li><em>Multiplicative Extended Kalman Filter</em>: state-of-the-art
+state estimator for flying robots</li>
+</ul></li>
+<li>Assignment 3</li>
+</ul>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<div class="r-fit-text">
+<p>?</p>
+</div>
+</section>
+<section id="references-suggested-reading" class="slide level2">
+<h2>References / Suggested Reading</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-2008-euston-ComplementaryFilterAttitudea" class="csl-entry"
+role="listitem">
+Euston, Mark, Paul Coote, Robert Mahony, Jonghyuk Kim, and Tarek Hamel.
+2008. <span>“A Complementary Filter for Attitude Estimation of a
+Fixed-Wing UAV.”</span> In <em>2008 IEEE/RSJ International Conference on
+Intelligent Robots and Systems</em>, 340–45. <a
+href="https://doi.org/10.1109/IROS.2008.4650766">https://doi.org/10.1109/IROS.2008.4650766</a>.
+</div>
+<div id="ref-2008-hall-QuaternionAttitudeEstimation" class="csl-entry"
+role="listitem">
+Hall, James K., Nathan B. Knoebel, and Timothy W. McLain. 2008.
+<span>“Quaternion Attitude Estimation for Miniature Air Vehicles Using a
+Multiplicative Extended Kalman Filter.”</span> In <em>2008 IEEE/ION
+Position, Location and Navigation Symposium</em>, 1230–37. <a
+href="https://doi.org/10.1109/PLANS.2008.4570043">https://doi.org/10.1109/PLANS.2008.4570043</a>.
+</div>
+<div id="ref-2014-madgwick-AHRSAlgorithmsCalibration" class="csl-entry"
+role="listitem">
+Madgwick, Sebastian O H. 2014. <span>“AHRS Algorithms and Calibration
+Solutions to Facilitate New Applications Using Low-Cost MEMS.”</span>
+</div>
+<div id="ref-2008-mahony-NonlinearComplementaryFilters"
+class="csl-entry" role="listitem">
+Mahony, Robert, Tarek Hamel, and Jean-Michel Pflimlin. 2008.
+<span>“Nonlinear Complementary Filters on the Special Orthogonal
+Group.”</span> <em>IEEE Transactions on Automatic Control</em> 53 (5):
+1203–18. <a
+href="https://doi.org/10.1109/TAC.2008.923738">https://doi.org/10.1109/TAC.2008.923738</a>.
+</div>
+<div id="ref-2003-markley-AttitudeErrorRepresentations"
+class="csl-entry" role="listitem">
+Markley, F. Landis. 2003. <span>“Attitude Error Representations for
+Kalman Filtering.”</span> <em>Journal of Guidance, Control, and
+Dynamics</em> 26 (2): 311–17. <a
+href="https://doi.org/10.2514/2.5048">https://doi.org/10.2514/2.5048</a>.
+</div>
+<div id="ref-2015-mueller-FusingUltrawidebandRange" class="csl-entry"
+role="listitem">
+Mueller, Mark W., Michael Hamer, and Raffaello D’Andrea. 2015.
+<span>“Fusing Ultra-Wideband Range Measurements with Accelerometers and
+Rate Gyroscopes for Quadrocopter State Estimation.”</span> In <em>2015
+IEEE International Conference on Robotics and Automation (ICRA)</em>,
+1730–36. <a
+href="https://doi.org/10.1109/ICRA.2015.7139421">https://doi.org/10.1109/ICRA.2015.7139421</a>.
+</div>
+<div id="ref-2017-mueller-CovarianceCorrectionStep" class="csl-entry"
+role="listitem">
+Mueller, Mark W., Markus Hehn, and Raffaello D’Andrea. 2017.
+<span>“Covariance Correction Step for Kalman Filtering with an
+Attitude.”</span> <em>Journal of Guidance, Control, and Dynamics</em> 40
+(9): 2301–6. <a
+href="https://doi.org/10.2514/1.G000848">https://doi.org/10.2514/1.G000848</a>.
+</div>
+<div id="ref-2020-scaramuzza-AerialRobotsVisualInertiala"
+class="csl-entry" role="listitem">
+Scaramuzza, Davide, and Zichao Zhang. 2020. <span>“Aerial Robots,
+Visual-Inertial Odometry Of.”</span> In <em>Encyclopedia of
+Robotics</em>, edited by Marcelo H Ang, Oussama Khatib, and Bruno
+Siciliano, 1–9. Berlin, Heidelberg: Springer Berlin Heidelberg. <a
+href="https://doi.org/10.1007/978-3-642-41610-1_71-1">https://doi.org/10.1007/978-3-642-41610-1_71-1</a>.
+</div>
+<div id="ref-thrunProbabilisticRobotics2005" class="csl-entry"
+role="listitem">
+Thrun, Sebastian, Wolfram Burgard, and Dieter Fox. 2005.
+<em>Probabilistic Robotics</em>. Edited by Ronald C. Arkin. Intelligent
+Robotics and Autonomous Agents Series. Cambridge, MA, USA: MIT Press.
+</div>
+<div id="ref-2005-trawny-IndirectKalmanFilter" class="csl-entry"
+role="listitem">
+Trawny, Nikolas, and Stergios I Roumeliotis. 2005. <span>“Indirect
+Kalman Filter for 3D Attitude Estimation.”</span>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4/plugin/math/math.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+
+        maxScale: 10,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
