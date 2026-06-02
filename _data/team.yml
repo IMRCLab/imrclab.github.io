@@ -133,7 +133,7 @@ team:
     role: Lab
     image: flightspace2.jpg
     start: 02/2024
-    note: Indoor flight space (7 x 4 x 2.75 m) with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
+    note: Indoor flight space (7.5 x 4 x 2.75 m) with safety nets and padding all around with two external tracking systems for ground truth (motion capture and LightHouse).
 
   - name: Flightspace
     role: Lab
