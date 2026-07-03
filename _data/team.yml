@@ -314,3 +314,11 @@ team:
     role: High School Student
     start: 01/2026
     end: 01/2026
+
+  - name: Maria Ter-Minasyan
+    role: Student Assistant
+    email:  maria (dot) ter-minasyan (at) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: mariatmin
+    image: maria_ter-minasyan.jpg
+    start: 07/2026
