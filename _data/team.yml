@@ -25,6 +25,7 @@ team:
     affiliation: TU Berlin
     image: akmaral_moldagalieva.jpg
     start: 12/2021
+    end: 08/2026
 
   - name: Khaled Wahba
     role: PhD student
@@ -265,6 +266,15 @@ team:
     image: christoph_scherer.jpg
     start: 02/2025
 
+  - name: Tilman Burghoff
+    role: PhD student
+    email: t (dot) burghoff (at) tu-berlin (dot) de
+    github: tilman-burghoff
+    linkedin: https://www.linkedin.com/in/tilman-burghoff
+    affiliation: TU Berlin
+    image: tilman_burghoff.jpg
+    start: 09/2026
+
   - name: Hendrik Berg
     role: MS Thesis (Computational Engineering Science)
     note: Motion Planning and Control for Fully Submerged Hydrofoil Vessels
@@ -275,6 +285,7 @@ team:
     role: MS Thesis (Computer Engineering)
     note: Kinodynamic Multi-Robot Traveling Salesman Problems with Applications to Ocean Cleanup
     start: 05/2025
+    end: 11/2025
 
   - name: Jiaming Li
     role: Student Assistant
@@ -309,6 +320,7 @@ team:
     github: JoJoRosero
     image: johannes_roser.jpg
     start: 12/2025
+    end: 7/2026
 
   - name: Issa-Noel Yamamura
     role: High School Student
@@ -322,3 +334,26 @@ team:
     github: mariatmin
     image: maria_ter-minasyan.jpg
     start: 07/2026
+
+  - name: Jiaming Li
+    role: Student Assistant
+    email:  jiaming (dot) li (at) campus (dot) tu-berlin (dot) de
+    affiliation: TU Berlin
+    github: Vincentive1232
+    image: jiaming_li.jpg
+    start: 08/2026
+
+  - name: Erik Schlenzka
+    role: MS Thesis (Computer Engineering)
+    note: Analyzing monocular event-based visual-inertial odometry on small Flying robots
+    start: 03/2026
+
+  - name: Florian Rutsch
+    role: MS Thesis (Computational Engineering Science)
+    note: Active Learning for Tuning Controller Parameters
+    start: 04/2026
+
+  - name: Georg Wolnik
+    role: MS Thesis (Computer Science)
+    note: Comparison of Control Strategies for Interaction-Force Aware Multirotor Teams
+    start: 08/2026
