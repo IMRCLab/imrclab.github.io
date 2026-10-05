@@ -49,12 +49,24 @@ title: IMRC Team
     <p>For past BS/MS theses, please see the <a href="thesis.html#past">thesis page</a>.</p>
     <ul class="paper">
 
-        {% for member in site.data.team.team reversed %}
+        {% comment %} Sort alumni by end date (MM/YYYY), most recent first {% endcomment %}
+        {% assign keys = "" | split: "" %}
+        {% for member in site.data.team.team %}
             {% if member.end %}
                 {% unless member.role contains "Thesis" %}
-                    {% include teammember_list.html %}
+                    {% assign parts = member.end | split: "/" %}
+                    {% assign month = parts[0] | prepend: "0" | slice: -2, 2 %}
+                    {% assign idx = forloop.index | plus: 1000 %}
+                    {% capture key %}{{ parts[1] }}{{ month }}-{{ idx }}{% endcapture %}
+                    {% assign keys = keys | push: key %}
                 {% endunless %}
             {% endif %}
+        {%- endfor %}
+        {% assign keys = keys | sort | reverse %}
+        {% for key in keys %}
+            {% assign i = key | slice: 7, 4 | minus: 1001 %}
+            {% assign member = site.data.team.team[i] %}
+            {% include teammember_list.html %}
         {%- endfor %}
 
     </ul>
