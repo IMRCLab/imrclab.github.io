@@ -7,6 +7,9 @@
 - name: Teaching
   link: /teaching.html
   icon: fa-solid fa-chalkboard
+- name: Thesis
+  link: /thesis.html
+  icon: fa-solid fa-scroll
 #- name: Projects
 #  link: /projects.html
 #  icon: fas fa-bars-progress

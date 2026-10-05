@@ -41,34 +41,19 @@ title: IMRC Team
     </div>
 </div>
 
-<div class="section-heading">
-    <h2 class="title is-2">Thesis Supervision</h2>
-</div>
-
-<div class="container">
-    <div class="team tile is-ancestor is-flex-wrap">
-
-        {% for member in site.data.team.team reversed %}
-            {% if member.role contains "Thesis" %}
-                {% unless member.end %}
-                    {% include teammember.html %}
-                {% endunless %}
-            {% endif %}
-        {%- endfor %}
-
-    </div>
-</div>
-
 <div class="section-heading" id="alumni">
     <h2 class="title is-2">Alumni</h2>
 </div>
 
 <div class="container">
+    <p>For past BS/MS theses, please see the <a href="thesis.html#past">thesis page</a>.</p>
     <ul class="paper">
 
         {% for member in site.data.team.team reversed %}
             {% if member.end %}
-                {% include teammember_list.html %}
+                {% unless member.role contains "Thesis" %}
+                    {% include teammember_list.html %}
+                {% endunless %}
             {% endif %}
         {%- endfor %}
 

@@ -1,0 +1,60 @@
+---
+layout: default
+title: IMRC Thesis
+---
+
+<div class="section-heading">
+    <h2 class="title is-2">PhD/MSc/BSc Thesis</h2>
+</div>
+
+<div class="container">
+    <!-- We recommend <a href="https://www.theses.tu-berlin.de/de/theses?currentEvents%5Bfilter%5D%5Bcustom_value_institutes%5D%5B0%5D=45c0629f-1a41-4ee9-927c-130e394f6354">(I)STROD - (International) Student Thesis and Research Opportunities Database</a> to find a thesis topic. -->
+    For open PhD positions, please take a look at our <a href="jobs.html">jobs page</a>.
+    For MSc/BSc theses, please see the topics below.
+</div>
+
+<div class="container">
+    <div class="tile is-ancestor is-flex-wrap">
+
+        {% for course in site.data.teaching.thesis %}
+            {% include course.html %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+<div class="section-heading">
+    <h2 class="title is-2">Current Thesis Supervision</h2>
+</div>
+
+<div class="container">
+    <div class="team tile is-ancestor is-flex-wrap">
+
+        {% for member in site.data.team.team reversed %}
+            {% if member.role contains "Thesis" %}
+                {% unless member.end %}
+                    {% include teammember.html %}
+                {% endunless %}
+            {% endif %}
+        {%- endfor %}
+
+    </div>
+</div>
+
+<div class="section-heading" id="past">
+    <h2 class="title is-2">Past Thesis</h2>
+</div>
+
+<div class="container">
+    <ul class="paper">
+
+        {% for member in site.data.team.team reversed %}
+            {% if member.end %}
+                {% if member.role contains "Thesis" %}
+                    {% include teammember_list.html %}
+                {% endif %}
+            {% endif %}
+        {%- endfor %}
+
+    </ul>
+</div>
