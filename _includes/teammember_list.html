@@ -17,12 +17,9 @@
   </span>
   {% endif %}
 
-  {% if member.email or member.website or member.github or member.thesis %}
+  {% if member.website or member.github or member.thesis %}
     <br>
     [
-    {% if member.email %}
-    <a href="mailto:{{member.email}}"><span class="icon"><i class="fas fa-at"></i></span></a>
-    {% endif %}
     {% if member.website %}
     <a href="{{member.website}}"><span class="icon"><i class="fas fa-external-link-alt"></i></span></a>
     {% endif %}

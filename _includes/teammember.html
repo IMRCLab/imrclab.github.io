@@ -27,7 +27,7 @@
         {% endif %}
       </div>
       <footer class="card-footer">
-        {% if member.email %}
+        {% if member.email and member.end == nil %}
         <a href="mailto:{{member.email}}" class="card-footer-item"><span class="icon"><i class="fas fa-at"></i></span></a>
         {% endif %}
         {% if member.website %}

@@ -2,7 +2,7 @@
 team:
   - name: Wolfgang Hönig
     role: Group Leader
-    email: hoenig (at) tu-berlin (dot) de
+    email: hoenig@tu-berlin.de
     website: https://whoenig.github.io/
     github: whoenig
     affiliation: TU Berlin
@@ -12,14 +12,14 @@ team:
 
   - name: Thalia Prokopiou
     role: Administration
-    email: office (at) mrs (dot) tu-berlin (dot) de
+    email: office@mrs.tu-berlin.de
     affiliation: TU Berlin
     image: thalia.jpg
     start: 11/2025
 
   - name: Akmaral Moldagalieva
     role: PhD student
-    email: moldagalieva (at) tu-berlin (dot) de
+    email: moldagalieva@tu-berlin.de
     # website:
     github: akmaralAW
     affiliation: TU Berlin
@@ -29,7 +29,7 @@ team:
 
   - name: Khaled Wahba
     role: PhD student
-    email: k (dot) wahba (at) tu-berlin (dot) de
+    email: k.wahba@tu-berlin.de
     # website:
     github: Khaledwahba1994
     affiliation: TU Berlin
@@ -38,7 +38,7 @@ team:
 
   - name: Pia Hanfeld
     role: PhD student MLSec (co-advised with <a href="https://www.mlsec.org/team/rieck/index.html">Konrad Rieck</a>)
-    email: p.hanfeld (at) hzdr (dot) de
+    email: p.hanfeld@hzdr.de
     github: phanfeld
     affiliation: TU Berlin, BIFOLD
     image: pia_hanfeld.jpg
@@ -54,7 +54,7 @@ team:
 
   - name: Pablo Robles Cervantes
     role: Student Assistant
-    email:  pablo (dot) roblescervantes (at) campus (dot) tu-berlin (dot) de
+    email:  pablo.roblescervantes@campus.tu-berlin.de
     affiliation: TU Berlin
     github: P10010
     image: pablo_robles_cervantes.jpg
@@ -108,7 +108,7 @@ team:
 
   - name: Julien Thévenoz
     role: Student Assistant
-    email:  julien (at) thevenoz (dot) ch
+    email:  julien@thevenoz.ch
     affiliation: FU Berlin
     github: julienthevenoz
     image: julien_thevenoz.jpg
@@ -124,7 +124,7 @@ team:
 
   - name: Bojan Derajić
     role: External PhD student (Continental)
-    email: bojan.derajic (at) continental-corporation (dot) com
+    email: bojan.derajic@continental-corporation.com
     linkedin: https://www.linkedin.com/in/bojan-derajic/
     github: bojan-derajic
     affiliation: Continental Corporation, TU Berlin
@@ -159,7 +159,7 @@ team:
 
   - name: Jan Achermann
     role: Student Assistant
-    email:  achermann (at) campus (dot) tu-berlin (dot) de
+    email:  achermann@campus.tu-berlin.de
     github: polyblank-5
     image: jan_achermann.jpg
     start: 06/2024
@@ -193,7 +193,7 @@ team:
 
   - name: Leon Thormeyer
     role: Student Assistant
-    email: leon (dot) thormeyer (at) campus (dot) tu-berlin (dot) de
+    email: leon.thormeyer@campus.tu-berlin.de
     github: leonthorm
     image: leon_thormeyer.jpg
     start: 08/2024
@@ -201,7 +201,7 @@ team:
 
   - name: Achim von Prittwitz
     role: Student Assistant
-    email:  von (dot) prittwitz (dot) und (dot) gaffron (at) campus (dot) tu-berlin (dot) de
+    email:  von.prittwitz.und.gaffron@campus.tu-berlin.de
     github: achimvp
     image: achim_von_prittwitz.jpg
     start: 08/2024
@@ -216,7 +216,7 @@ team:
 
   - name: Ilaria Cicchetti-Nilsson
     role: Administration
-    email: office (at) mrs (dot) tu-berlin (dot) de
+    email: office@mrs.tu-berlin.de
     affiliation: TU Berlin
     image: ilaria_cicchetti-nilsson.jpg
     start: 05/2021
@@ -250,7 +250,7 @@ team:
 
   - name: Dennis Schmidt
     role: Student Assistant
-    email:  dennis (dot) schmidt (dot) 1 (at) campus (dot) tu-berlin (dot) de
+    email:  dennis.schmidt.1@campus.tu-berlin.de
     affiliation: TU Berlin
     github: den-schmidt
     image: dennis_schmidt.jpg
@@ -259,7 +259,7 @@ team:
 
   - name: Omar Elsayed
     role: PhD student
-    email: o (dot) elsayed (at) tu-berlin (dot) de
+    email: o.elsayed@tu-berlin.de
     github: OmarMElsayed
     affiliation: TU Berlin
     image: omar_elsayed.jpg
@@ -267,7 +267,7 @@ team:
 
   - name: Christoph Scherer
     role: PhD student
-    email: c (dot) scherer (at) tu-berlin (dot) de
+    email: c.scherer@tu-berlin.de
     github: c-scherer
     affiliation: TU Berlin
     image: christoph_scherer.jpg
@@ -275,7 +275,7 @@ team:
 
   - name: Tilman Burghoff
     role: PhD student
-    email: t (dot) burghoff (at) tu-berlin (dot) de
+    email: t.burghoff@tu-berlin.de
     github: tilman-burghoff
     linkedin: https://www.linkedin.com/in/tilman-burghoff
     affiliation: TU Berlin
@@ -297,7 +297,7 @@ team:
 
   - name: Jiaming Li
     role: Student Assistant
-    email:  jiaming (dot) li (at) campus (dot) tu-berlin (dot) de
+    email:  jiaming.li@campus.tu-berlin.de
     affiliation: TU Berlin
     github: Vincentive1232
     image: jiaming_li.jpg
@@ -306,7 +306,7 @@ team:
 
   - name: Charlotte Stentzler
     role: Student Assistant
-    email:  charlotte (dot) stentzler (at) campus (dot) tu-berlin (dot) de
+    email:  charlotte.stentzler@campus.tu-berlin.de
     affiliation: TU Berlin
     github: Olumat
     image: charlotte_stentzler.jpg
@@ -314,7 +314,7 @@ team:
 
   - name: Nan Cai
     role: Student Assistant
-    email:  nan (dot) cai (at) campus (dot) tu-berlin (dot) de
+    email:  nan.cai@campus.tu-berlin.de
     affiliation: TU Berlin
     github: NannCai
     image: nan_cai.jpg
@@ -323,7 +323,7 @@ team:
 
   - name: Johannes Roser
     role: Student Assistant
-    email:  johannes (dot) roser (at) campus (dot) tu-berlin (dot) de
+    email:  johannes.roser@campus.tu-berlin.de
     affiliation: TU Berlin
     github: JoJoRosero
     image: johannes_roser.jpg
@@ -337,7 +337,7 @@ team:
 
   - name: Maria Ter-Minasyan
     role: Student Assistant
-    email:  maria (dot) ter-minasyan (at) tu-berlin (dot) de
+    email:  maria.ter-minasyan@tu-berlin.de
     affiliation: TU Berlin
     github: mariatmin
     image: maria_ter-minasyan.jpg
@@ -345,7 +345,7 @@ team:
 
   - name: Jiaming Li
     role: Student Assistant
-    email:  jiaming (dot) li (at) campus (dot) tu-berlin (dot) de
+    email:  jiaming.li@campus.tu-berlin.de
     affiliation: TU Berlin
     github: Vincentive1232
     image: jiaming_li.jpg
