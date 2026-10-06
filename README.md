@@ -23,3 +23,15 @@ And go to `http://localhost:4000` in your browser. The page will automatically u
 ## Deployment
 
 Simply push to the main branch. The site will be deployed automatically.
+
+## Notes
+
+### PDF Compression
+
+```
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/ebook \
+   -dDetectDuplicateImages=true -dCompressFonts=true \
+   -dPassThroughJPEGImages=true -dPassThroughJPXImages=true \
+   -dNOPAUSE -dQUIET -dBATCH \
+   -sOutputFile=out.pdf input.pdf
+```

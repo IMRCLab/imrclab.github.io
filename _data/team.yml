@@ -97,6 +97,7 @@ team:
     note: Long-Horizon Planning of Multirotor Teams for Construction Assembly
     start: 05/2023
     end: 11/2023
+    thesis: assets/pdf/2023-msthesis-kern.pdf
 
   - name: Keerthana Laxmish
     role: MS Thesis (ICT Innovation)
@@ -169,25 +170,28 @@ team:
     note: Motion Primitive Selection for Kinodynamic Motion Planning
     start: 05/2024
     end: 11/2024
+    thesis: assets/pdf/2024-msthesis-franke.pdf
 
   - name: Eckart Ferdinand Cobo Briesewitz
     role: BS Thesis (Computer Science)
     note: Learning-based Multirotor Control Enhancements
     start: 05/2024
     end: 10/2024
+    thesis: assets/pdf/2024-bsthesis-cobo-briesewitz.pdf
 
   - name: Dennis Schmidt
     role: MS Thesis (Electrical Engineering)
     note: Development of an uncertainty-aware Motion Planner combining Branch MPC with Machine Learning
     start: 06/2024
     end: 01/2025
+    thesis: assets/pdf/2025-msthesis-schmidt.pdf
 
   - name: Natalie Huang
     role: Visiting Research Student (MIT)
     start: 06/2024
     end: 08/2024
 
-  - name: Leon Thormeyer 
+  - name: Leon Thormeyer
     role: Student Assistant
     email: leon (dot) thormeyer (at) campus (dot) tu-berlin (dot) de
     github: leonthorm
@@ -208,6 +212,7 @@ team:
     note: Learning Residual Physics Distributions of Multirotors with Cable-Suspended Payloads
     start: 02/2024
     end: 09/2024
+    thesis: assets/pdf/2024-msthesis-scherer.pdf
 
   - name: Ilaria Cicchetti-Nilsson
     role: Administration
@@ -234,12 +239,14 @@ team:
     note: Learning Multirotor Vision-to-Action Control Policies via Imitation Learning
     start: 12/2024
     end: 06/2025
+    thesis: assets/pdf/2025-msthesis-klemens.pdf
 
   - name: Viktor Lorentz
     role: MS Thesis (Computer Engineering)
     note: Reinforcement Learning for Collaborative Transport of Cable Suspended Payloads with Multiple Multirotors
     start: 01/2025
     end: 07/2025
+    thesis: assets/pdf/2025-msthesis-lorentz.pdf
 
   - name: Dennis Schmidt
     role: Student Assistant
@@ -280,6 +287,7 @@ team:
     note: Motion Planning and Control for Fully Submerged Hydrofoil Vessels
     start: 03/2025
     end: 09/2025
+    thesis: assets/pdf/2025-msthesis-berg.pdf
 
   - name: Mathieu Siegenthaler
     role: MS Thesis (Computer Engineering)
@@ -343,10 +351,25 @@ team:
     image: jiaming_li.jpg
     start: 08/2026
 
+  - name: Niklas Hargus
+    role: MS Thesis (Computational Engineering Science)
+    note: Temporal Multi-Robot Task and Motion Planning for Mechanical Disassembly Tasks
+    start: 11/2025
+    end: 05/2026
+    thesis: assets/pdf/2026-msthesis-hargus.pdf
+
+  - name: Franz Friedrich Queißner
+    role: MS Thesis (Computer Engineering)
+    note: "ST-Db-RRT: Kinodynamic Motion Planning in Known Dynamic Environments"
+    start: 01/2026
+    end: 07/2026
+    thesis: assets/pdf/2026-msthesis-queissner.pdf
+
   - name: Erik Schlenzka
     role: MS Thesis (Computer Engineering)
     note: Analyzing monocular event-based visual-inertial odometry on small Flying robots
     start: 03/2026
+    end: 09/2026
 
   - name: Florian Rutsch
     role: MS Thesis (Computational Engineering Science)
